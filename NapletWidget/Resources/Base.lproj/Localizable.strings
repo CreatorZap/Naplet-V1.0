@@ -1,0 +1,45 @@
+/* ================================================
+   NAPLET WIDGET - ENGLISH LOCALIZATION
+   ================================================ */
+
+// Baby status
+"widget.awake" = "Awake";
+"widget.sleeping" = "Sleeping";
+"widget.sleepingFor" = "Sleeping for %@";
+"widget.napping" = "Napping";
+
+// Statistics
+"widget.sleepToday" = "Sleep today";
+"widget.napToday" = "Naps today";
+"widget.lastNap" = "Last nap";
+"widget.lastSleep" = "Last sleep";
+"widget.wakeWindow" = "Wake window";
+
+// Dashboard stats
+"dashboard.stats.naps" = "Naps";
+"dashboard.stats.totalSleep" = "Total";
+"dashboard.stats.nightSleep" = "Night";
+
+// Time
+"widget.hours" = "h";
+"widget.minutes" = "min";
+"widget.now" = "Now";
+"widget.ago" = "ago";
+
+// Quick Actions Widget
+"widget.quickAction.nap" = "Nap";
+"widget.quickAction.feed" = "Feed";
+"widget.quickAction.diaper" = "Diaper";
+"widget.quickAction.sleep" = "Sleep";
+"widget.quickAction.wakeUp" = "Wake Up";
+
+// Placeholder
+"widget.noBaby" = "Add a baby";
+"widget.noData" = "No data";
+"widget.tapToSetup" = "Tap to setup";
+
+// Widget Configuration
+"widget.sleepStatus.name" = "Baby Sleep";
+"widget.sleepStatus.description" = "Track your baby's sleep in real-time";
+"widget.quickAction.title" = "Quick Actions";
+"widget.quickAction.description" = "Log activities quickly";

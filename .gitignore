@@ -1,0 +1,26 @@
+# Xcode
+DerivedData/
+*.xcuserdata/
+*.xcworkspace/xcuserdata/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
+
+# Build
+build/
+.build/
+
+# macOS
+.DS_Store
+*.swp
+*~
+
+# CocoaPods (se usar)
+Pods/
+
+# Keys (IMPORTANTE - não subir chaves!)
+*.pem
+*.p12
+Secrets.swift

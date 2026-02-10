@@ -1,0 +1,1807 @@
+/*
+  Localizable.strings
+  Naplet - Portugues (Brasil)
+
+  Baby sleep tracking app localization file.
+  Default language: Portuguese (Brazil)
+*/
+
+// MARK: - Common
+"common.ok" = "OK";
+"common.cancel" = "Cancelar";
+"common.save" = "Salvar";
+"common.delete" = "Excluir";
+"common.edit" = "Editar";
+"common.done" = "Concluído";
+"common.close" = "Fechar";
+"common.error" = "Erro";
+"common.success" = "Sucesso";
+"common.loading" = "Carregando...";
+"common.retry" = "Tentar novamente";
+"common.yes" = "Sim";
+"common.no" = "Não";
+"common.skip" = "Pular";
+"common.next" = "Próximo";
+"common.back" = "Voltar";
+"common.continue" = "Continuar";
+"common.or" = "ou";
+"common.of" = "de";
+"common.optional" = "opcional";
+"common.today" = "Hoje";
+"common.yesterday" = "Ontem";
+"common.total" = "Total";
+
+// MARK: - Language
+"language.title" = "Idioma / Language";
+"language.subtitle" = "Selecione seu idioma preferido";
+"language.system" = "Automático (Sistema)";
+"language.autoApply" = "O idioma é aplicado automaticamente.";
+"settings.language" = "Idioma";
+
+// MARK: - Tabs
+"tabs.home" = "Início";
+"tabs.history" = "Histórico";
+"tabs.settings" = "Ajustes";
+
+// MARK: - Auth
+"auth.welcome" = "Bem-vindo ao Naplet";
+"auth.tagline" = "Acompanhe o sono do seu bebê com facilidade";
+"auth.signIn" = "Entrar";
+"auth.signUp" = "Criar Conta";
+"auth.email" = "Email";
+"auth.password" = "Senha";
+"auth.confirmPassword" = "Confirmar Senha";
+"auth.name" = "Seu nome";
+"auth.forgotPassword" = "Esqueci minha senha";
+"auth.noAccount" = "Não tem conta?";
+"auth.hasAccount" = "Já tem uma conta?";
+"auth.signInWithApple" = "Continuar com Apple";
+"auth.termsNotice" = "Ao continuar, você concorda com nossos";
+"auth.terms" = "Termos de Serviço";
+"auth.privacy" = "Política de Privacidade";
+"auth.skipLogin" = "Pular login (Modo Dev)";
+"auth.error.invalidEmail" = "Email inválido";
+"auth.error.weakPassword" = "Senha deve ter no mínimo 6 caracteres";
+"auth.error.passwordMismatch" = "As senhas não coincidem";
+"auth.error.generic" = "Erro ao autenticar. Tente novamente";
+"auth.error.signIn" = "Não foi possível entrar. Tente novamente.";
+"auth.error.signOut" = "Não foi possível sair. Tente novamente.";
+"auth.error.credentials" = "Não foi possível obter as credenciais da Apple";
+"auth.error.cancelled" = "Login cancelado ou falhou";
+"auth.error.title" = "Erro";
+"auth.error.acceptTerms" = "Por favor, aceite os termos para continuar";
+"auth.success.title" = "Sucesso";
+
+// Auth - New Premium Login Screen
+"auth.tagline" = "Acompanhe o sono do seu bebê\ncom inteligência artificial";
+"auth.socialProof.headline" = "O app #1 de sono para bebês";
+"auth.badge.editorsChoice.main" = "Escolha";
+"auth.badge.editorsChoice.sub" = "dos Editores";
+"auth.badge.appOfDay.main" = "App do";
+"auth.badge.appOfDay.sub" = "Dia";
+"auth.terms.agree" = "Concordo com os";
+"auth.terms.termsAndConditions" = "Termos e Condições";
+"auth.terms.and" = "e a";
+"auth.terms.privacyPolicy" = "Política de Privacidade";
+"auth.terms.ofNaplet" = "do Naplet";
+"auth.button.continueApple" = "Continuar com a Apple";
+"auth.button.continueGoogle" = "Continuar com o Google";
+"auth.button.continueEmail" = "Continuar com e-mail";
+
+// Auth - Email Sign In Sheet
+"auth.email.createAccount" = "Criar Conta";
+"auth.email.signIn" = "Entrar com E-mail";
+"auth.email.createSubtitle" = "Preencha seus dados para começar";
+"auth.email.signInSubtitle" = "Digite seu e-mail e senha";
+"auth.email.name" = "Nome";
+"auth.email.namePlaceholder" = "Seu nome";
+"auth.email.email" = "E-mail";
+"auth.email.emailPlaceholder" = "seu@email.com";
+"auth.email.password" = "Senha";
+"auth.email.confirmPassword" = "Confirmar Senha";
+"auth.email.createButton" = "Criar Conta";
+"auth.email.signInButton" = "Entrar";
+"auth.email.haveAccount" = "Já tem uma conta?";
+"auth.email.noAccount" = "Não tem uma conta?";
+"auth.email.signInLink" = "Entrar";
+"auth.email.createLink" = "Criar conta";
+
+// MARK: - Onboarding (New Refined Flow)
+// Welcome Screen
+"onboarding_welcome_title" = "Noites tranquilas começam aqui";
+"onboarding_welcome_subtitle" = "O app que ajuda seu bebê dormir melhor e você descansar mais.";
+"onboarding_welcome_cta" = "Começar agora";
+"onboarding_welcome_invite" = "Já tenho um convite";
+"onboarding_welcome_login" = "Já tem conta? Entrar";
+"onboarding_welcome_social_proof" = "Mais de 10.000 famílias já transformaram suas noites";
+
+// Benefits Screen
+"onboarding_benefits_title" = "Olá!";
+"onboarding_benefits_subtitle" = "Estamos aqui para transformar a rotina de sono da sua família. Com o Naplet você vai ter:";
+"onboarding_benefit_1_title" = "Menos estresse, mais clareza";
+"onboarding_benefit_1_desc" = "Saiba exatamente quando seu bebê precisa dormir. Chega de achismo.";
+"onboarding_benefit_2_title" = "Noites de sono melhores";
+"onboarding_benefit_2_desc" = "Para você E para o seu bebê. Sonecas previsíveis, noites mais longas.";
+"onboarding_benefit_3_title" = "Família sincronizada";
+"onboarding_benefit_3_desc" = "Todos os cuidadores na mesma página, em tempo real. Avós, babás, parceiro(a).";
+"onboarding_benefits_cta" = "Vamos lá!";
+
+// Differentials Screen
+"onboarding_diff_title" = "O que torna o Naplet especial?";
+"onboarding_diff_subtitle" = "Funcionalidades exclusivas que você não encontra em outros apps";
+"onboarding_diff_1_title" = "Assistente de IA 24h";
+"onboarding_diff_1_desc" = "Tire dúvidas sobre sono a qualquer hora. Respostas personalizadas para o SEU bebê.";
+"onboarding_diff_1_badge" = "Exclusivo";
+"onboarding_diff_2_title" = "Relatórios para o Pediatra";
+"onboarding_diff_2_desc" = "PDF profissional com toda a rotina. Consultas mais produtivas, pediatra impressionado.";
+"onboarding_diff_2_badge" = "Exclusivo";
+"onboarding_diff_3_title" = "Preço justo";
+"onboarding_diff_3_desc" = "3x mais barato que os concorrentes. Todas as features, sem pagar fortunas.";
+"onboarding_diff_3_badge" = "Melhor custo-benefício";
+
+// Attribution Screen
+"onboarding_attribution_title" = "Como você descobriu o Naplet?";
+"onboarding_attribution_subtitle" = "Isso nos ajuda a alcançar mais famílias como a sua";
+"onboarding_attribution_instagram" = "Instagram / Facebook";
+"onboarding_attribution_appstore" = "Busca na App Store";
+"onboarding_attribution_influencer" = "Recomendação de influenciador";
+"onboarding_attribution_tiktok" = "TikTok";
+"onboarding_attribution_google" = "Google";
+"onboarding_attribution_group" = "Grupo de mães/pais";
+"onboarding_attribution_friend" = "Amigo ou familiar indicou";
+"onboarding_attribution_other" = "Outro";
+"onboarding_skip" = "Pular por enquanto";
+
+// Goals Screen
+"onboarding_goals_title" = "O que você quer conquistar?";
+"onboarding_goals_subtitle" = "Vamos personalizar sua experiência. Selecione todos que se aplicam:";
+"onboarding_goals_microcopy" = "Quanto mais você compartilhar, melhor podemos ajudar";
+"onboarding_goal_longer_naps" = "Sonecas mais longas e regulares";
+"onboarding_goal_faster_sleep" = "Menos tempo para o bebê pegar no sono";
+"onboarding_goal_sleep_through" = "Dormir a noite toda";
+"onboarding_goal_fewer_wakings" = "Menos despertares noturnos";
+"onboarding_goal_routine" = "Estabelecer uma rotina de sono";
+"onboarding_goal_energy" = "Mais energia durante o dia";
+"onboarding_goal_feeding" = "Acompanhar alimentação também";
+"onboarding_goal_family" = "Compartilhar com a família";
+"onboarding_goals_skip" = "Pular por enquanto";
+
+// Baby Info Screens
+"onboarding_baby_name_title" = "Qual é o nome do seu bebê?";
+"onboarding_baby_name_subtitle" = "Vamos personalizar tudo para vocês dois";
+"onboarding_baby_name_placeholder" = "Nome do bebê";
+"onboarding_baby_name_hint" = "Você pode mudar depois nas configurações";
+"onboarding_baby_birth_title" = "Quando %@ nasceu?";
+"onboarding_baby_birth_subtitle" = "Usamos a idade para calcular as janelas de sono ideais para %@";
+"onboarding_baby_birth_microcopy" = "As necessidades de sono mudam rapidamente nos primeiros meses";
+"onboarding_baby_not_born" = "Meu bebê ainda não nasceu";
+"onboarding_baby_gender_title" = "%@ é...";
+"onboarding_baby_gender_subtitle" = "Opcional - ajuda a personalizar mensagens e notificações";
+"onboarding_gender_male" = "Menino";
+"onboarding_gender_female" = "Menina";
+"onboarding_gender_not_specified" = "Prefiro não informar";
+
+// Relationship Screen
+"onboarding_relationship_title" = "E você, quem é para %@?";
+"onboarding_relationship_subtitle" = "Assim personalizamos as notificações e mensagens para você";
+"onboarding_relationship_mother" = "Mamãe";
+"onboarding_relationship_father" = "Papai";
+"onboarding_relationship_grandparent" = "Avó/Avô";
+"onboarding_relationship_nanny" = "Babá";
+"onboarding_relationship_other" = "Outro cuidador";
+
+// Confirmation Screen
+"onboarding_confirm_title" = "Pronto! Vamos conferir?";
+"onboarding_confirm_subtitle" = "Você pode editar tudo isso depois nas configurações";
+"onboarding_confirm_cta" = "Confirmar e começar";
+"onboarding_confirm_name" = "Nome";
+"onboarding_confirm_birth" = "Data de nascimento";
+"onboarding_confirm_gender" = "Gênero";
+"onboarding_confirm_you_are" = "Você é";
+
+// Loading Screen
+"onboarding_loading_1" = "Preparando tudo para você...";
+"onboarding_loading_2" = "Calculando janelas de sono de %@...";
+"onboarding_loading_3" = "Personalizando sua experiência...";
+"onboarding_loading_4" = "Quase lá...";
+"onboarding_loading_tip" = "Dica: Registre o primeiro sono assim que terminar a configuração!";
+
+// Completion Screen
+"onboarding_complete_title" = "Tudo pronto!";
+"onboarding_complete_welcome" = "Bem-vindo(a) à família Naplet!";
+"onboarding_complete_message" = "A jornada para noites mais tranquilas começa agora. Estamos com você em cada despertar, cada soneca, cada conquista.";
+"onboarding_complete_cta" = "Começar a usar o Naplet";
+"onboarding_complete_tip_title" = "Primeira ação recomendada";
+"onboarding_complete_tip_text" = "Registre o próximo sono do seu bebê para começar a ver padrões";
+
+// Legacy (keep for backwards compatibility)
+"onboarding.welcome.title" = "Bem-vindo ao Naplet";
+"onboarding.welcome.subtitle" = "Acompanhe o sono do seu bebê com facilidade";
+"onboarding.getStarted" = "Começar";
+"onboarding.babyInfo.title" = "Sobre seu bebê";
+"onboarding.babyInfo.subtitle" = "Isso nos ajuda a personalizar as previsões de sono";
+"onboarding.babyInfo.nameLabel" = "Nome do bebê";
+"onboarding.babyInfo.namePlaceholder" = "Digite o nome";
+"onboarding.babyInfo.birthDate" = "Data de nascimento";
+"onboarding.babyInfo.gender" = "Sexo (opcional)";
+"onboarding.babyInfo.gender.male" = "Menino";
+"onboarding.babyInfo.gender.female" = "Menina";
+"onboarding.goals.title" = "Qual é seu objetivo de sono?";
+"onboarding.goals.subtitle" = "Selecione todos que se aplicam";
+"onboarding.notifications.title" = "Fique no caminho certo";
+"onboarding.notifications.subtitle" = "Receba alertas quando for hora da próxima soneca. Vamos ajudar você a encontrar a janela de sono perfeita.";
+"onboarding.notifications.enable" = "Ativar Notificações";
+"onboarding.notifications.skip" = "Talvez depois";
+"onboarding.complete.title" = "Tudo pronto!";
+"onboarding.complete.subtitle" = "Você está pronto para começar";
+
+// MARK: - Dashboard
+"dashboard.greeting.morning" = "Bom dia";
+"dashboard.greeting.afternoon" = "Boa tarde";
+"dashboard.greeting.evening" = "Boa noite";
+"dashboard.greeting.night" = "Boa noite";
+"dashboard.status.sleeping" = "Dormindo";
+"dashboard.status.awake" = "Acordado";
+"dashboard.status.active" = "Ativo";
+"dashboard.status.readyForSleep" = "Pronto para dormir";
+"dashboard.stats.totalSleep" = "Sono total";
+"dashboard.stats.naps" = "Sonecas";
+"dashboard.stats.sleepDuration" = "Duração do sono";
+"dashboard.quickActions.title" = "Ações Rápidas";
+"dashboard.quickActions.nap" = "Soneca";
+"dashboard.quickActions.nightSleep" = "Sono Noturno";
+"dashboard.quickActions.statistics" = "Estatísticas";
+"dashboard.quickActions.settings" = "Configurações";
+"dashboard.quickActions.aiChat" = "Chat IA";
+"dashboard.quickActions.report" = "Relatório";
+"dashboard.todayActivity" = "Atividade de Hoje";
+"dashboard.noRecords" = "Nenhum registro de sono ainda";
+"dashboard.noRecordsSubtitle" = "Comece a monitorar para ver os padrões de sono do seu bebê";
+"dashboard.wakeWindow" = "Janela de sono recomendada: %d min";
+"dashboard.startSleep" = "Iniciar Sono";
+"dashboard.wakeUp" = "Acordar";
+"dashboard.nextNapIn" = "Próxima soneca em";
+"dashboard.error.startSleep" = "Falha ao iniciar monitoramento";
+"dashboard.error.stopSleep" = "Falha ao parar monitoramento";
+
+// MARK: - Sleep Quality Sheet
+"sleepQuality.title" = "Como foi o sono?";
+"sleepQuality.excellent" = "Excelente";
+"sleepQuality.good" = "Bom";
+"sleepQuality.fair" = "Regular";
+"sleepQuality.poor" = "Ruim";
+"sleepQuality.notes" = "Observações (opcional)";
+"sleepQuality.notesPlaceholder" = "Adicione observações sobre este sono...";
+
+// MARK: - Sleep Record Detail
+"sleepDetail.title" = "Detalhes do Sono";
+"sleepDetail.duration" = "Duração";
+"sleepDetail.start" = "Início";
+"sleepDetail.end" = "Fim";
+"sleepDetail.date" = "Data";
+"sleepDetail.quality" = "Qualidade do Sono";
+"sleepDetail.notes" = "Observações";
+
+// MARK: - Sleep Tracking
+"sleep.tracking" = "Monitorando Sono";
+"sleep.startTracking" = "Iniciar Monitoramento";
+"sleep.endSleep" = "Encerrar Sono";
+"sleep.startedAt" = "Iniciado as %@";
+"sleep.nightSleep" = "Sono Noturno";
+"sleep.nap" = "Soneca";
+
+// MARK: - Sleep Types
+"sleepType.nap" = "Soneca";
+"sleepType.night" = "Noite";
+
+// MARK: - History
+"history.title" = "Histórico de Sono";
+"history.period.week" = "7 Dias";
+"history.period.twoWeeks" = "14 Dias";
+"history.period.month" = "30 Dias";
+"history.summary" = "Resumo";
+"history.dailyBreakdown" = "Detalhamento Diário";
+"history.sleepDuration" = "Duração do Sono";
+"history.averagePerDay" = "Média por dia";
+"history.totalNaps" = "Total de sonecas";
+"history.noRecords" = "Nenhum dado de sono disponível";
+"history.noRecordsToDisplay" = "Nenhum registro para exibir";
+"history.avgDailySleep" = "Média Diária de Sono";
+"history.avgNapsPerDay" = "Média Sonecas/Dia";
+"history.bestDay" = "Melhor Dia";
+"history.totalRecords" = "Total de Registros";
+"history.today" = "Hoje";
+"history.yesterday" = "Ontem";
+"history.naps" = "sonecas";
+"history.night" = "noturno";
+"history.hours" = "Horas";
+
+// MARK: - Statistics (New)
+"statistics.title" = "Estatísticas";
+"statistics.subtitle" = "Acompanhe a evolução do sono do seu bebê";
+"statistics.totalSleep" = "Sono Total";
+"statistics.distribution" = "Distribuição do Sono";
+"statistics.nightPeriod" = "Noturno";
+"statistics.dayPeriod" = "Diurno (Sonecas)";
+"statistics.wakeTime" = "Hora de Acordar";
+"statistics.bedtime" = "Hora de Dormir";
+"statistics.napsPerDay" = "Sonecas por Dia";
+"statistics.average" = "Média";
+"statistics.tab.summary" = "Resumo";
+"statistics.tab.naps" = "Sonecas";
+"statistics.tab.wakeTime" = "Acordar";
+"statistics.tab.nightSleep" = "Noturno";
+"statistics.avgNapDuration" = "Duração Média Soneca";
+"statistics.totalNaps" = "Total de Sonecas";
+"statistics.earliestWake" = "Acordou Mais Cedo";
+"statistics.latestWake" = "Acordou Mais Tarde";
+"statistics.avgNightSleep" = "Média Sono Noturno";
+"statistics.avgBedtime" = "Média Hora de Dormir";
+
+// MARK: - Settings
+"settings.title" = "Configurações";
+"settings.profile" = "Perfil";
+"settings.language" = "Idioma";
+"settings.baby" = "Bebê";
+"settings.addBaby" = "Adicionar Bebê";
+"settings.addBaby.subtitle" = "Cadastre um novo bebê para acompanhar";
+"settings.noBabySelected" = "Nenhum bebê selecionado";
+"settings.addBabyFirst" = "Adicione um bebê primeiro para gerenciar cuidadores";
+"settings.notifications" = "Notificações";
+"settings.notifications.subtitle" = "Janela de sono e lembretes";
+"settings.notificationSettings" = "Configurações de Notificação";
+"settings.caregivers" = "Cuidadores";
+"settings.caregivers.subtitle" = "Convidar parceiros, avós ou babás";
+"settings.acceptInvite" = "Aceitar Convite";
+"settings.acceptInvite.subtitle" = "Digite um código para entrar como cuidador";
+"settings.preferences" = "Preferências";
+"settings.hapticFeedback" = "Vibração";
+"settings.use24Hour" = "Formato 24 horas";
+"settings.showWakeWindows" = "Mostrar janelas de sono";
+"settings.about" = "Sobre";
+"settings.privacyPolicy" = "Política de Privacidade";
+"settings.termsOfService" = "Termos de Serviço";
+"settings.deleteBaby" = "Excluir Bebê";
+"settings.deleteBaby.title" = "Excluir Bebê?";
+"settings.deleteBaby.confirm" = "Excluir";
+"settings.deleteBaby.message" = "Tem certeza? Todos os registros de sono deste bebê serão perdidos. Esta ação não pode ser desfeita.";
+"settings.version" = "Versão";
+"settings.account" = "Conta";
+"settings.signOut" = "Sair";
+"settings.signOut.confirm" = "Tem certeza que deseja sair?";
+"settings.deleteAccount" = "Excluir Conta";
+"settings.resetOnboarding" = "Resetar Onboarding";
+"settings.sleepSchedule" = "Horários de Sono";
+"settings.sleepSchedule.subtitle" = "Personalize acordar, dormir e sonecas";
+
+// MARK: - Notifications Settings
+"notifications.title" = "Notificações";
+"notifications.status.enabled" = "Ativadas";
+"notifications.status.disabled" = "Desativadas";
+"notifications.enable" = "Ativar";
+"notifications.enableDescription" = "Ative as notificações para receber alertas de janela de sono e lembretes de rotina.";
+"notifications.wakeWindow.title" = "Alertas de Janela de Sono";
+"notifications.wakeWindow.subtitle" = "Avisa quando está na hora de dormir";
+"notifications.wakeWindow.alertBefore" = "Alertar antes do fim da janela de sono";
+"notifications.wakeWindow.recommended" = "Janela de sono recomendada para %@: %d-%d min";
+"notifications.alertTime.10min" = "10 min";
+"notifications.alertTime.15min" = "15 min";
+"notifications.alertTime.20min" = "20 min";
+"notifications.alertTime.30min" = "30 min";
+"notifications.bedtime.title" = "Lembrete de Rotina Noturna";
+"notifications.bedtime.subtitle" = "Lembrete diário para iniciar rotina";
+"notifications.bedtime.time" = "Horário de dormir";
+"notifications.bedtime.selectTime" = "Selecionar Horário";
+"notifications.other.title" = "Outras Notificações";
+"notifications.napReminder.title" = "Lembretes de Soneca";
+"notifications.napReminder.subtitle" = "Notifica quando é hora da soneca";
+"notifications.wakeReminder.title" = "Lembrete para Acordar";
+"notifications.wakeReminder.subtitle" = "Avisa após 2 horas de sono";
+"notifications.pending" = "Notificações Agendadas";
+"notifications.noPending" = "Nenhuma notificação agendada";
+"notifications.moreCount" = "+%d mais";
+"notifications.cancelAll" = "Cancelar Todas";
+
+// MARK: - Push Notification Content
+"notification.wakeWindow.warning.title" = "Quase na hora do soninho";
+"notification.wakeWindow.warning.body" = "%@ está acordado(a) há %d minutos. Em %d minutos será hora de dormir.";
+"notification.wakeWindow.reached.title" = "Hora do descanso";
+"notification.wakeWindow.reached.body" = "%@ completou a janela de sono de %d minutos. É o momento ideal para colocar para dormir.";
+"notification.bedtime.title" = "Rotina noturna";
+"notification.bedtime.body" = "Em %d minutos começa a rotina de sono de %@. Hora de preparar o ambiente.";
+"notification.nap.coming.title" = "Soneca chegando";
+"notification.nap.coming.body" = "Em cerca de 10 minutos será o horário ideal para a soneca de %@.";
+"notification.nap.time.title" = "Hora da soneca";
+"notification.nap.time.body" = "Agora é o horário ideal para a soneca. Coloque %@ para dormir para melhores resultados.";
+"notification.wake.title" = "Hora de acordar";
+"notification.wake.body" = "%@ está dormindo há 2 horas. Considere acordar para manter uma rotina de sono saudável.";
+
+// Notification Actions
+"notification.action.startNap" = "Iniciar Soneca";
+"notification.action.remind15" = "Lembrar em 15 min";
+"notification.action.dismiss" = "Dispensar";
+
+// MARK: - AI Chat
+"aiChat.title" = "Naplet AI";
+"aiChat.subtitle" = "Assistente de sono";
+"aiChat.welcome" = "Olá! Sou o assistente de sono do Naplet. Estou aqui para ajudar com dicas sobre o sono do seu bebê. Como posso ajudar?";
+"aiChat.placeholder" = "Digite sua pergunta...";
+"aiChat.error" = "Não foi possível obter resposta. Tente novamente.";
+"aiChat.remainingMessages" = "%d mensagens restantes este mês";
+"aiChat.limitReached" = "Limite de mensagens atingido";
+"aiChat.suggestedQuestions" = "Perguntas sugeridas";
+
+// MARK: - PDF Report
+"report.title" = "Relatório de Sono";
+"report.subtitle" = "Gerar Relatório para Pediatra";
+"report.description" = "Crie um PDF com as estatísticas de sono de %@ para compartilhar com o pediatra.";
+"report.period" = "Período do Relatório";
+"report.summary" = "Resumo";
+"report.included" = "O que está incluído";
+"report.included.babyInfo" = "Informações do bebê e idade";
+"report.included.stats" = "Estatísticas resumidas do período";
+"report.included.quality" = "Distribuição de qualidade do sono";
+"report.included.daily" = "Detalhamento diário";
+"report.included.goals" = "Comparação com metas recomendadas";
+"report.generate" = "Gerar e Compartilhar";
+"report.generating" = "Gerando...";
+"report.preview" = "Preview do PDF";
+"report.share" = "Compartilhar";
+"report.error" = "Não foi possível gerar o relatório";
+"report.info" = "O relatório será gerado com os dados do período selecionado";
+
+// MARK: - Caregivers
+"caregivers.title" = "Cuidadores";
+"caregivers.header" = "Cuidadores de %@";
+"caregivers.description" = "Convide familiares ou babás para acompanhar o sono do bebê em tempo real.";
+"caregivers.shareTitle" = "Compartilhe o cuidado";
+"caregivers.shareDescription" = "Convide parceiros, avós ou babás para acompanhar o sono do bebê";
+"caregivers.active" = "Cuidadores Ativos";
+"caregivers.pending" = "Convites Pendentes";
+"caregivers.invite" = "Convidar Cuidador";
+"caregivers.create" = "Criar Convite";
+"caregivers.remove" = "Remover Cuidador";
+"caregivers.remove.title" = "Remover Cuidador";
+"caregivers.remove.confirm" = "Tem certeza que deseja remover %@?";
+"caregivers.remove.button" = "Remover";
+"caregivers.empty.title" = "Nenhum cuidador ainda";
+"caregivers.empty.description" = "Convide familiares ou babas para ajudar a monitorar o sono";
+"caregivers.role.owner" = "Principal";
+"caregivers.role.parent" = "Pai/Mae";
+"caregivers.role.grandparent" = "Avo/Avo";
+"caregivers.role.nanny" = "Baba";
+"caregivers.role.other" = "Outro";
+"caregivers.default" = "Cuidador";
+"caregivers.error" = "Ocorreu um erro";
+"caregivers.role.ownerDesc" = "Responsavel principal";
+"caregivers.role.parentDesc" = "Pode editar e convidar outros";
+"caregivers.role.grandparentDesc" = "Pode visualizar e registrar sono";
+"caregivers.role.nannyDesc" = "Pode visualizar e registrar sono";
+"caregivers.role.otherDesc" = "Acesso básico ao registro de sono";
+
+// MARK: - Invite
+"invite.new" = "Criar Convite";
+"invite.role" = "Papel do Cuidador";
+"invite.email" = "Email (Opcional)";
+"invite.emailPlaceholder" = "email@exemplo.com";
+"invite.emailInfo" = "Se informado, enviaremos uma notificação quando o convite for aceito";
+"invite.info" = "Um código de 8 caracteres será gerado. Compartilhe com a pessoa que você deseja convidar. O convite expira em 7 dias.";
+"invite.create" = "Gerar Código de Convite";
+"invite.creating" = "Criando...";
+"invite.created" = "Convite Criado!";
+"invite.code" = "Código do Convite";
+"invite.codeLabel" = "Código:";
+"invite.validDays" = "Válido por 7 dias";
+"invite.expires" = "Expira em %@";
+"invite.characters" = "%d/8 caracteres";
+"invite.share" = "Compartilhar Convite";
+"invite.copy" = "Copiar Código";
+"invite.cancel" = "Cancelar Convite";
+"invite.cancel.title" = "Cancelar Convite";
+"invite.cancel.confirm" = "Tem certeza que deseja cancelar este convite?";
+"invite.cancel.button" = "Cancelar Convite";
+"invite.cancelled" = "Convite cancelado";
+"invite.success" = "Convite Criado!";
+"invite.validity" = "Válido por 7 dias";
+"invite.generate" = "Gerar Código de Convite";
+"invite.create.title" = "Criar Convite";
+"invite.header.title" = "Convide alguém para ajudar";
+"invite.header.subtitle" = "A pessoa convidada poderá ver e registrar o sono do bebê";
+"invite.role.title" = "Papel do Cuidador";
+"invite.email.title" = "Email (Opcional)";
+"invite.email.placeholder" = "email@exemplo.com";
+"invite.email.hint" = "Se informado, enviaremos uma notificação quando o convite for aceito";
+"invite.accepted" = "Convite Aceito!";
+"invite.accepted.description" = "Você agora pode acompanhar o sono do bebê. O app será atualizado com os dados.";
+"invite.error.length" = "O código deve ter 8 caracteres";
+"invite.error.enterCode" = "Digite o código do convite";
+"invite.accept.title" = "Aceitar Convite";
+"invite.accept.enterCode" = "Digite o código do convite";
+"invite.accept.description" = "Digite o código do convite";
+"invite.accept.info" = "Você recebeu um código de 8 caracteres para acompanhar o sono de um bebê";
+"invite.accept.placeholder" = "CÓDIGO";
+"invite.accept.button" = "Aceitar Convite";
+"invite.accept.verifying" = "Verificando...";
+"invite.accept.success" = "Convite Aceito!";
+"invite.accept.successInfo" = "Você agora pode acompanhar o sono do bebê. O app será atualizado com os dados.";
+"invite.accept.continue" = "Continuar";
+"invite.share.text" = "Convite para acompanhar %@ no Naplet!\n\nUse o código: %@\n\n1. Baixe o app Naplet\n2. Crie sua conta\n3. Vá em Configurações > Aceitar Convite\n4. Digite o código acima\n\nO convite expira em 7 dias.";
+"invite.status.pending" = "Pendente";
+"invite.status.accepted" = "Aceito";
+"invite.status.expired" = "Expirado";
+"invite.status.cancelled" = "Cancelado";
+
+// MARK: - Baby
+"baby.ageMonths" = "%d meses";
+"baby.ageYears" = "%d anos";
+"baby.ageYearsMonths" = "%d anos %d meses";
+"baby.ageDays" = "%d dias";
+"baby.gender.boy" = "Menino";
+"baby.gender.girl" = "Menina";
+"baby.gender.male" = "Menino";
+"baby.gender.female" = "Menina";
+"baby.gender.other" = "Outro";
+"baby.age.1week" = "1 semana";
+"baby.age.weeks" = "%d semanas";
+"baby.age.1month" = "1 mês";
+"baby.age.months" = "%d meses";
+"baby.age.1year" = "1 ano";
+"baby.age.years" = "%d anos";
+
+// MARK: - Time Formats
+"time.hours" = "%dh";
+"time.minutes" = "%dm";
+"time.hoursMinutes" = "%dh %dm";
+
+// MARK: - Errors
+"error.generic" = "Algo deu errado. Tente novamente.";
+"error.network" = "Erro de conexao. Verifique sua internet.";
+"error.server" = "Erro no servidor. Tente novamente mais tarde.";
+"error.unknown" = "Erro desconhecido. Tente novamente.";
+"error.noBabySelected" = "Nenhum bebê selecionado";
+"error.sleepStartFailed" = "Falha ao iniciar rastreamento de sono";
+"error.sleepStopFailed" = "Falha ao parar rastreamento de sono";
+"error.signOutFailed" = "Falha ao sair. Por favor, tente novamente.";
+"error.enterDisplayName" = "Por favor, digite um nome de exibição";
+"error.loadDataFailed" = "Não foi possível carregar os dados. Verifique sua conexão e tente novamente.";
+
+// MARK: - Watch
+"watch.openIPhone" = "Abra o Naplet no iPhone";
+"watch.toSync" = "para sincronizar";
+"watch.sleeping" = "Dormindo";
+"watch.awake" = "Acordado";
+"watch.sleep" = "Dormir";
+"watch.wakeUp" = "Acordar";
+"watch.todaySleep" = "Sono hoje";
+"watch.naps" = "Sonecas";
+
+// MARK: - Widget
+"widget.sleepStatus.name" = "Status do Sono";
+"widget.sleepStatus.description" = "Veja se o bebê está dormindo e estatísticas do dia.";
+"widget.quickAction.name" = "Ações Rápidas";
+"widget.quickAction.description" = "Inicie ou pare o sono com um toque.";
+"widget.awake" = "Acordado";
+"widget.sleepingFor" = "Dormindo há %@";
+"widget.sleepToday" = "Sono hoje";
+
+// MARK: - Feeding
+"feeding.title" = "Alimentação";
+"feeding.selectType" = "Como você vai alimentar?";
+"feeding.lastFeeding" = "Última mamada %@";
+"feeding.stop" = "Finalizar";
+"feeding.active" = "Em andamento";
+"feeding.todayStats" = "Estatísticas de Hoje";
+"feeding.todayHistory" = "Histórico de Hoje";
+"feeding.suggested" = "Sugerido";
+"feeding.amount" = "Quantidade";
+"feeding.switch" = "Trocar";
+"feeding.totalTime" = "Tempo total";
+"feeding.currentSide" = "Amamentando: %@";
+
+// Feeding Types
+"feeding.type.breast" = "Amamentação";
+"feeding.type.bottle" = "Mamadeira";
+"feeding.type.solid" = "Sólidos";
+
+// Breast Feeding
+"feeding.breast.start" = "Iniciar Amamentação";
+"feeding.breast.selectSide" = "Selecione o lado para começar";
+"feeding.breast.left" = "Esquerdo";
+"feeding.breast.right" = "Direito";
+"feeding.breast.both" = "Ambos";
+"feeding.breast.lastSide" = "Último lado: %@";
+
+// Bottle Feeding
+"feeding.bottle.start" = "Mamadeira";
+"feeding.bottle.amount" = "Quantidade (ml)";
+"feeding.bottle.type" = "Tipo de Conteúdo";
+"feeding.bottle.breastMilk" = "Leite Materno";
+"feeding.bottle.formula" = "Fórmula";
+"feeding.bottle.mixed" = "Misto";
+"feeding.bottle.startTimer" = "Iniciar Mamadeira";
+
+// Solid Feeding
+"feeding.solid.title" = "Alimentação Sólida";
+"feeding.solid.subtitle" = "Registre a refeição do seu bebê";
+"feeding.solid.notes" = "Observações";
+"feeding.solid.notesPlaceholder" = "O que o bebê comeu?";
+"feeding.solid.foods" = "Alimentos";
+"feeding.solid.suggestions" = "Sugestões";
+"feeding.solid.save" = "Registrar Refeição";
+"feeding.solid.recorded" = "Refeição registrada";
+
+// Food suggestions
+"feeding.food.fruit" = "Fruta";
+"feeding.food.vegetable" = "Legume";
+"feeding.food.cereal" = "Cereal";
+"feeding.food.meat" = "Carne";
+"feeding.food.dairy" = "Laticínio";
+"feeding.food.egg" = "Ovo";
+
+// Feeding Statistics
+"feeding.stats.breast" = "Amamentação";
+"feeding.stats.bottle" = "Mamadeira";
+"feeding.stats.solid" = "Sólidos";
+
+// Feeding History
+"feeding.history.title" = "Histórico de Alimentação";
+"feeding.history.summary" = "Resumo do Período";
+"feeding.history.total" = "Total";
+"feeding.history.feeds" = "mamadas";
+"feeding.history.empty" = "Nenhum registro";
+"feeding.history.emptySubtitle" = "Comece a registrar as mamadas para ver o histórico";
+"feeding.history.avgPerDay" = "Média: %@ por dia";
+
+// Feeding Empty State
+"feeding.empty.title" = "Nenhuma mamada hoje";
+"feeding.empty.subtitle" = "Toque em um dos botões acima para registrar";
+
+// Feeding Delete
+"feeding.delete.title" = "Excluir Registro";
+"feeding.delete.confirm" = "Tem certeza que deseja excluir este registro?";
+
+// Feeding Success/Errors
+"feeding.saved" = "Alimentação registrada!";
+"feeding.error.load" = "Erro ao carregar dados";
+"feeding.error.start" = "Erro ao iniciar";
+"feeding.error.stop" = "Erro ao finalizar";
+"feeding.error.save" = "Erro ao salvar";
+"feeding.error.delete" = "Erro ao excluir";
+
+// MARK: - Time
+"time.today" = "Hoje";
+"time.yesterday" = "Ontem";
+
+// MARK: - Common Additional
+"common.optional" = "opcional";
+
+// MARK: - Diaper
+"diaper.title" = "Fralda";
+"diaper.subtitle" = "Registrar troca";
+"diaper.change" = "Troca de Fralda";
+"diaper.record" = "Registrar troca de fralda";
+"diaper.save" = "Salvar";
+"diaper.saved" = "Troca registrada!";
+"diaper.time" = "Horário";
+"diaper.content" = "Conteúdo";
+"diaper.content.dry" = "Seca";
+"diaper.content.wet" = "Xixi";
+"diaper.content.dirty" = "Coco";
+"diaper.content.mixed" = "Mista";
+"diaper.weight" = "Peso da fralda";
+"diaper.weightPlaceholder" = "Peso em gramas";
+"diaper.notes" = "Observações";
+"diaper.notesPlaceholder" = "Adicione observações...";
+"diaper.today" = "Resumo de Hoje";
+"diaper.error.load" = "Erro ao carregar dados";
+"diaper.error.save" = "Erro ao salvar";
+"diaper.error.delete" = "Erro ao excluir";
+"diaper.lastChange" = "Última troca %@";
+"diaper.stats.wet" = "Xixi";
+"diaper.stats.dirty" = "Coco";
+"diaper.stats.mixed" = "Mista";
+"diaper.stats.total" = "Total";
+
+// MARK: - Health
+"health.title" = "Saúde";
+"health.record" = "Registrar";
+"health.temperature" = "Temperatura";
+"health.medication" = "Medicamento";
+"health.temperature.record" = "Registrar temperatura";
+"health.temperature.fahrenheit" = "Temperatura (°F)";
+"health.medication.record" = "Registrar medicamento";
+"health.time" = "Horário";
+"health.notes" = "Observações";
+"health.notesPlaceholder" = "Adicione observações...";
+"health.today" = "Registros de Hoje";
+"health.save" = "Salvar";
+"health.saved" = "Registro salvo!";
+"health.last" = "Último registro";
+"health.error.load" = "Erro ao carregar dados";
+"health.error.save" = "Erro ao salvar";
+
+// Temperature
+"health.temp.current" = "Temperatura atual";
+"health.temp.status.low" = "Baixa";
+"health.temp.status.normal" = "Normal";
+"health.temp.status.elevated" = "Elevada";
+"health.temp.status.fever" = "Febre";
+"health.temp.status.highFever" = "Febre Alta";
+"health.temp.quickSelect" = "Selecao Rapida";
+"health.temp.saved" = "Temperatura registrada!";
+
+// Medication
+"health.medication.name" = "Nome do medicamento";
+"health.medication.namePlaceholder" = "Digite o nome...";
+"health.medication.dose" = "Dose";
+"health.medication.dosePlaceholder" = "Ex: 5ml, 1 comprimido...";
+"health.medication.saved" = "Medicamento registrado!";
+"health.med.paracetamol" = "Paracetamol";
+"health.med.ibuprofen" = "Ibuprofeno";
+"health.med.vitamin" = "Vitamina D";
+"health.med.antibiotic" = "Antibiotico";
+"health.med.drops" = "Gotas";
+
+// MARK: - Bath
+"bath.title" = "Banho";
+"bath.subtitle" = "Registrar banho";
+"bath.register" = "Registrar Banho";
+"bath.time" = "Horário";
+"bath.duration" = "Duração";
+"bath.type" = "Tipo de Banho";
+"bath.mood" = "Como foi o banho?";
+"bath.notes" = "Observações";
+"bath.notesPlaceholder" = "Adicione observações...";
+"bath.save" = "Salvar Banho";
+"bath.saved" = "Banho registrado!";
+"bath.last" = "Último banho";
+"bath.today" = "Banhos de Hoje";
+"bath.error.load" = "Erro ao carregar dados";
+"bath.error.save" = "Erro ao salvar";
+
+// Bath Types
+"bath.type.bathtub" = "Banheira";
+"bath.type.shower" = "Chuveiro";
+"bath.type.sponge" = "Esponja";
+
+// Bath Moods
+"bath.mood.loved" = "Amou";
+"bath.mood.neutral" = "Normal";
+"bath.mood.cried" = "Chorou";
+
+// MARK: - Pumping
+"feeding.type.pumping" = "Extração";
+"feeding.pumping.title" = "Extração de Leite";
+"feeding.pumping.subtitle" = "Registrar extração";
+"feeding.pumping.mode" = "Modo de Registro";
+"feeding.pumping.mode.total" = "Total";
+"feeding.pumping.mode.perSide" = "Por Lado";
+"feeding.pumping.total" = "Total Extraído";
+"feeding.pumping.left" = "Lado Esquerdo";
+"feeding.pumping.right" = "Lado Direito";
+"feeding.pumping.amount" = "Quantidade (ml)";
+"feeding.pumping.quickAmount" = "Quantidades Rápidas";
+"feeding.pumping.save" = "Registrar Extração";
+"feeding.pumping.saved" = "Extração registrada!";
+"feeding.pumping.notes" = "Observações";
+"feeding.pumping.notesPlaceholder" = "Adicione observações...";
+
+// MARK: - Paywall
+"paywall.title" = "Desbloqueie o Naplet Premium";
+"paywall.subtitle" = "Tenha acesso completo a todas as funcionalidades";
+"paywall.choosePlan" = "Escolha seu plano";
+"paywall.subscribe" = "Assinar Agora";
+"paywall.restore" = "Restaurar Compras";
+"paywall.terms" = "Termos de Uso";
+"paywall.privacy" = "Privacidade";
+"paywall.trialInfo" = "7 dias grátis, depois será cobrado automaticamente";
+"paywall.bestValue" = "Economize %d%%";
+"paywall.monthlyEquivalent" = "equivalente a %@/mês";
+"paywall.annual" = "Anual";
+"paywall.monthly" = "Mensal";
+"paywall.weekly" = "Semanal";
+"paywall.lifetime" = "Vitalício";
+"paywall.perYear" = "/ano";
+"paywall.perMonth" = "/mês";
+"paywall.perWeek" = "/semana";
+"paywall.oneTime" = "pagamento único";
+"paywall.error.noPackage" = "Nenhum plano selecionado";
+"paywall.error.noPurchases" = "Nenhuma compra anterior encontrada";
+
+// MARK: - Paywall Benefits
+"paywall.benefit.caregivers.title" = "Múltiplos Cuidadores";
+"paywall.benefit.caregivers.description" = "Convide familiares para acompanhar o bebê";
+"paywall.benefit.ai.title" = "Chat IA Ilimitado";
+"paywall.benefit.ai.description" = "Perguntas ilimitadas ao assistente de sono";
+"paywall.benefit.stats.title" = "Estatísticas Detalhadas";
+"paywall.benefit.stats.description" = "Análises avançadas e tendências de sono";
+"paywall.benefit.export.title" = "Exportar Relatórios";
+"paywall.benefit.export.description" = "Gere PDFs para compartilhar com pediatra";
+"paywall.benefit.babies.title" = "Até 5 Bebês";
+"paywall.benefit.babies.description" = "Acompanhe múltiplos bebês na mesma conta";
+"paywall.benefit.history.title" = "Histórico Ilimitado";
+"paywall.benefit.history.description" = "Acesse todo o histórico de registros";
+"paywall.benefit.founder.title" = "Badge Exclusivo Founder";
+"paywall.benefit.founder.description" = "Reconhecimento especial no seu perfil";
+
+// MARK: - Paywall Founders
+"paywall.founders.badge" = "OFERTA DE LANÇAMENTO";
+"paywall.founders.title" = "Seja um dos primeiros!";
+"paywall.founders.subtitle" = "Founders pagam menos para sempre.";
+"paywall.founders.special" = "FOUNDERS ESPECIAL";
+"paywall.founders.save" = "economize %@";
+"paywall.founders.perMonth" = "= apenas %@/mês";
+"paywall.founders.validUntil" = "Oferta válida até %@";
+"paywall.founders.cta" = "Garantir preço de Founder";
+"paywall.founders.badgeProfile" = "Founder";
+
+// MARK: - Paywall Trust
+"paywall.trust.trial" = "14 dias grátis";
+"paywall.trust.cancel" = "Cancele quando quiser";
+"paywall.trust.priceLocked" = "Preço travado";
+
+// MARK: - Paywall Triggers
+// Headlines
+"paywall.trigger.invite.headline" = "Toda a família junto!";
+"paywall.trigger.ai.headline" = "Sua consultora de sono 24h";
+"paywall.trigger.pdf.headline" = "Impressione o pediatra";
+"paywall.trigger.history.headline" = "Veja toda a evolução";
+"paywall.trigger.babies.headline" = "Acompanhe todos os bebês";
+"paywall.trigger.general.headline" = "Desbloqueie todo o potencial";
+
+// Subtitles
+"paywall.trigger.invite.subtitle" = "Avós, babás, parceiro(a) - todos sincronizados em tempo real";
+"paywall.trigger.ai.subtitle" = "Perguntas ilimitadas para nosso assistente especializado em sono";
+"paywall.trigger.pdf.subtitle" = "Relatórios profissionais com toda a rotina do bebê";
+"paywall.trigger.history.subtitle" = "Acesse o histórico completo e identifique padrões de sono";
+"paywall.trigger.babies.subtitle" = "Gêmeos? Irmãos? Gerencie até 5 bebês em uma conta";
+"paywall.trigger.general.subtitle" = "Todas as ferramentas para noites tranquilas";
+
+// Premium Badge
+"paywall.premiumBadge" = "NAPLET PREMIUM";
+
+// MARK: - Chat Limit
+"chat.limitReached.title" = "Limite de mensagens atingido";
+"chat.limitReached.subtitle" = "Assine o Premium para continuar conversando";
+"chat.limitReached.upgrade" = "Desbloquear Chat Ilimitado";
+
+// MARK: - Chat Messages & History
+"chat.welcome.message" = "Olá! Sou o assistente de sono do Naplet. Estou aqui para ajudar com dicas sobre o sono do seu bebê. Como posso ajudar?";
+"chat.error.noBaby" = "Nenhum bebê selecionado";
+"chat.error.limitReached" = "Você atingiu o limite de %d mensagens gratuitas este mês.";
+"chat.error.notConfigured" = "O chat AI ainda não está configurado.";
+"chat.error.rateLimited" = "Muitas requisições. Aguarde alguns minutos.";
+"chat.error.unauthorized" = "Erro de autenticação da API.";
+"chat.error.generic" = "Não foi possível obter resposta. Tente novamente.";
+"chat.error.connection" = "Erro de conexão. Verifique sua internet.";
+
+// Chat Suggestions
+"chat.suggestion.routine" = "Como estabelecer rotina de sono?";
+"chat.suggestion.hoursPerDay" = "Quantas horas deve dormir por dia?";
+"chat.suggestion.improveNaps" = "Como melhorar as sonecas?";
+"chat.suggestion.nightWaking" = "Por que acorda muito à noite?";
+"chat.suggestion.napTransition" = "Transição de 2 para 1 soneca?";
+"chat.suggestion.bedtime" = "Melhor horário para dormir?";
+"chat.suggestion.sleepCues" = "Sinais de sono do bebê?";
+"chat.suggestion.wakeWindow" = "O que é janela de sono?";
+
+// Chat History
+"chat.history.title" = "Conversas";
+"chat.history.empty.title" = "Nenhuma conversa ainda";
+"chat.history.empty.subtitle" = "Inicie uma conversa com o assistente de sono do Naplet";
+"chat.history.startNew" = "Nova Conversa";
+"chat.history.newConversation" = "Nova conversa";
+"chat.history.messages" = "mensagens";
+
+// MARK: - Rating
+"rating.prompt.title" = "Você está gostando do Naplet?";
+"rating.prompt.subtitle" = "Sua opinião é muito importante para nós!";
+"rating.prompt.yes" = "Sim, muito!";
+"rating.prompt.no" = "Pode melhorar";
+"rating.feedback.title" = "O que podemos melhorar?";
+"rating.feedback.subtitle" = "Seu feedback nos ajuda a criar um app melhor para você.";
+"rating.feedback.placeholder" = "Conte-nos sua experiência...";
+"rating.feedback.send" = "Enviar Feedback";
+
+// MARK: - Legal
+"legal.privacy.title" = "Política de Privacidade";
+"legal.terms.title" = "Termos de Serviço";
+"legal.lastUpdate" = "Última atualização: Janeiro de 2026";
+
+// Privacy Policy Sections
+"legal.privacy.section1.title" = "1. Informações que Coletamos";
+"legal.privacy.section1.content" = "O Naplet coleta as seguintes informações:\n• Dados do perfil (nome, email)\n• Dados do bebê (nome, data de nascimento)\n• Registros de sono, alimentação e fraldas\n• Dados de uso do aplicativo";
+
+"legal.privacy.section2.title" = "2. Como Usamos suas Informações";
+"legal.privacy.section2.content" = "Utilizamos seus dados para:\n• Fornecer previsões de sono personalizadas\n• Sincronizar dados entre cuidadores\n• Melhorar nossos serviços\n• Enviar notificações relevantes";
+
+"legal.privacy.section3.title" = "3. Compartilhamento de Dados";
+"legal.privacy.section3.content" = "Seus dados são compartilhados apenas com:\n• Cuidadores que você convidar\n• Provedores de serviço essenciais (Supabase, RevenueCat)\n\nNunca vendemos seus dados a terceiros.";
+
+"legal.privacy.section4.title" = "4. Segurança";
+"legal.privacy.section4.content" = "Protegemos seus dados com:\n• Criptografia em trânsito e em repouso\n• Autenticação segura\n• Políticas de acesso restritas";
+
+"legal.privacy.section5.title" = "5. Seus Direitos";
+"legal.privacy.section5.content" = "Você pode:\n• Acessar seus dados a qualquer momento\n• Solicitar exclusão da sua conta\n• Exportar seus dados\n• Revogar permissões de cuidadores";
+
+"legal.privacy.section6.title" = "6. Contato";
+"legal.privacy.section6.content" = "Para questões sobre privacidade:\ncontato@naplet.app";
+
+// Terms of Service Sections
+"legal.terms.section1.title" = "1. Aceitação dos Termos";
+"legal.terms.section1.content" = "Ao usar o Naplet, você concorda com estes termos. Se não concordar, não use o aplicativo.";
+
+"legal.terms.section2.title" = "2. Uso do Serviço";
+"legal.terms.section2.content" = "O Naplet é uma ferramenta de auxílio para acompanhamento do sono de bebês. O app não substitui orientação médica profissional.\n\nVocê é responsável por:\n• Manter suas credenciais seguras\n• Informações precisas sobre seu bebê\n• Uso adequado do aplicativo";
+
+"legal.terms.section3.title" = "3. Assinatura Premium";
+"legal.terms.section3.content" = "• O período de teste gratuito é de 7 dias\n• A cobrança é anual após o período de teste\n• Você pode cancelar a qualquer momento\n• Reembolsos seguem as políticas da App Store";
+
+"legal.terms.section4.title" = "4. Limitações";
+"legal.terms.section4.content" = "O Naplet é fornecido \"como está\". Não garantimos:\n• Disponibilidade ininterrupta\n• Precisão absoluta das previsões\n• Resultados específicos";
+
+"legal.terms.section5.title" = "5. Propriedade Intelectual";
+"legal.terms.section5.content" = "Todo o conteúdo do Naplet (design, código, marca) é propriedade de Edy Souza.";
+
+"legal.terms.section6.title" = "6. Contato";
+"legal.terms.section6.content" = "Para questões sobre os termos:\ncontato@naplet.app";
+
+// MARK: - Sleep Location & Mood
+"where_baby_slept" = "Onde dormiu?";
+"sleep_duration_label" = "Duração do sono";
+
+// Sleep Location Options
+"sleep_location_crib" = "Berço";
+"sleep_location_breastfeeding" = "Mamando";
+"sleep_location_arms" = "No colo";
+"sleep_location_co_sleep" = "Junto comigo";
+"sleep_location_bottle" = "Mamadeira";
+"sleep_location_stroller" = "Carrinho";
+"sleep_location_car" = "Carro";
+"sleep_location_swing" = "Balanço";
+
+// Sleep Start Mood
+"how_fell_asleep" = "Como foi para dormir?";
+"sleep_start_easy" = "Fácil";
+"sleep_start_fussy" = "Agitado(a)";
+"sleep_start_took_long" = "Demorou";
+
+// Wake Type
+"how_woke_up" = "Como acordou?";
+"wake_type_natural" = "Sozinho(a)";
+"wake_type_woken_up" = "Foi acordado(a)";
+
+// Wake Mood
+"mood_when_woke" = "Humor ao acordar";
+"wake_mood_happy" = "Feliz";
+"wake_mood_neutral" = "Normal";
+"wake_mood_cranky" = "Mau humor";
+
+// MARK: - Profile
+"profile.title" = "Meu Perfil";
+"profile.displayName" = "Nome de exibição";
+"profile.displayName.placeholder" = "Digite seu nome";
+"profile.changePhoto" = "Alterar foto";
+"profile.removePhoto" = "Remover";
+"profile.accountInfo" = "Informações da conta";
+"profile.email" = "Email";
+"profile.subscription" = "Assinatura";
+"profile.memberSince" = "Membro desde";
+
+// Profile Messages
+"profile.success.nameSaved" = "Nome atualizado com sucesso!";
+"profile.success.avatarSaved" = "Foto atualizada com sucesso!";
+"profile.success.avatarRemoved" = "Foto removida com sucesso!";
+"profile.error.load" = "Não foi possível carregar o perfil";
+"profile.error.emptyName" = "O nome não pode estar vazio";
+"profile.error.saveName" = "Não foi possível salvar o nome";
+"profile.error.loadImage" = "Não foi possível carregar a imagem";
+"profile.error.processImage" = "Não foi possível processar a imagem";
+"profile.error.uploadAvatar" = "Não foi possível enviar a foto";
+"profile.error.removeAvatar" = "Não foi possível remover a foto";
+
+// Profile Alerts
+"profile.removeAvatar.title" = "Remover foto?";
+"profile.removeAvatar.message" = "Sua foto de perfil será removida.";
+"common.remove" = "Remover";
+
+// MARK: - Support
+"support.title" = "Suporte";
+"support.subtitle" = "Estamos aqui para ajudar você e seu bebê";
+
+// Support Menu Options
+"support.instagram.title" = "Siga-nos no Instagram";
+"support.instagram.subtitle" = "Dicas de sono, novidades e comunidade @naplet.app";
+"support.faq.title" = "Perguntas Frequentes";
+"support.faq.subtitle" = "Encontre respostas rápidas para suas dúvidas";
+"support.contact.title" = "Fale Conosco";
+"support.contact.subtitle" = "Envie uma mensagem para nossa equipe";
+"support.rate.title" = "Avaliar na App Store";
+"support.rate.subtitle" = "Sua avaliação nos ajuda a crescer";
+"support.share.title" = "Compartilhar Naplet";
+"support.share.subtitle" = "Indique para outros pais e mães";
+"support.share.message" = "Conheça o Naplet - o app que me ajuda a acompanhar o sono do meu bebê! 🌙";
+"support.madeWithLove" = "Feito com 💜 para famílias";
+
+// Coming Soon Section
+"support.comingSoon.title" = "Em Breve";
+"support.comingSoon.subtitle" = "Novidades que estamos preparando para você";
+"support.comingSoon.sounds.title" = "Sons de Ninar";
+"support.comingSoon.sounds.desc" = "Ruído branco, chuva, e músicas relaxantes";
+"support.comingSoon.course.title" = "Curso de Sono";
+"support.comingSoon.course.desc" = "Guia completo para noites tranquilas";
+"support.comingSoon.watch.title" = "Apple Watch";
+"support.comingSoon.watch.desc" = "Controle o sono direto do pulso";
+"support.comingSoon.badge" = "Em breve";
+"support.comingSoon.notify" = "Siga-nos para ser notificado";
+
+// MARK: - FAQ
+"support.faq.search" = "Buscar pergunta...";
+"support.faq.all" = "Todos";
+"support.faq.noResults" = "Nenhum resultado";
+"support.faq.tryDifferent" = "Tente buscar por outras palavras";
+
+// FAQ Categories
+"faq.category.general" = "Geral";
+"faq.category.sleep" = "Sono";
+"faq.category.subscription" = "Assinatura";
+"faq.category.technical" = "Técnico";
+"faq.category.account" = "Conta";
+
+// MARK: - Screenshot Alert
+"screenshot.alert.title" = "Gostou? Compartilhe!";
+"screenshot.alert.message" = "Não esqueça de marcar @naplet.app no Instagram! Adoramos ver como você está usando o app.";
+"screenshot.alert.share" = "Abrir Instagram";
+"screenshot.alert.later" = "Depois";
+
+// MARK: - Contact Form
+"support.contact.navTitle" = "Fale Conosco";
+"support.contact.title" = "Como podemos ajudar?";
+"support.contact.subtitle" = "Nossa equipe responde em até 24 horas";
+"support.contact.name" = "Nome";
+"support.contact.name.placeholder" = "Seu nome (opcional)";
+"support.contact.email" = "Email";
+"support.contact.email.placeholder" = "seu@email.com";
+"support.contact.category" = "Assunto";
+"support.contact.subject" = "Título";
+"support.contact.subject.placeholder" = "Resumo do seu contato";
+"support.contact.message" = "Mensagem";
+"support.contact.message.hint" = "Descreva sua dúvida ou problema com o máximo de detalhes";
+"support.contact.debugInfo" = "Informações do dispositivo (enviadas automaticamente):";
+"support.contact.send" = "Enviar";
+"support.contact.success.title" = "Mensagem Enviada!";
+"support.contact.success.message" = "Recebemos sua mensagem e responderemos em breve pelo email informado.";
+"support.contact.error.submit" = "Não foi possível enviar a mensagem. Tente novamente.";
+
+// Ticket Categories
+"ticket.category.bug" = "Problema";
+"ticket.category.feature" = "Sugestão";
+"ticket.category.billing" = "Pagamento";
+"ticket.category.question" = "Dúvida";
+"ticket.category.other" = "Outro";
+
+// MARK: - Edit Baby Profile
+"editBaby.title" = "Perfil do Bebê";
+"editBaby.name" = "Nome";
+"editBaby.name.placeholder" = "Nome do bebê";
+"editBaby.name.error" = "O nome deve ter pelo menos 2 caracteres";
+"editBaby.birthDate" = "Data de nascimento";
+"editBaby.gender" = "Gênero";
+"editBaby.gender.female" = "Menina";
+"editBaby.gender.male" = "Menino";
+"editBaby.gender.notSpecified" = "Não informar";
+"editBaby.age" = "Idade";
+"editBaby.changePhoto" = "Alterar foto";
+"editBaby.removePhoto" = "Remover";
+"editBaby.removePhoto.title" = "Remover foto?";
+"editBaby.removePhoto.message" = "A foto do bebê será removida.";
+"editBaby.save" = "Salvar Alterações";
+"editBaby.delete" = "Excluir bebê";
+"editBaby.delete.title" = "Excluir bebê?";
+"editBaby.delete.message" = "Tem certeza que deseja excluir? Todos os registros de sono, alimentação e fraldas serão perdidos permanentemente.";
+"editBaby.delete.confirm" = "Excluir";
+"editBaby.success.saved" = "Alterações salvas!";
+"editBaby.success.photoRemoved" = "Foto removida!";
+"editBaby.error.loadImage" = "Não foi possível carregar a imagem";
+"editBaby.error.uploadPhoto" = "Não foi possível enviar a foto";
+"editBaby.error.removePhoto" = "Não foi possível remover a foto";
+"editBaby.error.save" = "Não foi possível salvar as alterações";
+"editBaby.error.delete" = "Não foi possível excluir o bebê";
+"editBaby.error.notOwner" = "Apenas o responsável principal pode realizar esta ação";
+
+// Age components for detailed age display
+"baby.age.year" = "ano";
+"baby.age.month" = "mês";
+"baby.age.day" = "dia";
+"baby.age.months_word" = "meses";
+"baby.age.days_word" = "dias";
+"baby.age.newborn" = "Recém-nascido";
+"common.and" = "e";
+
+// ================================================
+// REFERRAL / INDICAÇÃO
+// ================================================
+
+"referral.title" = "Indique e Ganhe";
+"referral.subtitle" = "Compartilhe o Naplet com outras mamães e papais. Sua amiga ganha 30 dias grátis!";
+
+// Benefícios
+"referral.benefit.friend.title" = "Sua amiga ganha";
+"referral.benefit.friend.subtitle" = "30 dias de Premium grátis (ao invés de 14)";
+"referral.benefit.you.title" = "Você ganha";
+"referral.benefit.you.subtitle" = "Badge Embaixadora após 5 indicações";
+
+// Compartilhar
+"referral.share.more" = "Mais";
+"referral.code.copied" = "Código copiado!";
+"referral.button.invite" = "Indicar";
+
+// Progresso
+"referral.progress.title" = "Seja Embaixadora";
+"referral.ambassador.title" = "Você é Embaixadora!";
+"referral.progress.text" = "{count} indicações • Faltam {remaining} para o badge";
+"referral.ambassador.achieved" = "Parabéns! Você é uma Embaixadora Naplet";
+
+// Lista
+"referral.list.title" = "Suas indicações";
+"referral.friend" = "Amiga convidada";
+
+// Mensagem de compartilhamento
+"referral.share.message" = "Oi! Estou usando o Naplet para acompanhar o sono do meu bebê e está me ajudando muito!\n\nUse meu código {code} e ganhe 30 dias grátis!\n\nBaixa aqui: {url}";
+
+// QR Code
+"referral.qrcode.title" = "Seu QR Code";
+"referral.qrcode.yourCode" = "Seu código de indicação";
+"referral.qrcode.instructions" = "Mostre este QR Code para suas amigas escanearem e baixarem o Naplet com seu código";
+"referral.qrcode.save" = "Salvar";
+"referral.qrcode.share" = "Compartilhar";
+"referral.qrcode.saved" = "QR Code salvo nas fotos!";
+
+// Erros
+"referral.error.notAuthenticated" = "Você precisa estar logada para usar indicações";
+"referral.error.invalidCode" = "Código de indicação inválido";
+"referral.error.alreadyReferred" = "Você já usou um código de indicação";
+"referral.error.processingFailed" = "Não foi possível processar a indicação";
+
+// ================================================
+// MEDICATION SCHEDULE / LEMBRETES DE MEDICAMENTOS
+// ================================================
+
+// Tabs
+"medication.tab.record" = "Registrar";
+"medication.tab.schedule" = "Programar";
+
+// Schedule View
+"medication.schedule.new" = "Novo Medicamento";
+"medication.schedule.edit" = "Editar Medicamento";
+"medication.schedule.description" = "Configure horários e lembretes para não esquecer nenhuma dose";
+"medication.schedule.editDescription" = "Ajuste as configurações do medicamento";
+"medication.schedule.create" = "Criar Lembrete";
+"medication.schedule.add" = "Adicionar Medicamento";
+
+// Medication Info
+"medication.info" = "Informações";
+"medication.name" = "Nome do medicamento";
+"medication.namePlaceholder" = "Ex: Paracetamol, Vitamina D...";
+"medication.dose" = "Dose";
+"medication.dosePlaceholder" = "Ex: 5ml, 2 gotas...";
+"medication.doses" = "doses";
+
+// Frequency
+"medication.frequency" = "Frequência";
+"medication.frequency.every4h" = "A cada 4h";
+"medication.frequency.every6h" = "A cada 6h";
+"medication.frequency.every8h" = "A cada 8h";
+"medication.frequency.every12h" = "A cada 12h";
+"medication.frequency.onceDaily" = "1x ao dia";
+"medication.frequency.twiceDaily" = "2x ao dia";
+"medication.frequency.threeTimesDaily" = "3x ao dia";
+"medication.frequency.asNeeded" = "Se necessário";
+"medication.frequency.custom" = "Personalizado";
+
+// Times
+"medication.times" = "Horários";
+"medication.times.autoDescription" = "Os horários são sugeridos automaticamente baseado na frequência escolhida. Você pode ajustá-los.";
+
+// Duration
+"medication.duration" = "Duração do tratamento";
+"medication.duration.continuous" = "Uso contínuo";
+"medication.duration.days" = "Por %d dias";
+"medication.duration.until" = "Até %@";
+"medication.duration.continuousDescription" = "O medicamento será lembrado todos os dias até você desativar";
+"medication.duration.daysLabel" = "Quantos dias?";
+"medication.duration.endDate" = "Data de término";
+"medication.durationType.continuous" = "Contínuo";
+"medication.durationType.days" = "Por dias";
+"medication.durationType.untilDate" = "Até data";
+
+// Stock
+"medication.stock" = "Controle de estoque";
+"medication.stock.remaining" = "Doses restantes";
+"medication.stock.alertAt" = "Alertar quando restarem";
+"medication.stock.perTake" = "Doses por vez";
+"medication.stock.low" = "Restam %d doses";
+
+// Notes
+"medication.notes" = "Observações";
+
+// Actions
+"medication.action.given" = "Dado";
+"medication.action.snooze" = "Adiar";
+"medication.action.snooze15" = "15 min";
+"medication.action.snooze30" = "30 min";
+"medication.action.skip" = "Pular";
+
+// Status
+"medication.status.given" = "Dado";
+"medication.status.skipped" = "Pulado";
+"medication.status.snoozed" = "Adiado";
+"medication.status.missed" = "Perdido";
+"medication.paused" = "Pausado";
+
+// List
+"medication.next" = "Próximo medicamento";
+"medication.active" = "Medicamentos ativos";
+
+// Empty State
+"medication.empty.title" = "Nenhum medicamento programado";
+"medication.empty.description" = "Adicione medicamentos para receber lembretes nos horários certos";
+
+// Notifications
+"medication.reminder.title" = "Hora do medicamento";
+"medication.reminder.body" = "%@ %@ para %@";
+"medication.reminder.snoozed.title" = "Lembrete adiado";
+"medication.lowStock.title" = "Atenção: Estoque baixo";
+"medication.lowStock.body" = "%@ está acabando. Restam apenas %d doses.";
+
+// Errors
+"medication.error.save" = "Não foi possível salvar o medicamento";
+"medication.error.load" = "Não foi possível carregar os medicamentos";
+"medication.error.log" = "Não foi possível registrar";
+"medication.error.snooze" = "Não foi possível adiar";
+"medication.error.skip" = "Não foi possível pular";
+"medication.error.pause" = "Não foi possível pausar";
+"medication.error.resume" = "Não foi possível retomar";
+"medication.error.delete" = "Não foi possível excluir";
+"medication.error.stock" = "Não foi possível atualizar estoque";
+
+// ================================================
+// VACCINATION / CARTEIRA DE VACINAÇÃO
+// ================================================
+
+// Dashboard
+"vaccination.dashboard.title" = "Carteira de Vacinação";
+"vaccination.loading" = "Carregando vacinas...";
+
+// Progress
+"vaccination.progress.title" = "Progresso da Vacinação";
+"vaccination.progress.subtitle" = "Vacinação de %@";
+
+// Stats
+"vaccination.stats.completed" = "Aplicadas";
+"vaccination.stats.pending" = "Pendentes";
+"vaccination.stats.overdue" = "Atrasadas";
+
+// Status
+"vaccination.status.upToDate" = "Vacinação em dia!";
+"vaccination.status.needsAttention" = "Atenção necessária";
+"vaccination.status.pending" = "Pendente";
+"vaccination.status.completed" = "Aplicada";
+"vaccination.status.overdue" = "Atrasada";
+"vaccination.status.skipped" = "Pulada";
+
+// Overdue Alert
+"vaccination.overdue.title" = "Vacinas atrasadas";
+"vaccination.overdue.message" = "%d vacinas precisam de atenção";
+
+// Upcoming
+"vaccination.upcoming.title" = "Próximas vacinas";
+
+// Filters
+"vaccination.filter.all" = "Todas";
+"vaccination.filter.pending" = "Pendentes";
+"vaccination.filter.completed" = "Aplicadas";
+"vaccination.filter.overdue" = "Atrasadas";
+
+// Search
+"vaccination.search.placeholder" = "Buscar vacina...";
+
+// Age
+"vaccination.age.birth" = "Ao nascer";
+"vaccination.age.months" = "%d meses";
+"vaccination.age.years" = "%d anos";
+"vaccination.age.yearsMonths" = "%d anos e %d meses";
+"vaccination.age.monthsShort" = "meses";
+"vaccination.age.yearsShort" = "anos";
+
+// Dose
+"vaccination.dose.single" = "Dose única";
+"vaccination.dose.number" = "%dª dose de %d";
+
+// Category
+"vaccination.category.mandatory" = "Obrigatória";
+"vaccination.category.recommended" = "Recomendada";
+"vaccination.category.special" = "Especial";
+
+// Detail View
+"vaccination.detail.title" = "Detalhes da Vacina";
+"vaccination.info.title" = "Informações da Vacina";
+"vaccination.info.recommendedAge" = "Idade recomendada";
+"vaccination.info.dose" = "Dose";
+"vaccination.info.category" = "Categoria";
+"vaccination.info.required" = "Obrigatória";
+"vaccination.info.yes" = "Sim";
+
+// Completed Info
+"vaccination.completed.title" = "Dados da Aplicação";
+"vaccination.completed.date" = "Data de aplicação";
+"vaccination.completed.batch" = "Lote";
+"vaccination.completed.location" = "Local";
+"vaccination.completed.professional" = "Profissional";
+"vaccination.completed.notes" = "Observações";
+"vaccination.completed.reactions" = "Reações";
+
+// Form
+"vaccination.form.title" = "Registrar Aplicação";
+"vaccination.form.date" = "Data da aplicação";
+"vaccination.form.batch" = "Número do lote";
+"vaccination.form.batchPlaceholder" = "Ex: AB1234";
+"vaccination.form.location" = "Local de aplicação";
+"vaccination.form.locationPlaceholder" = "Ex: UBS Centro, Hospital...";
+"vaccination.form.professional" = "Profissional de saúde";
+"vaccination.form.professionalPlaceholder" = "Ex: Dra. Maria";
+"vaccination.form.notes" = "Observações";
+"vaccination.form.notesPlaceholder" = "Adicione observações...";
+
+// Additional Info
+"vaccination.protection.title" = "Proteção";
+"vaccination.sideEffects.title" = "Possíveis efeitos colaterais";
+"vaccination.tips.title" = "Dicas pós-vacinação";
+
+// Actions
+"vaccination.action.markComplete" = "Marcar como aplicada";
+"vaccination.action.markPending" = "Marcar como pendente";
+"vaccination.action.saving" = "Salvando...";
+
+// Mark Pending Confirmation
+"vaccination.markPending.confirm" = "Reverter para pendente?";
+"vaccination.markPending.message" = "Os dados da aplicação serão removidos.";
+"vaccination.markPending.action" = "Reverter";
+
+// Errors
+"vaccination.error.load" = "Não foi possível carregar as vacinas";
+"vaccination.error.update" = "Não foi possível atualizar a vacina";
+
+// ================================================
+// DOCUMENTS / CARTEIRA DE DOCUMENTOS
+// ================================================
+
+// Main
+"documents.title" = "Documentos";
+"documents.subtitle" = "Carteira digital do bebe";
+"documents.loading" = "Carregando documentos...";
+"documents.search" = "Buscar documento...";
+
+// Empty State
+"documents.empty.title" = "Nenhum documento";
+"documents.empty.subtitle" = "Guarde os documentos importantes do seu bebê de forma segura e acessível.";
+"documents.add.first" = "Adicionar primeiro documento";
+
+// Errors
+"documents.error.loadFailed" = "Erro ao carregar";
+
+// Filters
+"documents.filter.all" = "Todos";
+"documents.filter.favorites" = "Favoritos";
+"documents.filter.expiring" = "Vencendo";
+
+// Expiration Alerts
+"documents.expiring.alert" = "Documentos precisam de atenção";
+"documents.expiring.count" = "%d documentos vencendo ou vencidos";
+"documents.view" = "Ver";
+"documents.expired" = "Vencido";
+"documents.expiresIn" = "Vence em %d dias";
+"documents.expiringSoon" = "Vencendo em breve";
+
+// Actions
+"documents.favorite" = "Favoritar";
+"documents.unfavorite" = "Remover favorito";
+"documents.share" = "Compartilhar";
+
+// Add Document
+"documents.add.title" = "Novo Documento";
+"documents.selectType" = "Selecione o tipo";
+"documents.info" = "Informações";
+"documents.dates" = "Datas";
+"documents.photos" = "Fotos";
+"documents.notes" = "Observações";
+"documents.optional" = "Opcional";
+
+// Form
+"documents.form.title" = "Título";
+"documents.form.titlePlaceholder" = "Ex: Certidão de João";
+"documents.form.number" = "Número do documento";
+"documents.form.numberPlaceholder" = "Ex: 123456789";
+"documents.form.authority" = "Órgão emissor";
+"documents.form.authorityPlaceholder" = "Ex: Cartório Central";
+"documents.form.issueDate" = "Data de emissão";
+"documents.form.expirationDate" = "Data de validade";
+"documents.form.selectDate" = "Selecionar data";
+"documents.form.notesPlaceholder" = "Adicione observações...";
+
+// Photos
+"documents.addPhoto" = "Adicionar foto";
+"documents.loadingPhotos" = "Carregando fotos...";
+"documents.noPhotos" = "Nenhuma foto adicionada";
+"documents.uploading" = "Enviando...";
+
+// Detail
+"documents.addedOn" = "Adicionado em";
+
+// Delete
+"documents.delete.confirm" = "Excluir documento?";
+"documents.delete.message" = "Esta ação não pode ser desfeita. O documento e todas as fotos serão removidos.";
+
+// Errors
+"documents.error.load" = "Não foi possível carregar os documentos";
+"documents.error.create" = "Não foi possível criar o documento";
+"documents.error.update" = "Não foi possível atualizar o documento";
+"documents.error.delete" = "Não foi possível excluir o documento";
+"documents.error.upload" = "Não foi possível enviar a imagem";
+"documents.error.deleteFile" = "Não foi possível excluir o arquivo";
+
+// ================================================
+// PAYWALL VIEW (Localized Strings)
+// ================================================
+
+"paywall.error.title" = "Erro";
+"paywall.badge.launch_offer" = "OFERTA DE LANÇAMENTO";
+"paywall.badge.naplet_pro" = "NAPLET PRO";
+"paywall.badge.founders_special" = "FOUNDERS ESPECIAL";
+"paywall.founders.title" = "Seja um dos primeiros!";
+"paywall.founders.subtitle" = "Founders pagam menos para sempre.";
+"paywall.currency" = "R$";
+"paywall.founders.price" = "59,90";
+"paywall.founders.original_price" = "R$ 89,90";
+"paywall.founders.savings" = "economize R$ 30,00";
+"paywall.founders.monthly_equivalent" = "= apenas R$ 5,00/mês";
+"paywall.founders.valid_until" = "Oferta válida até %@";
+"paywall.savings.percentage" = "Economize %d%%";
+"paywall.monthly_equivalent" = "≈ %@/mês";
+"paywall.period.year" = "/ano";
+"paywall.period.month" = "/mês";
+"paywall.period.week" = "/semana";
+"paywall.period.lifetime" = "pagamento único";
+"paywall.cta.founders" = "Garantir preço de Founder";
+"paywall.cta.subscribe" = "Assinar Agora";
+"paywall.social.app_store_rating" = "4.9 NA APP STORE";
+"paywall.social.families_title" = "+10.000 famílias\ndormindo melhor";
+"paywall.social.subtitle" = "Veja o que os pais estão dizendo";
+"paywall.review1.title" = "Mudou nossas noites!";
+"paywall.review1.description" = "Finalmente entendi os padrões de sono da minha bebê. O Chat IA é um diferencial incrível!";
+"paywall.review1.author" = "Maria S.";
+"paywall.review1.role" = "mãe da Sophia";
+"paywall.review2.title" = "Melhor que o Napper!";
+"paywall.review2.description" = "Usei Napper por 6 meses. Naplet tem tudo + a IA + é mais barato. 10/10";
+"paywall.review2.author" = "Pedro R.";
+"paywall.review2.role" = "pai do Miguel";
+"paywall.review3.title" = "O PDF salvou minha consulta!";
+"paywall.review3.description" = "O pediatra ficou impressionado com o relatório. Super profissional!";
+"paywall.review3.author" = "Ana C.";
+"paywall.review3.role" = "mãe de primeira viagem";
+"paywall.trust.free_trial" = "14 dias\ngrátis";
+"paywall.trust.cancel_anytime" = "Cancele\nquando quiser";
+"paywall.trust.locked_price" = "Preço\ntravado";
+"paywall.loading" = "Carregando...";
+"paywall.package.annual" = "Anual";
+"paywall.package.monthly" = "Mensal";
+"paywall.package.weekly" = "Semanal";
+"paywall.package.lifetime" = "Vitalício";
+"paywall.package.equivalent" = "equivalente a %@/mês";
+"paywall.package.save" = "ECONOMIZE %d%%";
+"paywall.trigger.invite.headline" = "Toda a família junto!";
+"paywall.trigger.invite.subtitle" = "Avós, babás, parceiro(a) - todos sincronizados em tempo real";
+"paywall.trigger.ai.headline" = "Sua consultora de sono 24h";
+"paywall.trigger.ai.subtitle" = "Perguntas ilimitadas para nosso assistente especializado em sono";
+"paywall.trigger.pdf.headline" = "Impressione o pediatra";
+"paywall.trigger.pdf.subtitle" = "Relatórios profissionais com toda a rotina do bebê";
+"paywall.trigger.history.headline" = "Veja toda a evolução";
+"paywall.trigger.history.subtitle" = "Acesse o histórico completo e identifique padrões de sono";
+"paywall.trigger.babies.headline" = "Acompanhe todos os bebês";
+"paywall.trigger.babies.subtitle" = "Gêmeos? Irmãos? Gerencie até 5 bebês em uma conta";
+"paywall.trigger.default.headline" = "Desbloqueie todo o potencial";
+"paywall.trigger.default.subtitle" = "Todas as ferramentas para noites tranquilas";
+
+// ================================================
+// SIGN IN VIEW (Localized Strings)
+// ================================================
+
+// Validation Messages
+"auth.validation.fillEmailPassword" = "Preencha email e senha corretamente";
+"auth.validation.invalidEmail" = "Digite um email válido";
+"auth.validation.passwordMinLength" = "Senha deve ter no mínimo 6 caracteres";
+"auth.validation.passwordMismatch" = "As senhas não coincidem";
+"auth.validation.enterName" = "Digite seu nome";
+"auth.validation.invalidEmailReset" = "Digite um email válido para resetar a senha";
+
+// Success Messages
+"auth.success.accountCreated" = "Conta criada! Verifique seu email para confirmar.";
+"auth.success.recoveryEmail" = "Email de recuperação enviado para %@";
+
+// Error Messages
+"auth.error.invalidCredentials" = "Email ou senha incorretos";
+"auth.error.emailNotConfirmed" = "Confirme seu email antes de fazer login";
+"auth.error.emailAlreadyRegistered" = "Este email já está cadastrado";
+"auth.error.tooManyAttempts" = "Muitas tentativas. Aguarde alguns minutos";
+"auth.error.generic" = "Erro ao autenticar. Tente novamente";
+
+// Debug
+"auth.debug.skipLogin" = "Pular login (Dev)";
+
+// ================================================
+// PDF REPORT SERVICE (Localized Strings)
+// ================================================
+
+// Report Titles
+"pdf.report.title" = "RELATÓRIO COMPLETO - NAPLET";
+"pdf.sleep_report.title" = "Naplet - Relatório de Sono";
+
+// Labels
+"pdf.label.period" = "Período:";
+"pdf.label.to" = "a";
+"pdf.label.generated" = "Gerado em:";
+"pdf.label.name" = "Nome:";
+"pdf.label.age" = "Idade:";
+"pdf.label.birth" = "Nascimento:";
+
+// Section Titles
+"pdf.section.baby_info" = "INFORMAÇÕES DO BEBÊ";
+"pdf.section.sleep" = "SONO";
+"pdf.section.feeding" = "ALIMENTAÇÃO";
+"pdf.section.diapers" = "FRALDAS";
+"pdf.section.temperature" = "TEMPERATURA";
+"pdf.section.medications" = "MEDICAMENTOS";
+"pdf.section.vaccination" = "VACINAÇÃO";
+
+// Sleep Section
+"pdf.sleep.total" = "Total de sono:";
+"pdf.sleep.daily_average" = "Média por dia:";
+"pdf.sleep.total_naps" = "Total de sonecas:";
+"pdf.sleep.average_duration" = "Duração média:";
+"pdf.sleep.longest" = "Sono mais longo:";
+"pdf.sleep.shortest" = "Sono mais curto:";
+"pdf.sleep.quality" = "Qualidade do sono:";
+"pdf.sleep.no_records" = "Nenhum registro de sono no período";
+"pdf.sleep.type.nap" = "Soneca";
+"pdf.sleep.type.night" = "Noite";
+"pdf.sleep.in_progress" = "Em andamento";
+"pdf.hours" = "horas";
+
+// Quality
+"pdf.quality.good" = "Bom";
+"pdf.quality.restless" = "Agitado";
+"pdf.quality.difficult" = "Difícil";
+"pdf.quality.no_records" = "Nenhum registro de qualidade disponível";
+
+// Feeding Section
+"pdf.feeding.total" = "Total de registros:";
+"pdf.feeding.breastfeeding" = "Amamentação:";
+"pdf.feeding.bottle" = "Mamadeira:";
+"pdf.feeding.solids" = "Alimentação sólida:";
+"pdf.feeding.recent" = "Registros recentes:";
+"pdf.feeding.no_records" = "Nenhum registro de alimentação no período";
+"pdf.feeding.type.breast" = "Amamentação";
+"pdf.feeding.type.bottle" = "Mamadeira";
+"pdf.feeding.type.solid" = "Sólido";
+"pdf.feeding.type.pumping" = "Ordenha";
+"pdf.times" = "vezes";
+
+// Diaper Section
+"pdf.diaper.total" = "Total de trocas:";
+"pdf.diaper.daily_average" = "Média por dia:";
+"pdf.diaper.distribution" = "Distribuição:";
+"pdf.diaper.wet" = "Xixi";
+"pdf.diaper.dirty" = "Cocô";
+"pdf.diaper.mixed" = "Ambos";
+"pdf.diaper.no_records" = "Nenhum registro de fralda no período";
+
+// Temperature Section
+"pdf.temperature.total" = "Total de medições:";
+"pdf.temperature.highest" = "Temperatura mais alta:";
+"pdf.temperature.lowest" = "Temperatura mais baixa:";
+"pdf.temperature.fever_records" = "⚠️ Registros com febre (≥37.5°C):";
+"pdf.temperature.records" = "Registros:";
+"pdf.temperature.label" = "Temperatura";
+"pdf.temperature.no_records" = "Nenhum registro de temperatura no período";
+"pdf.temperature.status.normal" = "Normal";
+"pdf.temperature.status.elevated" = "Elevada";
+"pdf.temperature.status.fever" = "Febre";
+"pdf.temperature.status.high_fever" = "Febre Alta";
+"pdf.temperature.status.low" = "Baixa";
+
+// Medication Section
+"pdf.medication.total" = "Total de administrações:";
+"pdf.medication.name" = "Medicamento";
+"pdf.medication.dosage" = "Dosagem";
+"pdf.medication.no_records" = "Nenhum registro de medicamento no período";
+
+// Vaccination Section
+"pdf.vaccination.applied_in_period" = "Aplicadas no período:";
+"pdf.vaccination.no_records" = "Nenhuma vacina registrada neste período";
+"pdf.vaccination.vaccine" = "Vacina";
+"pdf.vaccination.dose" = "Dose";
+"pdf.vaccination.location" = "Local";
+"pdf.vaccination.overdue" = "⚠️ Vacinas em atraso:";
+"pdf.vaccination.pending" = "Próximas vacinas pendentes:";
+"pdf.vaccination.all_done" = "✅ Todas as vacinas em dia!";
+"pdf.vaccination.from" = "a partir de";
+
+// Table Headers
+"pdf.table.date" = "Data";
+"pdf.table.time" = "Hora";
+"pdf.table.type" = "Tipo";
+"pdf.table.details" = "Detalhes";
+"pdf.table.status" = "Status";
+"pdf.table.start" = "Início";
+"pdf.table.end" = "Fim";
+"pdf.table.duration" = "Duração";
+"pdf.table.quality" = "Qualidade";
+
+// Other
+"pdf.summary.title" = "Resumo do Período";
+"pdf.recommendations.title" = "Recomendações";
+"pdf.daily_records.title" = "Registros Diários";
+"pdf.more_records" = "... e mais %d registros";
+"pdf.more_vaccines" = "... e mais %d vacinas";
+"pdf.footer.generated_by" = "Gerado por Naplet em";
+
+// ================================================
+// MODELS/ENUMS (Localized Strings)
+// ================================================
+
+// Sleep Type
+"sleep.type.nap" = "Soneca";
+"sleep.type.night" = "Sono noturno";
+
+// Sleep Quality
+"sleep.quality.good" = "Bom";
+"sleep.quality.restless" = "Agitado";
+"sleep.quality.difficult" = "Difícil";
+
+// Wake Reason
+"sleep.wake.feeding" = "Alimentação";
+"sleep.wake.diaper" = "Fralda";
+"sleep.wake.comfort" = "Conforto";
+"sleep.wake.unknown" = "Desconhecido";
+
+// Subscription Tier
+"subscription.tier.free" = "Gratuito";
+"subscription.tier.premium" = "Premium";
+"subscription.tier.trial" = "Teste";
+
+// ================================================
+// SETTINGS, PROFILE, VIEWMODELS (Prioridade 5)
+// ================================================
+
+// AddBabyView Errors
+"baby.error.enterName" = "Digite o nome do bebê";
+"error.userNotAuthenticated" = "Erro: usuário não autenticado";
+"baby.error.saveFailed" = "Erro ao salvar bebê. Tente novamente.";
+
+// ReportViewModel
+"report.error.generateFailed" = "Falha ao gerar relatório";
+"report.error.noReport" = "Nenhum relatório gerado";
+"report.sleepPerDay" = "%.1fh/dia";
+"report.qualityGood" = "%.0f%% bom";
+
+// NotificationSettingsView
+"notifications.bedtime.timeLabel" = "Horário";
+
+// ================================================
+// SIGN IN SCREEN (Premium Login)
+// ================================================
+"signin.tagline" = "Noites tranquilas para o bebê.\nDescanso merecido para você.";
+"signin.rating_text" = "O app #1 de sono para bebês";
+"signin.families_trust" = "Mais de 50.000 famílias confiam no Naplet";
+"signin.badge_editors" = "Escolha dos Editores";
+"signin.badge_app_day" = "App do Dia";
+"signin.secure" = "Seguro";
+"signin.private" = "Privado";
+"signin.verified" = "Verificado";
+"signin.agree_terms" = "Concordo com os";
+"signin.terms" = "Termos";
+"signin.and" = "e";
+"signin.privacy" = "Privacidade";
+"signin.continue_apple" = "Continuar com a Apple";
+"signin.continue_google" = "Continuar com o Google";
+"signin.continue_email" = "Continuar com e-mail";
+"signin.or" = "ou";
+"signin.error_terms" = "Por favor, aceite os termos para continuar";
+"signin.error_credentials" = "Não foi possível obter as credenciais";
+"signin.error_login" = "Erro ao fazer login. Tente novamente.";
+"signin.cancelled" = "Login cancelado";
+
+
+// MARK: - Wake Window Status (Coach Empatico)
+"wakeWindow.awakeFor" = "Acordado(a) há";
+"wakeWindow.napIn" = "Próxima soneca em %@";
+"wakeWindow.timeUp" = "Hora de dormir!";
+"wakeWindow.recommended" = "Janela ideal: %d-%d min";
+"wakeWindow.startTracking" = "Registre a primeira soneca para ativar o monitoramento da janela de sono";
+// Status Messages - COM NOME DO BEBE
+"wakeWindow.status.happy" = "%@ está feliz e descansado(a)!";
+"wakeWindow.status.sleepy" = "Fique atento! %@ pode ficar sonolento(a) em breve";
+"wakeWindow.status.tired" = "Hora de preparar %@ para a soneca!";
+"wakeWindow.status.overtired" = "%@ precisa de carinho. Tente acalmá-lo(a) agora!";
+// Tips - Mais amigaveis
+"wakeWindow.tip.happy" = "Aproveite para brincadeiras e estímulos!";
+"wakeWindow.tip.sleepy" = "Comece a diminuir as luzes e os estímulos";
+"wakeWindow.tip.tired" = "Coloque para dormir agora para uma soneca perfeita!";
+"wakeWindow.tip.overtired" = "Abraço quentinho e som branco podem ajudar. Você consegue!";
+
+// MARK: - Bedtime Status
+"bedtime.recommendedTime" = "Hora de dormir: %@";
+"bedtime.prepare.title" = "Hora de Preparar";
+"bedtime.prepare.message" = "Está chegando a hora de %@ dormir. Comece a rotina da noite!";
+"bedtime.prepare.tip" = "Diminua as luzes, desligue telas e inicie a rotina noturna.";
+"bedtime.now.title" = "Hora de Dormir";
+"bedtime.now.message" = "É hora de %@ ir para a cama. Bons sonhos!";
+"bedtime.now.tip" = "Ambiente calmo, escuro e temperatura agradável ajudam muito.";
+"bedtime.past.title" = "Passou da Hora";
+"bedtime.past.message" = "%@ já deveria estar dormindo. Não se preocupe, coloque na cama agora!";
+"bedtime.past.tip" = "Evite estimulação. Um ambiente tranquilo é o melhor agora.";
+
+// Bedtime tips (nomenclatura alternativa usada no código)
+"bedtime.tip.prepare" = "Banho morno, luz baixa e uma história ajudam a relaxar!";
+"bedtime.tip.now" = "Coloque para dormir agora para uma noite tranquila!";
+"bedtime.tip.past" = "Tente acalmar e colocar para dormir o quanto antes.";
+
+// MARK: - Timeline
+"timeline.title" = "Linha do Tempo";
+"timeline.wakeUp" = "Acordou";
+"timeline.napNumber" = "Soneca %d";
+"timeline.inProgress" = "Em andamento";
+"timeline.predicted" = "Previsão";
+"timeline.lastNapCutoff" = "Limite p/ última soneca";
+"timeline.bedtime" = "Hora de dormir";
+"timeline.now" = "Agora";
+"timeline.current" = "AGORA";
+"timeline.napsRecommended" = "%d-%d sonecas/dia";
+"timeline.at" = "às";
+"timeline.noMoreEvents" = "Nenhum evento pendente";
+"timeline.learned" = "Aprendido";
+"timeline.custom" = "Personalizado";
+
+// MARK: - Too Early (Madrugada)
+"tooEarly.title" = "Madrugada";
+"tooEarly.wakeTime" = "Acordar às %@";
+"tooEarly.message" = "Ainda é muito cedo. Se %@ acordou, tente mantê-lo calmo e no escuro.";
+"tooEarly.tip" = "Evite luzes fortes e estímulos. Sons suaves podem ajudar a voltar a dormir.";
+
+// MARK: - Nap Notifications (Soneca)
+"notification.nap.warning.title" = "Hora da soneca chegando!";
+"notification.nap.warning.body" = "%@ vai precisar de uma soneca em %d minutos. Prepare o ambiente!";
+"notification.nap.now.title" = "Hora da soneca!";
+"notification.nap.now.body" = "%@ está pronto para uma soneca. Coloque para dormir agora!";
+
+// MARK: - Bedtime Notifications (Sono Noturno)
+"notification.bedtime.prepare.title" = "Hora de preparar para dormir!";
+"notification.bedtime.prepare.body" = "%@ vai dormir em %d minutos. Comece a rotina: banho, luz baixa...";
+"notification.bedtime.now.title" = "Hora do sono noturno!";
+"notification.bedtime.now.body" = "%@ está pronto para o sono noturno. Boa noite!";
+
+// MARK: - Sleep Schedule Settings
+"sleepSchedule.title" = "Horários de Sono";
+"sleepSchedule.info.title" = "Personalize os horários";
+"sleepSchedule.info.description" = "Defina os horários do seu bebê ou deixe o app aprender automaticamente com o uso.";
+"sleepSchedule.useCustom" = "Usar horário personalizado";
+"sleepSchedule.default" = "Padrão: %@";
+"sleepSchedule.wakeTime.title" = "Horário de Acordar";
+"sleepSchedule.wakeTime.label" = "Acordar às";
+"sleepSchedule.bedtime.title" = "Hora de Dormir";
+"sleepSchedule.bedtime.label" = "Dormir às";
+"sleepSchedule.napDuration.title" = "Duração da Soneca";
+"sleepSchedule.wakeWindow.title" = "Janela de Sono";
+"sleepSchedule.learned.title" = "Dados Aprendidos";
+"sleepSchedule.learned.description" = "Baseado em %d dias de uso";
+"sleepSchedule.reset" = "Restaurar padrões";

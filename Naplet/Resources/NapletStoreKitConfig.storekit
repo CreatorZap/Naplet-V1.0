@@ -1,0 +1,216 @@
+{
+  "identifier" : "F9A8B7C6-D5E4-3F2A-1B0C-9D8E7F6A5B4C",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6744427938",
+    "_developerTeamID" : "QGF593V39B",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 760492800,
+    "_locale" : "pt_BR",
+    "_storefront" : "BRA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "naplet_premium_group",
+      "localizations" : [
+        {
+          "description" : "Desbloqueie todos os recursos premium do Naplet",
+          "displayName" : "Naplet Premium",
+          "locale" : "pt_BR"
+        },
+        {
+          "description" : "Unlock all Naplet premium features",
+          "displayName" : "Naplet Premium",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Desbloquea todas las funciones premium de Naplet",
+          "displayName" : "Naplet Premium",
+          "locale" : "es_ES"
+        }
+      ],
+      "name" : "Naplet Premium",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "59.90",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "founders_annual_001",
+          "introductoryOffer" : {
+            "displayPrice" : "0",
+            "internalID" : "founders_trial_001",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1W"
+          },
+          "localizations" : [
+            {
+              "description" : "Preço especial para os primeiros usuários. Economize 50% para sempre!",
+              "displayName" : "Plano Fundadores (Anual)",
+              "locale" : "pt_BR"
+            },
+            {
+              "description" : "Special price for early adopters. Save 50% forever!",
+              "displayName" : "Founders Plan (Annual)",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "Precio especial para los primeros usuarios. ¡Ahorra 50% para siempre!",
+              "displayName" : "Plan Fundadores (Anual)",
+              "locale" : "es_ES"
+            }
+          ],
+          "productID" : "naplet_founders_annual",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Naplet Founders Annual",
+          "subscriptionGroupID" : "naplet_premium_group",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "89.90",
+          "familyShareable" : true,
+          "groupNumber" : 2,
+          "internalID" : "premium_annual_001",
+          "introductoryOffer" : {
+            "displayPrice" : "0",
+            "internalID" : "premium_annual_trial_001",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1W"
+          },
+          "localizations" : [
+            {
+              "description" : "Acesso completo a todos os recursos premium. Economize 42% comparado ao mensal!",
+              "displayName" : "Plano Premium (Anual)",
+              "locale" : "pt_BR"
+            },
+            {
+              "description" : "Full access to all premium features. Save 42% compared to monthly!",
+              "displayName" : "Premium Plan (Annual)",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "Acceso completo a todas las funciones premium. ¡Ahorra 42% comparado al mensual!",
+              "displayName" : "Plan Premium (Anual)",
+              "locale" : "es_ES"
+            }
+          ],
+          "productID" : "naplet_premium_annual",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Naplet Premium Annual",
+          "subscriptionGroupID" : "naplet_premium_group",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "12.90",
+          "familyShareable" : true,
+          "groupNumber" : 3,
+          "internalID" : "premium_monthly_001",
+          "introductoryOffer" : {
+            "displayPrice" : "0",
+            "internalID" : "premium_monthly_trial_001",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1W"
+          },
+          "localizations" : [
+            {
+              "description" : "Acesso completo a todos os recursos premium com flexibilidade mensal.",
+              "displayName" : "Plano Premium (Mensal)",
+              "locale" : "pt_BR"
+            },
+            {
+              "description" : "Full access to all premium features with monthly flexibility.",
+              "displayName" : "Premium Plan (Monthly)",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "Acceso completo a todas las funciones premium con flexibilidad mensual.",
+              "displayName" : "Plan Premium (Mensual)",
+              "locale" : "es_ES"
+            }
+          ],
+          "productID" : "naplet_premium_monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Naplet Premium Monthly",
+          "subscriptionGroupID" : "naplet_premium_group",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

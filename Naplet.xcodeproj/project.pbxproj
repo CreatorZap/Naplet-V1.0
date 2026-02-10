@@ -1,0 +1,1840 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 70;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1100000000000001 /* NapletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000001 /* NapletApp.swift */; };
+		1100000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000002 /* ContentView.swift */; };
+		1100000000000003 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000003 /* AppDelegate.swift */; };
+		1100000000000010 /* NapletColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000010 /* NapletColors.swift */; };
+		1100000000000011 /* NapletTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000011 /* NapletTypography.swift */; };
+		1100000000000012 /* NapletSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000012 /* NapletSpacing.swift */; };
+		1100000000000020 /* NapletButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000020 /* NapletButton.swift */; };
+		1100000000000021 /* NapletCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000021 /* NapletCard.swift */; };
+		1100000000000022 /* NapletIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000022 /* NapletIcon.swift */; };
+		1100000000000023 /* NapletTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000023 /* NapletTextField.swift */; };
+		1100000000000024 /* SleepCircleProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000024 /* SleepCircleProgress.swift */; };
+		1100000000000025 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000025 /* ActionButton.swift */; };
+		1100000000000030 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000030 /* Date+Extensions.swift */; };
+		1100000000000031 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000031 /* View+Extensions.swift */; };
+		1100000000000032 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000032 /* Color+Extensions.swift */; };
+		1100000000000040 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000040 /* Constants.swift */; };
+		1100000000000041 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000041 /* Logger.swift */; };
+		1100000000000042 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000042 /* LocalizationManager.swift */; };
+		1100000000000045 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000045 /* AppConfig.swift */; };
+		1100000000000046 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000046 /* Environment.swift */; };
+		1100000000000050 /* Baby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000050 /* Baby.swift */; };
+		1100000000000051 /* SleepRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000051 /* SleepRecord.swift */; };
+		1100000000000052 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000052 /* User.swift */; };
+		1100000000000053 /* Caregiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000053 /* Caregiver.swift */; };
+		1100000000000055 /* SupabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000055 /* SupabaseService.swift */; };
+		1100000000000056 /* PurchaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000056 /* PurchaseService.swift */; };
+		1100000000000057 /* BabyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000057 /* BabyRepository.swift */; };
+		1100000000000058 /* SleepRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000058 /* SleepRepository.swift */; };
+		1100000000000060 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000060 /* OnboardingView.swift */; };
+		1100000000000061 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000061 /* OnboardingViewModel.swift */; };
+		1100000000000062 /* OnboardingComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000062 /* OnboardingComponents.swift */; };
+		1100000000000070 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000070 /* DashboardView.swift */; };
+		1100000000000071 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000071 /* DashboardViewModel.swift */; };
+		1100000000000080 /* SleepTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000080 /* SleepTrackingView.swift */; };
+		1100000000000081 /* SleepTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000081 /* SleepTrackingViewModel.swift */; };
+		1100000000000090 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000090 /* SettingsView.swift */; };
+		1100000000000091 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000091 /* SettingsViewModel.swift */; };
+		1100000000000095 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000095 /* SignInView.swift */; };
+		1100000000000100 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2100000000000100 /* Assets.xcassets */; };
+		1100000000000101 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2100000000000101 /* Localizable.strings */; };
+		1100000000000110 /* SleepHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000110 /* SleepHistoryView.swift */; };
+		1100000000000111 /* SleepHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000111 /* SleepHistoryViewModel.swift */; };
+		1100000000000120 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000120 /* NotificationService.swift */; };
+		1100000000000121 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000121 /* NotificationDelegate.swift */; };
+		1100000000000122 /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000122 /* NotificationSettingsView.swift */; };
+		1100000000000123 /* EditBabyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000123 /* EditBabyProfileView.swift */; };
+		1100000000000124 /* EditBabyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000124 /* EditBabyProfileViewModel.swift */; };
+		1100000000000130 /* AnimatedComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000130 /* AnimatedComponents.swift */; };
+		1100000000000131 /* EnhancedCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000131 /* EnhancedCards.swift */; };
+		1100000000000140 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000140 /* ChatMessage.swift */; };
+		1100000000000141 /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000141 /* OpenAIService.swift */; };
+		1100000000000142 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000142 /* ChatViewModel.swift */; };
+		1100000000000143 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000143 /* ChatView.swift */; };
+		1100000000000144 /* ChatHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000144 /* ChatHistoryView.swift */; };
+		1100000000000150 /* PDFReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000150 /* PDFReportService.swift */; };
+		1100000000000151 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000151 /* ReportViewModel.swift */; };
+		1100000000000152 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000152 /* ReportView.swift */; };
+		1100000000000160 /* CaregiverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000160 /* CaregiverViewModel.swift */; };
+		1100000000000161 /* CaregiversView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000161 /* CaregiversView.swift */; };
+		1100000000000162 /* CreateInviteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000162 /* CreateInviteSheet.swift */; };
+		1100000000000163 /* AcceptInviteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000163 /* AcceptInviteView.swift */; };
+		1100000000000164 /* CaregiverRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000164 /* CaregiverRepository.swift */; };
+		1100000000000170 /* iOSConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000170 /* iOSConnectivityManager.swift */; };
+		1100000000000180 /* WidgetDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000180 /* WidgetDataManager.swift */; };
+		1100000000000190 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000190 /* String+Localization.swift */; };
+		1100000000000200 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9100000000000001 /* Supabase */; };
+		1100000000000201 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 9100000000000002 /* RevenueCat */; };
+		1100000000000300 /* FeedingRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000300 /* FeedingRecord.swift */; };
+		1100000000000301 /* FeedingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000301 /* FeedingRepository.swift */; };
+		1100000000000302 /* FeedingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000302 /* FeedingViewModel.swift */; };
+		1100000000000303 /* FeedingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000303 /* FeedingView.swift */; };
+		1100000000000304 /* BreastFeedingTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000304 /* BreastFeedingTimerView.swift */; };
+		1100000000000305 /* BottleFeedingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000305 /* BottleFeedingView.swift */; };
+		1100000000000306 /* FeedingHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000306 /* FeedingHistoryView.swift */; };
+		1100000000000307 /* PumpingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000307 /* PumpingView.swift */; };
+		1100000000000400 /* DiaperRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000400 /* DiaperRecord.swift */; };
+		1100000000000401 /* DiaperRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000401 /* DiaperRepository.swift */; };
+		1100000000000402 /* DiaperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000402 /* DiaperViewModel.swift */; };
+		1100000000000403 /* DiaperChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000403 /* DiaperChangeView.swift */; };
+		1100000000000410 /* HealthRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000410 /* HealthRecord.swift */; };
+		1100000000000411 /* HealthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000411 /* HealthRepository.swift */; };
+		1100000000000412 /* HealthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000412 /* HealthViewModel.swift */; };
+		1100000000000413 /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000413 /* TemperatureView.swift */; };
+		1100000000000414 /* MedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000414 /* MedicationView.swift */; };
+		1100000000000420 /* TimeAdjustButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000420 /* TimeAdjustButtons.swift */; };
+		1100000000000500 /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000500 /* SubscriptionManager.swift */; };
+		1100000000000510 /* PaywallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000510 /* PaywallViewModel.swift */; };
+		1100000000000511 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000511 /* PaywallView.swift */; };
+		1100000000000512 /* PaywallTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000512 /* PaywallTrigger.swift */; };
+		1100000000000600 /* RatingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000600 /* RatingManager.swift */; };
+		1100000000000601 /* RatingPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000601 /* RatingPromptView.swift */; };
+		1100000000000610 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000610 /* PrivacyPolicyView.swift */; };
+		1100000000000611 /* TermsOfServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000611 /* TermsOfServiceView.swift */; };
+		1100000000000700 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000700 /* AvatarView.swift */; };
+		1100000000000710 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000710 /* ProfileViewModel.swift */; };
+		1100000000000711 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000711 /* ProfileView.swift */; };
+		1100000000000800 /* BathRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000800 /* BathRecord.swift */; };
+		1100000000000801 /* BathRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000801 /* BathRepository.swift */; };
+		1100000000000802 /* BathViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000802 /* BathViewModel.swift */; };
+		1100000000000803 /* BathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000803 /* BathView.swift */; };
+		1100000000000900 /* SleepEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000900 /* SleepEnums.swift */; };
+		1100000000000901 /* SleepLocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000901 /* SleepLocationPicker.swift */; };
+		1100000000000902 /* SleepMoodPickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000902 /* SleepMoodPickers.swift */; };
+		1100000000000A01 /* ActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000A01 /* ActivityItem.swift */; };
+		1100000000001000 /* SupportModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000001000 /* SupportModels.swift */; };
+		1100000000001001 /* SupportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000001001 /* SupportViewModel.swift */; };
+		1100000000001002 /* SupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000001002 /* SupportView.swift */; };
+		1100000000001003 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000001003 /* FAQView.swift */; };
+		1100000000001004 /* ContactFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000001004 /* ContactFormView.swift */; };
+		1100000000001005 /* SupabaseService+Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000001005 /* SupabaseService+Support.swift */; };
+		1100000000001010 /* ScreenshotDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000001010 /* ScreenshotDetector.swift */; };
+		1100000000002001 /* ReferralModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000002001 /* ReferralModels.swift */; };
+		1100000000002002 /* ReferralRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000002002 /* ReferralRepository.swift */; };
+		1100000000002003 /* ReferralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000002003 /* ReferralViewModel.swift */; };
+		1100000000002004 /* ReferralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000002004 /* ReferralView.swift */; };
+		1100000000002005 /* ReferralButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000002005 /* ReferralButton.swift */; };
+		1100000000003000 /* MedicationSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000003000 /* MedicationSchedule.swift */; };
+		1100000000003001 /* MedicationScheduleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000003001 /* MedicationScheduleRepository.swift */; };
+		1100000000003002 /* MedicationScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000003002 /* MedicationScheduleView.swift */; };
+		1100000000003003 /* MedicationReminderCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000003003 /* MedicationReminderCard.swift */; };
+		1100000000003004 /* MedicationScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000003004 /* MedicationScheduleViewModel.swift */; };
+		1100000000003005 /* MedicationScheduleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000003005 /* MedicationScheduleListViewModel.swift */; };
+		1100000000004000 /* VaccinationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000004000 /* VaccinationModels.swift */; };
+		1100000000004001 /* VaccinationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000004001 /* VaccinationRepository.swift */; };
+		1100000000004002 /* VaccinationDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000004002 /* VaccinationDashboardViewModel.swift */; };
+		1100000000004003 /* VaccinationDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000004003 /* VaccinationDashboardView.swift */; };
+		1100000000004004 /* VaccinationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000004004 /* VaccinationDetailView.swift */; };
+		1100000000005000 /* DocumentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000005000 /* DocumentModels.swift */; };
+		1100000000005001 /* DocumentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000005001 /* DocumentRepository.swift */; };
+		1100000000005002 /* DocumentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000005002 /* DocumentsViewModel.swift */; };
+		1100000000005003 /* DocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000005003 /* DocumentsView.swift */; };
+		1100000000005004 /* AddDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000005004 /* AddDocumentView.swift */; };
+		1100000000005005 /* DocumentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000005005 /* DocumentDetailView.swift */; };
+		1100000000006000 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000006000 /* HapticManager.swift */; };
+		1100000000006001 /* AddBabyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000006001 /* AddBabyView.swift */; };
+		1100000000007001 /* TimelineModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000007001 /* TimelineModels.swift */; };
+		1100000000007002 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000007002 /* TimelineView.swift */; };
+		1100000000008001 /* BabySleepPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000008001 /* BabySleepPreferences.swift */; };
+		1100000000008002 /* SleepLearningService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000008002 /* SleepLearningService.swift */; };
+		1100000000009001 /* SleepScheduleSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000009001 /* SleepScheduleSettingsView.swift */; };
+		1100000000009002 /* SleepScheduleSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000009002 /* SleepScheduleSettingsViewModel.swift */; };
+		A419034B2F2EEE6700FFC095 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = A419034A2F2EEE6700FFC095 /* GoogleSignIn */; };
+		A419034D2F2EEE6700FFC095 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A419034C2F2EEE6700FFC095 /* GoogleSignInSwift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A420A0C12F2441C300B950DB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4A29F212F24647300CD8BFF /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2100000000000001 /* NapletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapletApp.swift; sourceTree = "<group>"; };
+		2100000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2100000000000003 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2100000000000010 /* NapletColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapletColors.swift; sourceTree = "<group>"; };
+		2100000000000011 /* NapletTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapletTypography.swift; sourceTree = "<group>"; };
+		2100000000000012 /* NapletSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapletSpacing.swift; sourceTree = "<group>"; };
+		2100000000000020 /* NapletButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapletButton.swift; sourceTree = "<group>"; };
+		2100000000000021 /* NapletCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapletCard.swift; sourceTree = "<group>"; };
+		2100000000000022 /* NapletIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapletIcon.swift; sourceTree = "<group>"; };
+		2100000000000023 /* NapletTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapletTextField.swift; sourceTree = "<group>"; };
+		2100000000000024 /* SleepCircleProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepCircleProgress.swift; sourceTree = "<group>"; };
+		2100000000000025 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		2100000000000030 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		2100000000000031 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		2100000000000032 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		2100000000000040 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2100000000000041 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		2100000000000042 /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
+		2100000000000045 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		2100000000000046 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		2100000000000050 /* Baby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Baby.swift; sourceTree = "<group>"; };
+		2100000000000051 /* SleepRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepRecord.swift; sourceTree = "<group>"; };
+		2100000000000052 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2100000000000053 /* Caregiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caregiver.swift; sourceTree = "<group>"; };
+		2100000000000055 /* SupabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseService.swift; sourceTree = "<group>"; };
+		2100000000000056 /* PurchaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseService.swift; sourceTree = "<group>"; };
+		2100000000000057 /* BabyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyRepository.swift; sourceTree = "<group>"; };
+		2100000000000058 /* SleepRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepRepository.swift; sourceTree = "<group>"; };
+		2100000000000060 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		2100000000000061 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		2100000000000062 /* OnboardingComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingComponents.swift; sourceTree = "<group>"; };
+		2100000000000070 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		2100000000000071 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		2100000000000080 /* SleepTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTrackingView.swift; sourceTree = "<group>"; };
+		2100000000000081 /* SleepTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTrackingViewModel.swift; sourceTree = "<group>"; };
+		2100000000000090 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2100000000000091 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		2100000000000095 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		2100000000000100 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2100000000000102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2100000000000103 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2100000000000104 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2100000000000105 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2100000000000110 /* SleepHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepHistoryView.swift; sourceTree = "<group>"; };
+		2100000000000111 /* SleepHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepHistoryViewModel.swift; sourceTree = "<group>"; };
+		2100000000000120 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		2100000000000121 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDelegate.swift; sourceTree = "<group>"; };
+		2100000000000122 /* NotificationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
+		2100000000000123 /* EditBabyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBabyProfileView.swift; sourceTree = "<group>"; };
+		2100000000000124 /* EditBabyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBabyProfileViewModel.swift; sourceTree = "<group>"; };
+		2100000000000130 /* AnimatedComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedComponents.swift; sourceTree = "<group>"; };
+		2100000000000131 /* EnhancedCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedCards.swift; sourceTree = "<group>"; };
+		2100000000000140 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		2100000000000141 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		2100000000000142 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		2100000000000143 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		2100000000000144 /* ChatHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHistoryView.swift; sourceTree = "<group>"; };
+		2100000000000150 /* PDFReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFReportService.swift; sourceTree = "<group>"; };
+		2100000000000151 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
+		2100000000000152 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		2100000000000160 /* CaregiverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverViewModel.swift; sourceTree = "<group>"; };
+		2100000000000161 /* CaregiversView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiversView.swift; sourceTree = "<group>"; };
+		2100000000000162 /* CreateInviteSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInviteSheet.swift; sourceTree = "<group>"; };
+		2100000000000163 /* AcceptInviteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptInviteView.swift; sourceTree = "<group>"; };
+		2100000000000164 /* CaregiverRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverRepository.swift; sourceTree = "<group>"; };
+		2100000000000170 /* iOSConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSConnectivityManager.swift; sourceTree = "<group>"; };
+		2100000000000180 /* WidgetDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDataManager.swift; sourceTree = "<group>"; };
+		2100000000000190 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		2100000000000300 /* FeedingRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingRecord.swift; sourceTree = "<group>"; };
+		2100000000000301 /* FeedingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingRepository.swift; sourceTree = "<group>"; };
+		2100000000000302 /* FeedingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingViewModel.swift; sourceTree = "<group>"; };
+		2100000000000303 /* FeedingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingView.swift; sourceTree = "<group>"; };
+		2100000000000304 /* BreastFeedingTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreastFeedingTimerView.swift; sourceTree = "<group>"; };
+		2100000000000305 /* BottleFeedingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleFeedingView.swift; sourceTree = "<group>"; };
+		2100000000000306 /* FeedingHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingHistoryView.swift; sourceTree = "<group>"; };
+		2100000000000307 /* PumpingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PumpingView.swift; sourceTree = "<group>"; };
+		2100000000000400 /* DiaperRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaperRecord.swift; sourceTree = "<group>"; };
+		2100000000000401 /* DiaperRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaperRepository.swift; sourceTree = "<group>"; };
+		2100000000000402 /* DiaperViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaperViewModel.swift; sourceTree = "<group>"; };
+		2100000000000403 /* DiaperChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaperChangeView.swift; sourceTree = "<group>"; };
+		2100000000000410 /* HealthRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRecord.swift; sourceTree = "<group>"; };
+		2100000000000411 /* HealthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRepository.swift; sourceTree = "<group>"; };
+		2100000000000412 /* HealthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthViewModel.swift; sourceTree = "<group>"; };
+		2100000000000413 /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
+		2100000000000414 /* MedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationView.swift; sourceTree = "<group>"; };
+		2100000000000420 /* TimeAdjustButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAdjustButtons.swift; sourceTree = "<group>"; };
+		2100000000000500 /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
+		2100000000000510 /* PaywallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallViewModel.swift; sourceTree = "<group>"; };
+		2100000000000511 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		2100000000000512 /* PaywallTrigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallTrigger.swift; sourceTree = "<group>"; };
+		2100000000000600 /* RatingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingManager.swift; sourceTree = "<group>"; };
+		2100000000000601 /* RatingPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingPromptView.swift; sourceTree = "<group>"; };
+		2100000000000610 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		2100000000000611 /* TermsOfServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceView.swift; sourceTree = "<group>"; };
+		2100000000000700 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		2100000000000710 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		2100000000000711 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		2100000000000800 /* BathRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathRecord.swift; sourceTree = "<group>"; };
+		2100000000000801 /* BathRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathRepository.swift; sourceTree = "<group>"; };
+		2100000000000802 /* BathViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathViewModel.swift; sourceTree = "<group>"; };
+		2100000000000803 /* BathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathView.swift; sourceTree = "<group>"; };
+		2100000000000900 /* SleepEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepEnums.swift; sourceTree = "<group>"; };
+		2100000000000901 /* SleepLocationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepLocationPicker.swift; sourceTree = "<group>"; };
+		2100000000000902 /* SleepMoodPickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepMoodPickers.swift; sourceTree = "<group>"; };
+		2100000000000A01 /* ActivityItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityItem.swift; sourceTree = "<group>"; };
+		2100000000001000 /* SupportModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportModels.swift; sourceTree = "<group>"; };
+		2100000000001001 /* SupportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewModel.swift; sourceTree = "<group>"; };
+		2100000000001002 /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
+		2100000000001003 /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
+		2100000000001004 /* ContactFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormView.swift; sourceTree = "<group>"; };
+		2100000000001005 /* SupabaseService+Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SupabaseService+Support.swift"; sourceTree = "<group>"; };
+		2100000000001010 /* ScreenshotDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotDetector.swift; sourceTree = "<group>"; };
+		2100000000002001 /* ReferralModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferralModels.swift; sourceTree = "<group>"; };
+		2100000000002002 /* ReferralRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferralRepository.swift; sourceTree = "<group>"; };
+		2100000000002003 /* ReferralViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferralViewModel.swift; sourceTree = "<group>"; };
+		2100000000002004 /* ReferralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferralView.swift; sourceTree = "<group>"; };
+		2100000000002005 /* ReferralButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferralButton.swift; sourceTree = "<group>"; };
+		2100000000003000 /* MedicationSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationSchedule.swift; sourceTree = "<group>"; };
+		2100000000003001 /* MedicationScheduleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationScheduleRepository.swift; sourceTree = "<group>"; };
+		2100000000003002 /* MedicationScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationScheduleView.swift; sourceTree = "<group>"; };
+		2100000000003003 /* MedicationReminderCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationReminderCard.swift; sourceTree = "<group>"; };
+		2100000000003004 /* MedicationScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationScheduleViewModel.swift; sourceTree = "<group>"; };
+		2100000000003005 /* MedicationScheduleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationScheduleListViewModel.swift; sourceTree = "<group>"; };
+		2100000000004000 /* VaccinationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationModels.swift; sourceTree = "<group>"; };
+		2100000000004001 /* VaccinationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationRepository.swift; sourceTree = "<group>"; };
+		2100000000004002 /* VaccinationDashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationDashboardViewModel.swift; sourceTree = "<group>"; };
+		2100000000004003 /* VaccinationDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationDashboardView.swift; sourceTree = "<group>"; };
+		2100000000004004 /* VaccinationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationDetailView.swift; sourceTree = "<group>"; };
+		2100000000005000 /* DocumentModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentModels.swift; sourceTree = "<group>"; };
+		2100000000005001 /* DocumentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentRepository.swift; sourceTree = "<group>"; };
+		2100000000005002 /* DocumentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewModel.swift; sourceTree = "<group>"; };
+		2100000000005003 /* DocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsView.swift; sourceTree = "<group>"; };
+		2100000000005004 /* AddDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocumentView.swift; sourceTree = "<group>"; };
+		2100000000005005 /* DocumentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailView.swift; sourceTree = "<group>"; };
+		2100000000006000 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		2100000000006001 /* AddBabyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBabyView.swift; sourceTree = "<group>"; };
+		2100000000007001 /* TimelineModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineModels.swift; sourceTree = "<group>"; };
+		2100000000007002 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		2100000000008001 /* BabySleepPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabySleepPreferences.swift; sourceTree = "<group>"; };
+		2100000000008002 /* SleepLearningService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepLearningService.swift; sourceTree = "<group>"; };
+		2100000000009001 /* SleepScheduleSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepScheduleSettingsView.swift; sourceTree = "<group>"; };
+		2100000000009002 /* SleepScheduleSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepScheduleSettingsViewModel.swift; sourceTree = "<group>"; };
+		3100000000000001 /* Naplet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Naplet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A420A0B22F2441C200B950DB /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		A420A0B42F2441C200B950DB /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A420A0CE2F24479D00B950DB /* Naplet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Naplet.entitlements; sourceTree = "<group>"; };
+		A420A0CF2F2448FD00B950DB /* NapletWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NapletWidgetExtension.entitlements; sourceTree = "<group>"; };
+		A4A29F232F2467EB00CD8BFF /* WatchBaby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchBaby.swift; sourceTree = "<group>"; };
+		A4A29F252F2467EB00CD8BFF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A4A29F262F2467EB00CD8BFF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A4A29F272F2467EB00CD8BFF /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A4A29F2A2F2467EB00CD8BFF /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManager.swift; sourceTree = "<group>"; };
+		A4A29F2C2F2467EB00CD8BFF /* WatchColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchColors.swift; sourceTree = "<group>"; };
+		A4A29F2E2F2467EB00CD8BFF /* MainWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWatchView.swift; sourceTree = "<group>"; };
+		A4A29F2F2F2467EB00CD8BFF /* SleepTypePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTypePickerView.swift; sourceTree = "<group>"; };
+		A4A29F312F2467EB00CD8BFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A4A29F322F2467EB00CD8BFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A4A29F332F2467EB00CD8BFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4A29F342F2467EB00CD8BFF /* NapletWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapletWatchApp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A420A0B62F2441C200B950DB /* NapletWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NapletWidget; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4100000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1100000000000200 /* Supabase in Frameworks */,
+				1100000000000201 /* RevenueCat in Frameworks */,
+				A419034B2F2EEE6700FFC095 /* GoogleSignIn in Frameworks */,
+				A419034D2F2EEE6700FFC095 /* GoogleSignInSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5000000000000000 = {
+			isa = PBXGroup;
+			children = (
+				A4A29F352F2467EB00CD8BFF /* NapletWatch */,
+				A420A0CF2F2448FD00B950DB /* NapletWidgetExtension.entitlements */,
+				5100000000000001 /* Naplet */,
+				A420A0B62F2441C200B950DB /* NapletWidget */,
+				A420A0B12F2441C200B950DB /* Frameworks */,
+				5000000000000002 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5000000000000002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3100000000000001 /* Naplet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5100000000000001 /* Naplet */ = {
+			isa = PBXGroup;
+			children = (
+				A420A0CE2F24479D00B950DB /* Naplet.entitlements */,
+				5100000000000010 /* App */,
+				5100000000000020 /* Core */,
+				5100000000000050 /* Features */,
+				5100000000000070 /* Data */,
+				5100000000000080 /* Resources */,
+			);
+			path = Naplet;
+			sourceTree = "<group>";
+		};
+		5100000000000010 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000001 /* NapletApp.swift */,
+				2100000000000002 /* ContentView.swift */,
+				2100000000000003 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5100000000000020 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000000026 /* Config */,
+				5100000000000021 /* Design */,
+				5100000000000024 /* Extensions */,
+				5100000000006000 /* Managers */,
+				5100000000000025 /* Utilities */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		5100000000000021 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000000022 /* Theme */,
+				5100000000000023 /* Components */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		5100000000000022 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000010 /* NapletColors.swift */,
+				2100000000000011 /* NapletTypography.swift */,
+				2100000000000012 /* NapletSpacing.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		5100000000000023 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000020 /* NapletButton.swift */,
+				2100000000000021 /* NapletCard.swift */,
+				2100000000000022 /* NapletIcon.swift */,
+				2100000000000023 /* NapletTextField.swift */,
+				2100000000000024 /* SleepCircleProgress.swift */,
+				2100000000000025 /* ActionButton.swift */,
+				2100000000000130 /* AnimatedComponents.swift */,
+				2100000000000131 /* EnhancedCards.swift */,
+				2100000000000420 /* TimeAdjustButtons.swift */,
+				2100000000000700 /* AvatarView.swift */,
+				5100000000000901 /* Pickers */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5100000000000024 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000030 /* Date+Extensions.swift */,
+				2100000000000031 /* View+Extensions.swift */,
+				2100000000000032 /* Color+Extensions.swift */,
+				2100000000000190 /* String+Localization.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5100000000000025 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000040 /* Constants.swift */,
+				2100000000000041 /* Logger.swift */,
+				2100000000000042 /* LocalizationManager.swift */,
+				2100000000001010 /* ScreenshotDetector.swift */,
+				2100000000000121 /* NotificationDelegate.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		5100000000000026 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000045 /* AppConfig.swift */,
+				2100000000000046 /* Environment.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		5100000000000049 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000062 /* OnboardingComponents.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5100000000000050 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000000063 /* Auth */,
+				5100000000000051 /* Onboarding */,
+				5100000000000054 /* Dashboard */,
+				5100000000000065 /* History */,
+				5100000000000057 /* Sleep */,
+				5100000000000060 /* Settings */,
+				5100000000000110 /* Caregivers */,
+				5100000000000090 /* Chat */,
+				5100000000000100 /* Reports */,
+				5100000000000200 /* Feeding */,
+				5100000000000300 /* Diaper */,
+				5100000000000310 /* Health */,
+				5100000000000400 /* Paywall */,
+				5100000000000500 /* Rating */,
+				5100000000000510 /* Legal */,
+				5100000000000700 /* Profile */,
+				5100000000000800 /* Bath */,
+				5100000000001000 /* Support */,
+				5100000000002000 /* Referral */,
+				5100000000004000 /* Vaccination */,
+				5100000000005000 /* Documents */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		5100000000000051 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000000052 /* Views */,
+				5100000000000053 /* ViewModels */,
+				5100000000000049 /* Components */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		5100000000000052 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000060 /* OnboardingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000000053 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000061 /* OnboardingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000000054 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000000055 /* Views */,
+				5100000000000056 /* ViewModels */,
+				5100000000000A01 /* Models */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		5100000000000055 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000070 /* DashboardView.swift */,
+				2100000000007002 /* TimelineView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000000056 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000071 /* DashboardViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000000057 /* Sleep */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000000058 /* Views */,
+				5100000000000059 /* ViewModels */,
+				5100000000000900 /* Models */,
+			);
+			path = Sleep;
+			sourceTree = "<group>";
+		};
+		5100000000000058 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000080 /* SleepTrackingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000000059 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000081 /* SleepTrackingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000000060 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000000061 /* Views */,
+				5100000000000062 /* ViewModels */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		5100000000000061 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000090 /* SettingsView.swift */,
+				2100000000000122 /* NotificationSettingsView.swift */,
+				2100000000000123 /* EditBabyProfileView.swift */,
+				2100000000006001 /* AddBabyView.swift */,
+				2100000000009001 /* SleepScheduleSettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000000062 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000091 /* SettingsViewModel.swift */,
+				2100000000000124 /* EditBabyProfileViewModel.swift */,
+				2100000000009002 /* SleepScheduleSettingsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000000063 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000000064 /* Views */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		5100000000000064 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000095 /* SignInView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000000065 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000000066 /* Views */,
+				5100000000000067 /* ViewModels */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		5100000000000066 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000110 /* SleepHistoryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000000067 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000111 /* SleepHistoryViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000000070 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000000071 /* Models */,
+				5100000000000072 /* Repositories */,
+				5100000000000073 /* Services */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5100000000000071 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000050 /* Baby.swift */,
+				2100000000000051 /* SleepRecord.swift */,
+				2100000000000052 /* User.swift */,
+				2100000000000053 /* Caregiver.swift */,
+				2100000000000140 /* ChatMessage.swift */,
+				2100000000000300 /* FeedingRecord.swift */,
+				2100000000000400 /* DiaperRecord.swift */,
+				2100000000000410 /* HealthRecord.swift */,
+				2100000000000800 /* BathRecord.swift */,
+				2100000000003000 /* MedicationSchedule.swift */,
+				2100000000007001 /* TimelineModels.swift */,
+				2100000000008001 /* BabySleepPreferences.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5100000000000072 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000057 /* BabyRepository.swift */,
+				2100000000000058 /* SleepRepository.swift */,
+				2100000000000164 /* CaregiverRepository.swift */,
+				2100000000000301 /* FeedingRepository.swift */,
+				2100000000000401 /* DiaperRepository.swift */,
+				2100000000000411 /* HealthRepository.swift */,
+				2100000000000801 /* BathRepository.swift */,
+				2100000000003001 /* MedicationScheduleRepository.swift */,
+				2100000000004001 /* VaccinationRepository.swift */,
+				2100000000005001 /* DocumentRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		5100000000000073 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000000074 /* Supabase */,
+				5100000000000076 /* RevenueCat */,
+				5100000000000075 /* Notifications */,
+				5100000000000077 /* OpenAI */,
+				5100000000000078 /* PDF */,
+				5100000000000079 /* WatchConnectivity */,
+				5100000000000081 /* Widget */,
+				5100000000000082 /* Learning */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5100000000000074 /* Supabase */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000055 /* SupabaseService.swift */,
+				2100000000001005 /* SupabaseService+Support.swift */,
+			);
+			path = Supabase;
+			sourceTree = "<group>";
+		};
+		5100000000000075 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000120 /* NotificationService.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		5100000000000076 /* RevenueCat */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000056 /* PurchaseService.swift */,
+				2100000000000500 /* SubscriptionManager.swift */,
+			);
+			path = RevenueCat;
+			sourceTree = "<group>";
+		};
+		5100000000000077 /* OpenAI */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000141 /* OpenAIService.swift */,
+			);
+			path = OpenAI;
+			sourceTree = "<group>";
+		};
+		5100000000000078 /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000150 /* PDFReportService.swift */,
+			);
+			path = PDF;
+			sourceTree = "<group>";
+		};
+		5100000000000079 /* WatchConnectivity */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000170 /* iOSConnectivityManager.swift */,
+			);
+			path = WatchConnectivity;
+			sourceTree = "<group>";
+		};
+		5100000000000080 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000100 /* Assets.xcassets */,
+				2100000000000101 /* Localizable.strings */,
+				2100000000000102 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5100000000000081 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000180 /* WidgetDataManager.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		5100000000000082 /* Learning */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000008002 /* SleepLearningService.swift */,
+			);
+			path = Learning;
+			sourceTree = "<group>";
+		};
+		5100000000000090 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000000091 /* Views */,
+				5100000000000092 /* ViewModels */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		5100000000000091 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000143 /* ChatView.swift */,
+				2100000000000144 /* ChatHistoryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000000092 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000142 /* ChatViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000000100 /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000000101 /* Views */,
+				5100000000000102 /* ViewModels */,
+			);
+			path = Reports;
+			sourceTree = "<group>";
+		};
+		5100000000000101 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000152 /* ReportView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000000102 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000151 /* ReportViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000000110 /* Caregivers */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000000111 /* Views */,
+				5100000000000112 /* ViewModels */,
+			);
+			path = Caregivers;
+			sourceTree = "<group>";
+		};
+		5100000000000111 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000161 /* CaregiversView.swift */,
+				2100000000000162 /* CreateInviteSheet.swift */,
+				2100000000000163 /* AcceptInviteView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000000112 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000160 /* CaregiverViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000000200 /* Feeding */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000000201 /* Views */,
+				5100000000000202 /* ViewModels */,
+			);
+			path = Feeding;
+			sourceTree = "<group>";
+		};
+		5100000000000201 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000303 /* FeedingView.swift */,
+				2100000000000304 /* BreastFeedingTimerView.swift */,
+				2100000000000305 /* BottleFeedingView.swift */,
+				2100000000000306 /* FeedingHistoryView.swift */,
+				2100000000000307 /* PumpingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000000202 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000302 /* FeedingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000000300 /* Diaper */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000000301 /* Views */,
+				5100000000000302 /* ViewModels */,
+			);
+			path = Diaper;
+			sourceTree = "<group>";
+		};
+		5100000000000301 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000403 /* DiaperChangeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000000302 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000402 /* DiaperViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000000310 /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000000311 /* Views */,
+				5100000000000312 /* ViewModels */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
+		5100000000000311 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000413 /* TemperatureView.swift */,
+				2100000000000414 /* MedicationView.swift */,
+				2100000000003002 /* MedicationScheduleView.swift */,
+				2100000000003003 /* MedicationReminderCard.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000000312 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000412 /* HealthViewModel.swift */,
+				2100000000003004 /* MedicationScheduleViewModel.swift */,
+				2100000000003005 /* MedicationScheduleListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000000400 /* Paywall */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000000403 /* Models */,
+				5100000000000401 /* Views */,
+				5100000000000402 /* ViewModels */,
+			);
+			path = Paywall;
+			sourceTree = "<group>";
+		};
+		5100000000000401 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000511 /* PaywallView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000000402 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000510 /* PaywallViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000000403 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000512 /* PaywallTrigger.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5100000000000500 /* Rating */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000600 /* RatingManager.swift */,
+				2100000000000601 /* RatingPromptView.swift */,
+			);
+			path = Rating;
+			sourceTree = "<group>";
+		};
+		5100000000000510 /* Legal */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000610 /* PrivacyPolicyView.swift */,
+				2100000000000611 /* TermsOfServiceView.swift */,
+			);
+			path = Legal;
+			sourceTree = "<group>";
+		};
+		5100000000000700 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000000710 /* ViewModels */,
+				5100000000000711 /* Views */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		5100000000000710 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000710 /* ProfileViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000000711 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000711 /* ProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000000800 /* Bath */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000802 /* BathViewModel.swift */,
+				2100000000000803 /* BathView.swift */,
+			);
+			path = Bath;
+			sourceTree = "<group>";
+		};
+		5100000000000900 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000900 /* SleepEnums.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5100000000000901 /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000901 /* SleepLocationPicker.swift */,
+				2100000000000902 /* SleepMoodPickers.swift */,
+			);
+			path = Pickers;
+			sourceTree = "<group>";
+		};
+		5100000000000A01 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000000A01 /* ActivityItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5100000000001000 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000001001 /* Models */,
+				5100000000001002 /* ViewModels */,
+				5100000000001003 /* Views */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		5100000000001001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000001000 /* SupportModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5100000000001002 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000001001 /* SupportViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000001003 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000001002 /* SupportView.swift */,
+				2100000000001003 /* FAQView.swift */,
+				2100000000001004 /* ContactFormView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000002000 /* Referral */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000002001 /* Models */,
+				5100000000002002 /* Repository */,
+				5100000000002003 /* ViewModels */,
+				5100000000002004 /* Views */,
+			);
+			path = Referral;
+			sourceTree = "<group>";
+		};
+		5100000000002001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000002001 /* ReferralModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5100000000002002 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000002002 /* ReferralRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		5100000000002003 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000002003 /* ReferralViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000002004 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000002004 /* ReferralView.swift */,
+				2100000000002005 /* ReferralButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000004000 /* Vaccination */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000004001 /* Models */,
+				5100000000004002 /* ViewModels */,
+				5100000000004003 /* Views */,
+			);
+			path = Vaccination;
+			sourceTree = "<group>";
+		};
+		5100000000004001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000004000 /* VaccinationModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5100000000004002 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000004002 /* VaccinationDashboardViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000004003 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000004003 /* VaccinationDashboardView.swift */,
+				2100000000004004 /* VaccinationDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000005000 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000005001 /* Models */,
+				5100000000005002 /* ViewModels */,
+				5100000000005003 /* Views */,
+			);
+			path = Documents;
+			sourceTree = "<group>";
+		};
+		5100000000005001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000005000 /* DocumentModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5100000000005002 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000005002 /* DocumentsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000005003 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000005003 /* DocumentsView.swift */,
+				2100000000005004 /* AddDocumentView.swift */,
+				2100000000005005 /* DocumentDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000006000 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000006000 /* HapticManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		A420A0B12F2441C200B950DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A420A0B22F2441C200B950DB /* WidgetKit.framework */,
+				A420A0B42F2441C200B950DB /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A4A29F222F2467EB00CD8BFF /* Complications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Complications;
+			sourceTree = "<group>";
+		};
+		A4A29F242F2467EB00CD8BFF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A4A29F232F2467EB00CD8BFF /* WatchBaby.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A4A29F292F2467EB00CD8BFF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A4A29F282F2467EB00CD8BFF /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A4A29F2B2F2467EB00CD8BFF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A4A29F2A2F2467EB00CD8BFF /* WatchConnectivityManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A4A29F2D2F2467EB00CD8BFF /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				A4A29F2C2F2467EB00CD8BFF /* WatchColors.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		A4A29F302F2467EB00CD8BFF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4A29F2E2F2467EB00CD8BFF /* MainWatchView.swift */,
+				A4A29F2F2F2467EB00CD8BFF /* SleepTypePickerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A4A29F352F2467EB00CD8BFF /* NapletWatch */ = {
+			isa = PBXGroup;
+			children = (
+				A4A29F222F2467EB00CD8BFF /* Complications */,
+				A4A29F242F2467EB00CD8BFF /* Models */,
+				A4A29F292F2467EB00CD8BFF /* Resources */,
+				A4A29F2B2F2467EB00CD8BFF /* Services */,
+				A4A29F2D2F2467EB00CD8BFF /* Theme */,
+				A4A29F302F2467EB00CD8BFF /* Views */,
+				A4A29F312F2467EB00CD8BFF /* Assets.xcassets */,
+				A4A29F322F2467EB00CD8BFF /* ContentView.swift */,
+				A4A29F332F2467EB00CD8BFF /* Info.plist */,
+				A4A29F342F2467EB00CD8BFF /* NapletWatchApp.swift */,
+			);
+			path = NapletWatch;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6100000000000001 /* Naplet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7100000000000003 /* Build configuration list for PBXNativeTarget "Naplet" */;
+			buildPhases = (
+				6100000000000002 /* Sources */,
+				4100000000000001 /* Frameworks */,
+				6100000000000003 /* Resources */,
+				A420A0C12F2441C300B950DB /* Embed Foundation Extensions */,
+				A4A29F212F24647300CD8BFF /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Naplet;
+			packageProductDependencies = (
+				9100000000000001 /* Supabase */,
+				9100000000000002 /* RevenueCat */,
+				A419034A2F2EEE6700FFC095 /* GoogleSignIn */,
+				A419034C2F2EEE6700FFC095 /* GoogleSignInSwift */,
+			);
+			productName = Naplet;
+			productReference = 3100000000000001 /* Naplet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					6100000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 7100000000000001 /* Build configuration list for PBXProject "Naplet" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = "pt-BR";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				"pt-BR",
+				es,
+				en,
+				Base,
+				pt,
+			);
+			mainGroup = 5000000000000000;
+			packageReferences = (
+				8000000000000001 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				8000000000000002 /* XCRemoteSwiftPackageReference "purchases-ios" */,
+				A41903492F2EEE6700FFC095 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
+			productRefGroup = 5000000000000002 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6100000000000001 /* Naplet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6100000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1100000000000100 /* Assets.xcassets in Resources */,
+				1100000000000101 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6100000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1100000000000001 /* NapletApp.swift in Sources */,
+				1100000000000002 /* ContentView.swift in Sources */,
+				1100000000000003 /* AppDelegate.swift in Sources */,
+				1100000000000010 /* NapletColors.swift in Sources */,
+				1100000000000011 /* NapletTypography.swift in Sources */,
+				1100000000000012 /* NapletSpacing.swift in Sources */,
+				1100000000000020 /* NapletButton.swift in Sources */,
+				1100000000000021 /* NapletCard.swift in Sources */,
+				1100000000000022 /* NapletIcon.swift in Sources */,
+				1100000000000023 /* NapletTextField.swift in Sources */,
+				1100000000000024 /* SleepCircleProgress.swift in Sources */,
+				1100000000000025 /* ActionButton.swift in Sources */,
+				1100000000000030 /* Date+Extensions.swift in Sources */,
+				1100000000000031 /* View+Extensions.swift in Sources */,
+				1100000000000032 /* Color+Extensions.swift in Sources */,
+				1100000000000040 /* Constants.swift in Sources */,
+				1100000000000041 /* Logger.swift in Sources */,
+				1100000000000042 /* LocalizationManager.swift in Sources */,
+				1100000000001010 /* ScreenshotDetector.swift in Sources */,
+				1100000000000045 /* AppConfig.swift in Sources */,
+				1100000000000046 /* Environment.swift in Sources */,
+				1100000000000050 /* Baby.swift in Sources */,
+				1100000000000051 /* SleepRecord.swift in Sources */,
+				1100000000000052 /* User.swift in Sources */,
+				1100000000000053 /* Caregiver.swift in Sources */,
+				1100000000000057 /* BabyRepository.swift in Sources */,
+				1100000000000058 /* SleepRepository.swift in Sources */,
+				1100000000000055 /* SupabaseService.swift in Sources */,
+				1100000000000056 /* PurchaseService.swift in Sources */,
+				1100000000000060 /* OnboardingView.swift in Sources */,
+				1100000000000061 /* OnboardingViewModel.swift in Sources */,
+				1100000000000062 /* OnboardingComponents.swift in Sources */,
+				1100000000000070 /* DashboardView.swift in Sources */,
+				1100000000000071 /* DashboardViewModel.swift in Sources */,
+				1100000000000A01 /* ActivityItem.swift in Sources */,
+				1100000000000080 /* SleepTrackingView.swift in Sources */,
+				1100000000000081 /* SleepTrackingViewModel.swift in Sources */,
+				1100000000000090 /* SettingsView.swift in Sources */,
+				1100000000000091 /* SettingsViewModel.swift in Sources */,
+				1100000000000095 /* SignInView.swift in Sources */,
+				1100000000000110 /* SleepHistoryView.swift in Sources */,
+				1100000000000111 /* SleepHistoryViewModel.swift in Sources */,
+				1100000000000120 /* NotificationService.swift in Sources */,
+				1100000000000121 /* NotificationDelegate.swift in Sources */,
+				1100000000000122 /* NotificationSettingsView.swift in Sources */,
+				1100000000000123 /* EditBabyProfileView.swift in Sources */,
+				1100000000006001 /* AddBabyView.swift in Sources */,
+				1100000000000124 /* EditBabyProfileViewModel.swift in Sources */,
+				1100000000000130 /* AnimatedComponents.swift in Sources */,
+				1100000000000131 /* EnhancedCards.swift in Sources */,
+				1100000000000140 /* ChatMessage.swift in Sources */,
+				1100000000000141 /* OpenAIService.swift in Sources */,
+				1100000000000142 /* ChatViewModel.swift in Sources */,
+				1100000000000143 /* ChatView.swift in Sources */,
+				1100000000000144 /* ChatHistoryView.swift in Sources */,
+				1100000000000150 /* PDFReportService.swift in Sources */,
+				1100000000000151 /* ReportViewModel.swift in Sources */,
+				1100000000000152 /* ReportView.swift in Sources */,
+				1100000000000160 /* CaregiverViewModel.swift in Sources */,
+				1100000000000161 /* CaregiversView.swift in Sources */,
+				1100000000000162 /* CreateInviteSheet.swift in Sources */,
+				1100000000000163 /* AcceptInviteView.swift in Sources */,
+				1100000000000164 /* CaregiverRepository.swift in Sources */,
+				1100000000000170 /* iOSConnectivityManager.swift in Sources */,
+				1100000000000180 /* WidgetDataManager.swift in Sources */,
+				1100000000000190 /* String+Localization.swift in Sources */,
+				1100000000000300 /* FeedingRecord.swift in Sources */,
+				1100000000000301 /* FeedingRepository.swift in Sources */,
+				1100000000000302 /* FeedingViewModel.swift in Sources */,
+				1100000000000303 /* FeedingView.swift in Sources */,
+				1100000000000304 /* BreastFeedingTimerView.swift in Sources */,
+				1100000000000305 /* BottleFeedingView.swift in Sources */,
+				1100000000000306 /* FeedingHistoryView.swift in Sources */,
+				1100000000000307 /* PumpingView.swift in Sources */,
+				1100000000000400 /* DiaperRecord.swift in Sources */,
+				1100000000000401 /* DiaperRepository.swift in Sources */,
+				1100000000000402 /* DiaperViewModel.swift in Sources */,
+				1100000000000403 /* DiaperChangeView.swift in Sources */,
+				1100000000000410 /* HealthRecord.swift in Sources */,
+				1100000000000411 /* HealthRepository.swift in Sources */,
+				1100000000000412 /* HealthViewModel.swift in Sources */,
+				1100000000000413 /* TemperatureView.swift in Sources */,
+				1100000000000414 /* MedicationView.swift in Sources */,
+				1100000000000420 /* TimeAdjustButtons.swift in Sources */,
+				1100000000000500 /* SubscriptionManager.swift in Sources */,
+				1100000000000510 /* PaywallViewModel.swift in Sources */,
+				1100000000000511 /* PaywallView.swift in Sources */,
+				1100000000000512 /* PaywallTrigger.swift in Sources */,
+				1100000000000600 /* RatingManager.swift in Sources */,
+				1100000000000601 /* RatingPromptView.swift in Sources */,
+				1100000000000610 /* PrivacyPolicyView.swift in Sources */,
+				1100000000000611 /* TermsOfServiceView.swift in Sources */,
+				1100000000000700 /* AvatarView.swift in Sources */,
+				1100000000000710 /* ProfileViewModel.swift in Sources */,
+				1100000000000711 /* ProfileView.swift in Sources */,
+				1100000000000800 /* BathRecord.swift in Sources */,
+				1100000000000801 /* BathRepository.swift in Sources */,
+				1100000000000802 /* BathViewModel.swift in Sources */,
+				1100000000000803 /* BathView.swift in Sources */,
+				1100000000000900 /* SleepEnums.swift in Sources */,
+				1100000000000901 /* SleepLocationPicker.swift in Sources */,
+				1100000000000902 /* SleepMoodPickers.swift in Sources */,
+				1100000000001000 /* SupportModels.swift in Sources */,
+				1100000000001001 /* SupportViewModel.swift in Sources */,
+				1100000000001002 /* SupportView.swift in Sources */,
+				1100000000001003 /* FAQView.swift in Sources */,
+				1100000000001004 /* ContactFormView.swift in Sources */,
+				1100000000001005 /* SupabaseService+Support.swift in Sources */,
+				1100000000002001 /* ReferralModels.swift in Sources */,
+				1100000000002002 /* ReferralRepository.swift in Sources */,
+				1100000000002003 /* ReferralViewModel.swift in Sources */,
+				1100000000002004 /* ReferralView.swift in Sources */,
+				1100000000002005 /* ReferralButton.swift in Sources */,
+				1100000000003000 /* MedicationSchedule.swift in Sources */,
+				1100000000003001 /* MedicationScheduleRepository.swift in Sources */,
+				1100000000003002 /* MedicationScheduleView.swift in Sources */,
+				1100000000003003 /* MedicationReminderCard.swift in Sources */,
+				1100000000003004 /* MedicationScheduleViewModel.swift in Sources */,
+				1100000000003005 /* MedicationScheduleListViewModel.swift in Sources */,
+				1100000000004000 /* VaccinationModels.swift in Sources */,
+				1100000000004001 /* VaccinationRepository.swift in Sources */,
+				1100000000004002 /* VaccinationDashboardViewModel.swift in Sources */,
+				1100000000004003 /* VaccinationDashboardView.swift in Sources */,
+				1100000000004004 /* VaccinationDetailView.swift in Sources */,
+				1100000000005000 /* DocumentModels.swift in Sources */,
+				1100000000005001 /* DocumentRepository.swift in Sources */,
+				1100000000005002 /* DocumentsViewModel.swift in Sources */,
+				1100000000005003 /* DocumentsView.swift in Sources */,
+				1100000000005004 /* AddDocumentView.swift in Sources */,
+				1100000000005005 /* DocumentDetailView.swift in Sources */,
+				1100000000006000 /* HapticManager.swift in Sources */,
+				1100000000007001 /* TimelineModels.swift in Sources */,
+				1100000000007002 /* TimelineView.swift in Sources */,
+				1100000000008001 /* BabySleepPreferences.swift in Sources */,
+				1100000000008002 /* SleepLearningService.swift in Sources */,
+				1100000000009001 /* SleepScheduleSettingsView.swift in Sources */,
+				1100000000009002 /* SleepScheduleSettingsViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2100000000000101 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2100000000000103 /* pt-BR */,
+				2100000000000104 /* es */,
+				2100000000000105 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		A4A29F282F2467EB00CD8BFF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4A29F252F2467EB00CD8BFF /* en */,
+				A4A29F262F2467EB00CD8BFF /* es */,
+				A4A29F272F2467EB00CD8BFF /* pt */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8100000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8100000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8100000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Naplet/Naplet.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9335JM8ZTU;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Naplet/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Naplet;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Naplet precisa de acesso a camera para tirar fotos do seu bebe.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Naplet precisa de acesso as suas fotos para salvar o QR Code de indicacao e fotos do seu bebe.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arm64;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.naplet.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Naplet App Store";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		8100000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Naplet/Naplet.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9335JM8ZTU;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Naplet/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Naplet;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Naplet precisa de acesso a camera para tirar fotos do seu bebe.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Naplet precisa de acesso as suas fotos para salvar o QR Code de indicacao e fotos do seu bebe.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arm64;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.naplet.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Naplet App Store";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7100000000000001 /* Build configuration list for PBXProject "Naplet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8100000000000001 /* Debug */,
+				8100000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7100000000000003 /* Build configuration list for PBXNativeTarget "Naplet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8100000000000003 /* Debug */,
+				8100000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8000000000000001 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		8000000000000002 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		A41903492F2EEE6700FFC095 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9100000000000001 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8000000000000001 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+		9100000000000002 /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8000000000000002 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = RevenueCat;
+		};
+		A419034A2F2EEE6700FFC095 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A41903492F2EEE6700FFC095 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		A419034C2F2EEE6700FFC095 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A41903492F2EEE6700FFC095 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 6000000000000001 /* Project object */;
+}

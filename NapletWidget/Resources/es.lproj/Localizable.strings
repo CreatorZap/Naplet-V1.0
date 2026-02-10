@@ -1,0 +1,45 @@
+/* ================================================
+   NAPLET WIDGET - LOCALIZACIÓN ESPAÑOL
+   ================================================ */
+
+// Estado del bebé
+"widget.awake" = "Despierto";
+"widget.sleeping" = "Durmiendo";
+"widget.sleepingFor" = "Durmiendo hace %@";
+"widget.napping" = "Siesta";
+
+// Estadísticas
+"widget.sleepToday" = "Sueño hoy";
+"widget.napToday" = "Siestas hoy";
+"widget.lastNap" = "Última siesta";
+"widget.lastSleep" = "Último sueño";
+"widget.wakeWindow" = "Ventana de sueño";
+
+// Dashboard stats
+"dashboard.stats.naps" = "Siestas";
+"dashboard.stats.totalSleep" = "Total";
+"dashboard.stats.nightSleep" = "Nocturno";
+
+// Tiempo
+"widget.hours" = "h";
+"widget.minutes" = "min";
+"widget.now" = "Ahora";
+"widget.ago" = "hace";
+
+// Quick Actions Widget
+"widget.quickAction.nap" = "Siesta";
+"widget.quickAction.feed" = "Comida";
+"widget.quickAction.diaper" = "Pañal";
+"widget.quickAction.sleep" = "Dormir";
+"widget.quickAction.wakeUp" = "Despertar";
+
+// Placeholder
+"widget.noBaby" = "Agrega un bebé";
+"widget.noData" = "Sin datos";
+"widget.tapToSetup" = "Toca para configurar";
+
+// Widget Configuration
+"widget.sleepStatus.name" = "Sueño del Bebé";
+"widget.sleepStatus.description" = "Sigue el sueño de tu bebé en tiempo real";
+"widget.quickAction.title" = "Acciones Rápidas";
+"widget.quickAction.description" = "Registra actividades rápidamente";

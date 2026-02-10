@@ -1,0 +1,87 @@
+# Cursor Rules - Naplet iOS App
+
+## Project Overview
+Naplet is a baby care tracking iOS app built with SwiftUI and Supabase.
+The app is 95% complete and ready for launch - be extremely careful with changes.
+
+## Critical Rules
+
+### 1. DO NOT Break Existing Functionality
+- NEVER remove code that "seems unused"
+- NEVER replace entire functions without understanding context
+- NEVER refactor working code
+- NEVER change names of existing variables/functions
+- NEVER alter execution order of async code
+
+### 2. Always Ask Before Modifying Critical Files
+Critical files that require permission:
+- AppDelegate.swift, ContentView.swift, NapletApp.swift
+- SupabaseService.swift, AppConfig.swift
+- Any *ViewModel.swift file
+- Any *Repository.swift file
+- Any *Service.swift file
+
+### 3. Working Features - DO NOT Touch
+These features are 100% working:
+- Authentication (Sign in with Apple + Email)
+- Baby registration
+- Sleep tracking (start/stop timer)
+- Feeding tracking
+- Diaper tracking
+- Bath tracking
+- Temperature tracking
+- Medication tracking
+- AI Chat
+- History with charts
+- Supabase sync
+- Complete onboarding
+- Paywall
+- Settings
+- Multi-caregiver
+
+### 4. Async Code Rules
+- Maintain execution order (await A before await B)
+- Do not move await calls to different locations
+- Do not remove await from existing functions
+- Do not add await where there was none
+
+### 5. Icons and Emojis - IMPORTANT
+- NEVER use emojis anywhere in the code
+- ALWAYS use SF Symbols for icons
+- Use simple bullets (•) for PDF lists
+
+Icon mapping:
+| Meaning | SF Symbol |
+|---------|-----------|
+| Love/Happy | heart.fill |
+| Sad/Cried | cloud.rain.fill |
+| OK/Normal | hand.thumbsup.fill |
+| Sleep | moon.zzz.fill |
+| Alert | exclamationmark.triangle.fill |
+| Clock | clock.fill |
+| Sunrise | sunrise.fill |
+| Bell | bell.fill |
+
+### 6. Before Any Task
+Ask yourself:
+1. Which files will I modify?
+2. Are any critical files involved?
+3. Can my change affect working features?
+4. Am I ADDING code or MODIFYING existing code?
+5. Should I ask before proceeding?
+
+### 7. If Something Goes Wrong
+1. STOP immediately
+2. SHOW exactly what you changed
+3. REVERT the change if possible
+4. ASK how to proceed
+
+### 8. Code Style
+- Use Swift best practices
+- Follow existing patterns in the codebase
+- Use NapletColors, NapletTypography, NapletSpacing for styling
+- Maintain consistent naming conventions
+
+## Response Format
+When starting any task, confirm:
+"I understand the rules. I will preserve existing code and use only SF Symbols."

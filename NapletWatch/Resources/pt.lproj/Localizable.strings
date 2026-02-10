@@ -1,0 +1,41 @@
+/* ================================================
+   NAPLET WATCH - LOCALIZAÇÃO PT-BR
+   ================================================ */
+
+// Status
+"watch.awake" = "Acordado";
+"watch.sleeping" = "Dormindo";
+"watch.napping" = "Cochilando";
+
+// Ações
+"watch.sleep" = "Dormir";
+"watch.wakeUp" = "Acordar";
+"watch.startSleep" = "Iniciar Sono";
+"watch.stopSleep" = "Parar Sono";
+
+// Estatísticas
+"watch.todaySleep" = "Sono hoje";
+"watch.naps" = "Sonecas";
+"watch.totalSleep" = "Total";
+
+// Tipos de sono
+"watch.sleepType.nap" = "Soneca";
+"watch.sleepType.night" = "Noturno";
+
+// Tempo
+"watch.now" = "Agora";
+"watch.minutesAgo" = "há %d min";
+"watch.hoursAgo" = "há %dh %dm";
+
+// Geral
+"watch.baby" = "Bebê";
+"watch.loading" = "Carregando...";
+"watch.notConnected" = "iPhone não conectado";
+
+// Confirmação
+"sleep.endSleep" = "Encerrar sono?";
+"common.cancel" = "Cancelar";
+"common.confirm" = "Confirmar";
+
+// Configurações
+"settings.baby" = "Bebê";

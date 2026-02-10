@@ -1,0 +1,41 @@
+/* ================================================
+   NAPLET WATCH - ENGLISH LOCALIZATION
+   ================================================ */
+
+// Status
+"watch.awake" = "Awake";
+"watch.sleeping" = "Sleeping";
+"watch.napping" = "Napping";
+
+// Actions
+"watch.sleep" = "Sleep";
+"watch.wakeUp" = "Wake Up";
+"watch.startSleep" = "Start Sleep";
+"watch.stopSleep" = "Stop Sleep";
+
+// Statistics
+"watch.todaySleep" = "Sleep today";
+"watch.naps" = "Naps";
+"watch.totalSleep" = "Total";
+
+// Sleep types
+"watch.sleepType.nap" = "Nap";
+"watch.sleepType.night" = "Night";
+
+// Time
+"watch.now" = "Now";
+"watch.minutesAgo" = "%d min ago";
+"watch.hoursAgo" = "%dh %dm ago";
+
+// General
+"watch.baby" = "Baby";
+"watch.loading" = "Loading...";
+"watch.notConnected" = "iPhone not connected";
+
+// Confirmation
+"sleep.endSleep" = "End sleep?";
+"common.cancel" = "Cancel";
+"common.confirm" = "Confirm";
+
+// Settings
+"settings.baby" = "Baby";
