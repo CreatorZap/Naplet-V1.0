@@ -14,6 +14,8 @@ class SettingsViewModel: ObservableObject {
     @Published var selectedBabyId: UUID?
     @Published var isSigningOut: Bool = false
     @Published var signOutError: String?
+    @Published var isDeletingAccount: Bool = false
+    @Published var deleteAccountError: String?
 
     // Preferences
     @Published var notificationsEnabled: Bool {
@@ -37,6 +39,16 @@ class SettingsViewModel: ObservableObject {
         }
     }
 
+    @Published var aiDataSharingEnabled: Bool {
+        didSet {
+            if aiDataSharingEnabled {
+                AIConsentManager.grantConsent()
+            } else {
+                AIConsentManager.revokeConsent()
+            }
+        }
+    }
+
     // Sheets
     @Published var showAddBaby: Bool = false
     @Published var showEditProfile: Bool = false
@@ -52,6 +64,7 @@ class SettingsViewModel: ObservableObject {
         self.hapticFeedbackEnabled = UserDefaults.standard.object(forKey: Constants.StorageKeys.hapticFeedbackEnabled) as? Bool ?? true
         self.use24HourFormat = UserDefaults.standard.bool(forKey: "use24HourFormat")
         self.showWakeWindows = UserDefaults.standard.object(forKey: "showWakeWindows") as? Bool ?? true
+        self.aiDataSharingEnabled = AIConsentManager.hasConsent
 
         loadData()
     }
@@ -157,10 +170,16 @@ class SettingsViewModel: ObservableObject {
                 UserDefaults.standard.removeObject(forKey: Constants.StorageKeys.userId)
                 UserDefaults.standard.removeObject(forKey: Constants.StorageKeys.hasCompletedOnboarding)
                 UserDefaults.standard.removeObject(forKey: Constants.StorageKeys.currentBabyId)
+                UserDefaults.standard.removeObject(forKey: "currentBaby")
 
                 user = nil
                 babies = []
                 selectedBabyId = nil
+
+                // Notificar o app para atualizar o estado de auth
+                await MainActor.run {
+                    NotificationCenter.default.post(name: NSNotification.Name("UserDidSignOut"), object: nil)
+                }
 
                 Logger.info("User signed out successfully")
             } catch {
@@ -169,6 +188,42 @@ class SettingsViewModel: ObservableObject {
             }
 
             isSigningOut = false
+        }
+    }
+
+    func deleteAccount() {
+        isDeletingAccount = true
+        deleteAccountError = nil
+
+        Task {
+            do {
+                // Delete account and all data from Supabase
+                try await supabaseService.deleteAccount()
+
+                // Clear ALL local user data
+                UserDefaults.standard.removeObject(forKey: Constants.StorageKeys.userId)
+                UserDefaults.standard.removeObject(forKey: Constants.StorageKeys.hasCompletedOnboarding)
+                UserDefaults.standard.removeObject(forKey: Constants.StorageKeys.currentBabyId)
+                UserDefaults.standard.removeObject(forKey: "currentBaby")
+                UserDefaults.standard.removeObject(forKey: "selectedSleepGoals")
+                AIConsentManager.revokeConsent()
+
+                user = nil
+                babies = []
+                selectedBabyId = nil
+
+                // Notificar o app para atualizar o estado de auth
+                await MainActor.run {
+                    NotificationCenter.default.post(name: NSNotification.Name("UserDidSignOut"), object: nil)
+                }
+
+                Logger.info("Account deleted successfully")
+            } catch {
+                deleteAccountError = "settings.deleteAccount.error".localized
+                Logger.error("Account deletion failed: \(error.localizedDescription)")
+            }
+
+            isDeletingAccount = false
         }
     }
 

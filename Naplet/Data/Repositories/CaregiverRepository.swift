@@ -367,7 +367,7 @@ class CaregiverRepository: ObservableObject {
     // MARK: - Helper: Generate Invite Code
     private func generateInviteCode() -> String {
         let characters = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789" // Excludes confusing chars like O, 0, I, 1
-        return String((0..<8).map { _ in characters.randomElement()! })
+        return String((0..<8).map { _ in characters.randomElement() ?? Character("A") })
     }
 }
 
@@ -541,6 +541,7 @@ extension CaregiverRepository {
 }
 
 // MARK: - Mock Repository
+#if DEBUG
 final class MockCaregiverRepository {
     var caregivers: [Caregiver] = Caregiver.previewList
     var invites: [Invite] = []
@@ -579,3 +580,4 @@ final class MockCaregiverRepository {
         caregivers.removeAll { $0.id == caregiver.id }
     }
 }
+#endif

@@ -265,13 +265,16 @@ struct PaywallView: View {
     // MARK: - CTA Section
     private var ctaSection: some View {
         Button {
-            Task { await viewModel.purchase() }
+            Task {
+                await viewModel.ctaAction()
+            }
         } label: {
             HStack(spacing: 8) {
-                if viewModel.isPurchasing {
+                if viewModel.isLoadingPrices || viewModel.isPurchasing {
                     ProgressView()
                         .tint(.white)
                 } else {
+                    // Always show purchase text — never "Try Again"
                     Text(viewModel.isFoundersPeriod ? "paywall.cta.founders".localized : "paywall.cta.subscribe".localized)
                         .font(.system(size: 18, weight: .bold))
                 }
@@ -289,68 +292,34 @@ struct PaywallView: View {
             .cornerRadius(16)
             .shadow(color: NapletColors.primaryPurple.opacity(0.4), radius: 12, x: 0, y: 6)
         }
-        .disabled(viewModel.selectedPackage == nil || viewModel.isPurchasing)
-        .opacity((viewModel.selectedPackage == nil || viewModel.isPurchasing) ? 0.6 : 1)
+        .disabled(viewModel.isLoadingPrices || viewModel.isPurchasing)
+        .opacity((viewModel.isLoadingPrices || viewModel.isPurchasing) ? 0.6 : 1)
         .scaleEffect(appearAnimation ? 1 : 0.95)
         .animation(.spring(response: 0.4, dampingFraction: 0.7).delay(0.5), value: appearAnimation)
     }
 
     // MARK: - Social Proof Section
     private var socialProofSection: some View {
-        VStack(spacing: 20) {
-            // Header com badge App Store
-            VStack(spacing: 12) {
-                // Badge App Store
-                HStack(spacing: 6) {
-                    Image(systemName: "star.fill")
-                        .font(.system(size: 12, weight: .semibold))
-                        .foregroundColor(.black)
-                    Text("paywall.social.app_store_rating".localized)
-                        .font(.system(size: 12, weight: .bold))
-                        .foregroundColor(.black)
-                }
-                .padding(.horizontal, 14)
-                .padding(.vertical, 8)
-                .background(
-                    Capsule()
-                        .fill(Color.yellow)
+        VStack(spacing: 12) {
+            Image(systemName: "heart.fill")
+                .font(.system(size: 28))
+                .foregroundStyle(
+                    LinearGradient(
+                        colors: [NapletColors.primaryPurple, NapletColors.primaryPink],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
                 )
 
-                // Título impactante
-                Text("paywall.social.families_title".localized)
-                    .font(.system(size: 22, weight: .bold))
-                    .foregroundColor(NapletColors.textPrimary)
-                    .multilineTextAlignment(.center)
+            Text("paywall.social.join_family".localized)
+                .font(.system(size: 20, weight: .bold))
+                .foregroundColor(NapletColors.textPrimary)
+                .multilineTextAlignment(.center)
 
-                // Subtítulo
-                Text("paywall.social.subtitle".localized)
-                    .font(.system(size: 14))
-                    .foregroundColor(NapletColors.textSecondary)
-            }
-
-            // Reviews
-            VStack(spacing: 12) {
-                PaywallReviewCard(
-                    title: "paywall.review1.title".localized,
-                    description: "paywall.review1.description".localized,
-                    author: "paywall.review1.author".localized,
-                    role: "paywall.review1.role".localized
-                )
-
-                PaywallReviewCard(
-                    title: "paywall.review2.title".localized,
-                    description: "paywall.review2.description".localized,
-                    author: "paywall.review2.author".localized,
-                    role: "paywall.review2.role".localized
-                )
-
-                PaywallReviewCard(
-                    title: "paywall.review3.title".localized,
-                    description: "paywall.review3.description".localized,
-                    author: "paywall.review3.author".localized,
-                    role: "paywall.review3.role".localized
-                )
-            }
+            Text("paywall.social.join_subtitle".localized)
+                .font(.system(size: 14))
+                .foregroundColor(NapletColors.textSecondary)
+                .multilineTextAlignment(.center)
         }
         .padding(.vertical, 8)
         .opacity(appearAnimation ? 1 : 0)
@@ -381,10 +350,21 @@ struct PaywallView: View {
             }
             .disabled(viewModel.isPurchasing)
 
+            // Texto legal obrigatorio Apple (auto-renovacao)
+            Text("paywall.auto_renew_disclaimer".localized)
+                .font(.caption2)
+                .foregroundColor(NapletColors.textMuted)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+
             HStack(spacing: 20) {
-                Link("paywall.terms".localized, destination: URL(string: "https://naplet.app/terms")!)
+                if let termsURL = URL(string: "https://naplet.app/terms") {
+                    Link("paywall.terms".localized, destination: termsURL)
+                }
                 Text("•").foregroundColor(NapletColors.textMuted)
-                Link("paywall.privacy".localized, destination: URL(string: "https://naplet.app/privacy")!)
+                if let privacyURL = URL(string: "https://naplet.app/privacy") {
+                    Link("paywall.privacy".localized, destination: privacyURL)
+                }
             }
             .font(.system(size: 13))
             .foregroundColor(NapletColors.textMuted)
@@ -504,66 +484,6 @@ struct NapletTrustBadge: View {
     }
 }
 
-// MARK: - Paywall Review Card
-struct PaywallReviewCard: View {
-    let title: String
-    let description: String
-    let author: String
-    let role: String
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            // 5 Stars
-            HStack(spacing: 3) {
-                ForEach(0..<5, id: \.self) { _ in
-                    Image(systemName: "star.fill")
-                        .font(.system(size: 12))
-                        .foregroundColor(.yellow)
-                }
-            }
-
-            // Title
-            Text("\"\(title)\"")
-                .font(.system(size: 15, weight: .semibold))
-                .foregroundColor(NapletColors.textPrimary)
-
-            // Description
-            Text(description)
-                .font(.system(size: 13))
-                .foregroundColor(NapletColors.textSecondary)
-                .lineSpacing(2)
-
-            // Author
-            HStack(spacing: 8) {
-                Text("— \(author),")
-                    .font(.system(size: 12, weight: .medium))
-                    .foregroundColor(NapletColors.textPrimary)
-
-                Text(role)
-                    .font(.system(size: 12))
-                    .foregroundColor(NapletColors.textMuted)
-            }
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(16)
-        .background(
-            RoundedRectangle(cornerRadius: 14)
-                .fill(NapletColors.cardBackground)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 14)
-                        .stroke(
-                            LinearGradient(
-                                colors: [NapletColors.primaryPurple.opacity(0.2), NapletColors.primaryPink.opacity(0.1)],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            ),
-                            lineWidth: 1
-                        )
-                )
-        )
-    }
-}
-
 // MARK: - Naplet Package Card
 struct NapletPackageCard: View {
     let package: Package
@@ -573,18 +493,18 @@ struct NapletPackageCard: View {
     let savingsPercentage: Int
     let onSelect: () -> Void
 
-    // Fallback prices (until Apple approves products)
+    // Fallback prices (matching App Store Connect USD prices)
     private var fallbackPrice: String {
         switch package.packageType {
-        case .annual: return "R$ 89,90"
-        case .monthly: return "R$ 12,90"
+        case .annual: return "$21.99"
+        case .monthly: return "$3.49"
         default: return package.localizedPriceString
         }
     }
 
     private var displayPrice: String {
         let price = package.localizedPriceString
-        if price.isEmpty || price == "--" {
+        if price.isEmpty {
             return fallbackPrice
         }
         return price
@@ -617,7 +537,7 @@ struct NapletPackageCard: View {
                             .font(.system(size: 17, weight: .semibold))
                             .foregroundColor(NapletColors.textPrimary)
 
-                        if let equivalent = monthlyEquivalent, equivalent != "--" {
+                        if let equivalent = monthlyEquivalent, !equivalent.isEmpty {
                             Text(String(format: "paywall.package.equivalent".localized, equivalent))
                                 .font(.system(size: 13))
                                 .foregroundColor(NapletColors.textSecondary)

@@ -106,3 +106,14 @@ https://naplet.app/privacidade
 - "Acompanhe a evolução"
 - "Dicas personalizadas de sono"
 - "Cuide em família"
+
+---
+
+## Novidades v1.1 (What's New)
+
+Novidades da v1.1:
+- Previsão de Soneca — Veja quando será a próxima soneca do seu bebê
+- Marcos de Desenvolvimento — Acompanhe os 30 marcos do seu bebê
+- Crescimento — Registre peso, altura e perímetro cefálico com gráficos
+- Notificações Inteligentes — Alertas antes da hora da soneca
+- Preços na moeda local

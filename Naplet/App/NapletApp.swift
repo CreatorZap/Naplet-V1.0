@@ -117,6 +117,7 @@ class AppState: ObservableObject {
     @Published var isLoading: Bool = true
     @Published var hasCompletedOnboarding: Bool = false
     @Published var authState: AuthState = .unknown
+    @Published var isRefreshingAfterLogin: Bool = false
     @Published var currentBaby: Baby?
     @Published var babies: [Baby] = []
 
@@ -127,6 +128,29 @@ class AppState: ObservableObject {
     // MARK: - Initialization
 
     init() {
+        // Conectar callback de auth state change do SupabaseService
+        supabaseService.onSignedIn = { [weak self] user in
+            Task { @MainActor [weak self] in
+                guard let self else { return }
+                let profile = Profile(
+                    id: user.id,
+                    email: user.email,
+                    displayName: user.userMetadata["display_name"]?.stringValue
+                )
+                self.authState = .authenticated(profile)
+            }
+        }
+
+        // Escutar notificação de sign out
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("UserDidSignOut"), object: nil, queue: .main) { [weak self] _ in
+            Task { @MainActor [weak self] in
+                self?.authState = .unauthenticated
+                self?.currentBaby = nil
+                self?.babies = []
+                self?.hasCompletedOnboarding = false
+            }
+        }
+
         Task {
             await checkAppState()
         }
@@ -137,8 +161,14 @@ class AppState: ObservableObject {
     func checkAppState() async {
         Logger.info("Checking app state...")
 
-        // Wait for Supabase to initialize
+        // Wait for Supabase to initialize (max 10 seconds timeout)
+        let startTime = Date()
+        let maxWait: TimeInterval = 10
         while !supabaseService.isInitialized {
+            if Date().timeIntervalSince(startTime) > maxWait {
+                Logger.warning("Supabase initialization timeout after \(maxWait)s - continuing without waiting")
+                break
+            }
             try? await Task.sleep(nanoseconds: 100_000_000) // 0.1 seconds
         }
 
@@ -360,14 +390,32 @@ class AppState: ObservableObject {
     // MARK: - Refresh State (after login)
 
     func refreshAfterLogin() async {
-        guard case .authenticated = authState else { return }
+        // Garantir que authState está autenticado
+        if case .authenticated = authState {
+            // OK, já autenticado
+        } else if let user = supabaseService.currentUser {
+            // Fallback: setar authState a partir do currentUser
+            let profile = Profile(
+                id: user.id,
+                email: user.email,
+                displayName: user.userMetadata["display_name"]?.stringValue
+            )
+            authState = .authenticated(profile)
+        } else {
+            return
+        }
         guard let userId = supabaseService.currentUserId else { return }
 
-        isLoading = true
+        isRefreshingAfterLogin = true
 
         // Verificar acesso de desenvolvedor após login
         purchaseService.checkDeveloperAccess()
 
+        // Configurar RevenueCat
+        await purchaseService.setUserID(userId.uuidString)
+        await SubscriptionManager.shared.setUser(id: userId.uuidString)
+
+        // Buscar bebês do Supabase
         await fetchBabiesFromSupabase(userId: userId)
 
         if babies.isEmpty {
@@ -376,7 +424,7 @@ class AppState: ObservableObject {
             hasCompletedOnboarding = true
         }
 
-        isLoading = false
+        isRefreshingAfterLogin = false
     }
 }
 

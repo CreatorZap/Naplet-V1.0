@@ -10,6 +10,9 @@ struct DashboardView: View {
     @State private var selectedBathRecord: BathRecord?
     @State private var selectedHealthRecord: HealthRecord?
     @State private var showChat = false
+    @State private var showAIConsent = false
+    @State private var consentTriggeredByChat = false
+    @AppStorage("hasShownAIConsentOnce") private var hasShownAIConsentOnce = false
     @State private var showReport = false
     @State private var showFeeding = false
     @State private var showDiaper = false
@@ -19,6 +22,8 @@ struct DashboardView: View {
     @State private var showProfile = false
     @State private var showVaccination = false
     @State private var showDocuments = false
+    @State private var showMilestones = false
+    @State private var showGrowth = false
     @State private var showSleepScheduleSettings = false
 
     var body: some View {
@@ -39,6 +44,20 @@ struct DashboardView: View {
                         LazyVStack(spacing: NapletSpacing.lg) {
                             headerView
                             sleepStatusCard
+
+                            // Wake Window Card
+                            if let baby = viewModel.currentBaby {
+                                WakeWindowCardView(
+                                    status: WakeWindowCalculator.napWindowStatus(
+                                        lastWakeTime: viewModel.lastWakeTime,
+                                        ageInMonths: baby.ageInMonths,
+                                        isSleeping: viewModel.isSleeping,
+                                        sleepStartTime: viewModel.sleepStartTime
+                                    ),
+                                    ageInMonths: baby.ageInMonths,
+                                    wakeWindowProgress: viewModel.wakeWindowProgress
+                                )
+                            }
 
                             // Timeline do dia
                             if !viewModel.timelineEvents.isEmpty {
@@ -81,6 +100,14 @@ struct DashboardView: View {
         .onAppear {
             // Track app launch para sistema de rating
             ratingManager.trackAppLaunch()
+
+            // Auto-show AI consent on first Dashboard appearance (Apple Guideline 5.1.2(i))
+            if AppConfig.Features.enableAIChat && !AIConsentManager.hasConsent && !hasShownAIConsentOnce {
+                hasShownAIConsentOnce = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    showAIConsent = true
+                }
+            }
         }
         .overlay {
             // Rating prompt overlay
@@ -125,6 +152,15 @@ struct DashboardView: View {
                 ChatView(baby: baby, sleepRecords: viewModel.todaysSleepRecords)
                     .presentationBackground(NapletColors.background)
             }
+        }
+        .sheet(isPresented: $showAIConsent) {
+            AIConsentView {
+                if consentTriggeredByChat {
+                    showChat = true
+                }
+                consentTriggeredByChat = false
+            }
+            .presentationBackground(NapletColors.background)
         }
         .sheet(isPresented: $showReport) {
             if let baby = viewModel.currentBaby {
@@ -174,6 +210,22 @@ struct DashboardView: View {
             if let baby = viewModel.currentBaby {
                 NavigationStack {
                     DocumentsView(baby: baby)
+                }
+                .presentationBackground(NapletColors.background)
+            }
+        }
+        .sheet(isPresented: $showMilestones) {
+            if let baby = viewModel.currentBaby {
+                NavigationStack {
+                    MilestonesView(babyId: baby.id, ageInMonths: baby.ageInMonths)
+                }
+                .presentationBackground(NapletColors.background)
+            }
+        }
+        .sheet(isPresented: $showGrowth) {
+            if let baby = viewModel.currentBaby {
+                NavigationStack {
+                    GrowthView(babyId: baby.id, birthDate: baby.birthDate)
                 }
                 .presentationBackground(NapletColors.background)
             }
@@ -835,6 +887,24 @@ struct DashboardView: View {
                     showDocuments = true
                 }
 
+                ActionCardEnhanced(
+                    icon: "star.fill",
+                    title: "milestones.dashboard.title".localized,
+                    subtitle: "milestones.dashboard.subtitle".localized,
+                    gradientColors: [Color(hex: "#F59E0B"), NapletColors.primaryPink]
+                ) {
+                    showMilestones = true
+                }
+
+                ActionCardEnhanced(
+                    icon: "chart.line.uptrend.xyaxis",
+                    title: "growth.dashboard.title".localized,
+                    subtitle: "growth.dashboard.subtitle".localized,
+                    gradientColors: [NapletColors.success, NapletColors.primaryCyan]
+                ) {
+                    showGrowth = true
+                }
+
                 // Sleep Report
                 ActionCardEnhanced(
                     icon: "doc.text.fill",
@@ -853,7 +923,12 @@ struct DashboardView: View {
                         subtitle: L10n.AIChat.subtitle.localized,
                         gradientColors: [NapletColors.primaryPurple, NapletColors.primaryBlue]
                     ) {
-                        showChat = true
+                        if AIConsentManager.hasConsent {
+                            showChat = true
+                        } else {
+                            consentTriggeredByChat = true
+                            showAIConsent = true
+                        }
                     }
                 }
 

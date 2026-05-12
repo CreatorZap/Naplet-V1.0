@@ -131,8 +131,8 @@ final class ContactFormViewModel: ObservableObject {
 // MARK: - Support Actions
 struct SupportActions {
     static func openInstagram() {
-        let instagramURL = URL(string: "instagram://user?username=naplet.app")!
-        let webURL = URL(string: "https://instagram.com/naplet.app")!
+        guard let instagramURL = URL(string: "instagram://user?username=naplet.app"),
+              let webURL = URL(string: "https://instagram.com/naplet.app") else { return }
 
         if UIApplication.shared.canOpenURL(instagramURL) {
             UIApplication.shared.open(instagramURL)
@@ -152,8 +152,8 @@ struct SupportActions {
         // ⚠️ IMPORTANTE: Substituir pelo App ID real após criar no App Store Connect
         // Formato: id seguido de números, ex: id1234567890
         // Obter em: App Store Connect → App Information → Apple ID
-        let appStoreID = "id123456789" // TODO: SUBSTITUIR PELO APP ID REAL
-        let url = URL(string: "https://apps.apple.com/app/naplet/\(appStoreID)")!
+        let appStoreID = "id6758465410"
+        guard let url = URL(string: "https://apps.apple.com/app/naplet/\(appStoreID)") else { return }
 
         let activityVC = UIActivityViewController(
             activityItems: [text, url],

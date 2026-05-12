@@ -24,3 +24,6 @@ Pods/
 *.pem
 *.p12
 Secrets.swift
+
+# macOS metadata files (AppleDouble)
+._*

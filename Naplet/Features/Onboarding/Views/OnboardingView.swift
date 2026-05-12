@@ -20,57 +20,39 @@ struct OnboardingView: View {
                     .padding(.top, NapletSpacing.md)
                 }
 
-                // Content
-                TabView(selection: $viewModel.currentStep) {
-                    // Tela 1: Welcome
-                    WelcomeStepView(viewModel: viewModel)
-                        .tag(OnboardingViewModel.OnboardingStep.welcome)
-
-                    // Tela 2: Benefits
-                    BenefitsStepView(viewModel: viewModel)
-                        .tag(OnboardingViewModel.OnboardingStep.benefits)
-
-                    // Tela 3: Differentials
-                    DifferentialsStepView(viewModel: viewModel)
-                        .tag(OnboardingViewModel.OnboardingStep.differentials)
-
-                    // Tela 4: Attribution
-                    AttributionStepView(viewModel: viewModel)
-                        .tag(OnboardingViewModel.OnboardingStep.attribution)
-
-                    // Tela 5: Goals
-                    GoalsStepView(viewModel: viewModel)
-                        .tag(OnboardingViewModel.OnboardingStep.goals)
-
-                    // Tela 6: Baby Name
-                    BabyNameStepView(viewModel: viewModel)
-                        .tag(OnboardingViewModel.OnboardingStep.babyName)
-
-                    // Tela 7: Baby Birth
-                    BabyBirthStepView(viewModel: viewModel)
-                        .tag(OnboardingViewModel.OnboardingStep.babyBirth)
-
-                    // Tela 8: Baby Gender
-                    BabyGenderStepView(viewModel: viewModel)
-                        .tag(OnboardingViewModel.OnboardingStep.babyGender)
-
-                    // Tela 9: Relationship
-                    RelationshipStepView(viewModel: viewModel)
-                        .tag(OnboardingViewModel.OnboardingStep.relationship)
-
-                    // Tela 10: Confirmation
-                    ConfirmationStepView(viewModel: viewModel)
-                        .tag(OnboardingViewModel.OnboardingStep.confirmation)
-
-                    // Tela 11: Loading
-                    LoadingStepView(viewModel: viewModel)
-                        .tag(OnboardingViewModel.OnboardingStep.loading)
-
-                    // Tela 12: Completion
-                    CompletionStepView(viewModel: viewModel)
-                        .tag(OnboardingViewModel.OnboardingStep.completion)
+                // Content (Group+switch instead of TabView to prevent swipe bypass)
+                Group {
+                    switch viewModel.currentStep {
+                    case .welcome:
+                        WelcomeStepView(viewModel: viewModel)
+                    case .benefits:
+                        BenefitsStepView(viewModel: viewModel)
+                    case .differentials:
+                        DifferentialsStepView(viewModel: viewModel)
+                    case .attribution:
+                        AttributionStepView(viewModel: viewModel)
+                    case .goals:
+                        GoalsStepView(viewModel: viewModel)
+                    case .babyName:
+                        BabyNameStepView(viewModel: viewModel)
+                    case .babyBirth:
+                        BabyBirthStepView(viewModel: viewModel)
+                    case .babyGender:
+                        BabyGenderStepView(viewModel: viewModel)
+                    case .relationship:
+                        RelationshipStepView(viewModel: viewModel)
+                    case .confirmation:
+                        ConfirmationStepView(viewModel: viewModel)
+                    case .loading:
+                        LoadingStepView(viewModel: viewModel)
+                    case .completion:
+                        CompletionStepView(viewModel: viewModel)
+                    }
                 }
-                .tabViewStyle(.page(indexDisplayMode: .never))
+                .transition(.asymmetric(
+                    insertion: .move(edge: .trailing).combined(with: .opacity),
+                    removal: .move(edge: .leading).combined(with: .opacity)
+                ))
                 .animation(.spring(response: 0.35, dampingFraction: 0.85), value: viewModel.currentStep)
             }
         }
@@ -97,45 +79,51 @@ struct WelcomeStepView: View {
     @State private var showLogin = false
 
     var body: some View {
-        VStack(spacing: NapletSpacing.xl) {
-            Spacer()
+        VStack(spacing: 0) {
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: NapletSpacing.xl) {
+                    Spacer(minLength: NapletSpacing.xl)
 
-            // Logo and Illustration
-            VStack(spacing: NapletSpacing.lg) {
-                Image(systemName: "moon.zzz.fill")
-                    .font(.system(size: 80))
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [NapletColors.primaryPurple, NapletColors.primaryPink],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
+                    // Logo and Illustration
+                    VStack(spacing: NapletSpacing.lg) {
+                        Image(systemName: "moon.zzz.fill")
+                            .font(.system(size: 80))
+                            .foregroundStyle(
+                                LinearGradient(
+                                    colors: [NapletColors.primaryPurple, NapletColors.primaryPink],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
 
-                Text("Naplet")
-                    .font(.system(size: 36, weight: .bold, design: .rounded))
-                    .foregroundColor(NapletColors.textPrimary)
+                        Text("Naplet")
+                            .font(.system(size: 36, weight: .bold, design: .rounded))
+                            .foregroundColor(NapletColors.textPrimary)
+                    }
+
+                    // Title and Subtitle
+                    VStack(spacing: NapletSpacing.md) {
+                        Text("onboarding_welcome_title".localized)
+                            .font(NapletTypography.title1())
+                            .foregroundColor(NapletColors.textPrimary)
+                            .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
+
+                        Text("onboarding_welcome_subtitle".localized)
+                            .font(NapletTypography.body())
+                            .foregroundColor(NapletColors.textSecondary)
+                            .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding(.horizontal, NapletSpacing.lg)
+                    }
+
+                    // Social Proof
+                    SocialProofBanner(text: "onboarding_welcome_social_proof".localized)
+                        .padding(.top, NapletSpacing.md)
+
+                    Spacer(minLength: NapletSpacing.xl)
+                }
             }
-
-            // Title and Subtitle
-            VStack(spacing: NapletSpacing.md) {
-                Text("onboarding_welcome_title".localized)
-                    .font(NapletTypography.title1())
-                    .foregroundColor(NapletColors.textPrimary)
-                    .multilineTextAlignment(.center)
-
-                Text("onboarding_welcome_subtitle".localized)
-                    .font(NapletTypography.body())
-                    .foregroundColor(NapletColors.textSecondary)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, NapletSpacing.lg)
-            }
-
-            // Social Proof
-            SocialProofBanner(text: "onboarding_welcome_social_proof".localized)
-                .padding(.top, NapletSpacing.md)
-
-            Spacer()
 
             // Buttons
             VStack(spacing: NapletSpacing.md) {
@@ -442,7 +430,7 @@ struct BabyNameStepView: View {
     @FocusState private var isNameFocused: Bool
 
     var body: some View {
-        VStack(spacing: NapletSpacing.lg) {
+        VStack(spacing: 0) {
             // Back button
             HStack {
                 OnboardingBackButton { viewModel.previousStep() }
@@ -450,52 +438,58 @@ struct BabyNameStepView: View {
             }
             .padding(.horizontal, NapletSpacing.md)
 
-            Spacer()
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: NapletSpacing.lg) {
+                    Spacer(minLength: NapletSpacing.xl)
 
-            // Illustration
-            Image(systemName: "face.smiling.fill")
-                .font(.system(size: 80))
-                .foregroundStyle(
-                    LinearGradient(
-                        colors: [NapletColors.primaryPurple, NapletColors.primaryPink],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
+                    // Illustration
+                    Image(systemName: "face.smiling.fill")
+                        .font(.system(size: 80))
+                        .foregroundStyle(
+                            LinearGradient(
+                                colors: [NapletColors.primaryPurple, NapletColors.primaryPink],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
 
-            // Header
-            VStack(spacing: NapletSpacing.sm) {
-                Text("onboarding_baby_name_title".localized)
-                    .font(NapletTypography.title1())
-                    .foregroundColor(NapletColors.textPrimary)
-                    .multilineTextAlignment(.center)
+                    // Header
+                    VStack(spacing: NapletSpacing.sm) {
+                        Text("onboarding_baby_name_title".localized)
+                            .font(NapletTypography.title1())
+                            .foregroundColor(NapletColors.textPrimary)
+                            .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
 
-                Text("onboarding_baby_name_subtitle".localized)
-                    .font(NapletTypography.body())
-                    .foregroundColor(NapletColors.textSecondary)
-                    .multilineTextAlignment(.center)
-            }
+                        Text("onboarding_baby_name_subtitle".localized)
+                            .font(NapletTypography.body())
+                            .foregroundColor(NapletColors.textSecondary)
+                            .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
 
-            // Text Field
-            TextField("", text: $viewModel.babyName)
-                .placeholder(when: viewModel.babyName.isEmpty) {
-                    Text("onboarding_baby_name_placeholder".localized)
+                    // Text Field
+                    TextField("", text: $viewModel.babyName)
+                        .placeholder(when: viewModel.babyName.isEmpty) {
+                            Text("onboarding_baby_name_placeholder".localized)
+                                .foregroundColor(NapletColors.textMuted)
+                        }
+                        .font(NapletTypography.title2())
+                        .foregroundColor(NapletColors.textPrimary)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                        .background(NapletColors.backgroundSecondary)
+                        .cornerRadius(16)
+                        .padding(.horizontal, NapletSpacing.xl)
+                        .focused($isNameFocused)
+
+                    Text("onboarding_baby_name_hint".localized)
+                        .font(NapletTypography.caption())
                         .foregroundColor(NapletColors.textMuted)
+
+                    Spacer(minLength: NapletSpacing.xl)
                 }
-                .font(NapletTypography.title2())
-                .foregroundColor(NapletColors.textPrimary)
-                .multilineTextAlignment(.center)
-                .padding()
-                .background(NapletColors.backgroundSecondary)
-                .cornerRadius(16)
-                .padding(.horizontal, NapletSpacing.xl)
-                .focused($isNameFocused)
-
-            Text("onboarding_baby_name_hint".localized)
-                .font(NapletTypography.caption())
-                .foregroundColor(NapletColors.textMuted)
-
-            Spacer()
+            }
 
             OnboardingPrimaryButton(
                 "common.next".localized,
@@ -519,7 +513,7 @@ struct BabyBirthStepView: View {
     @ObservedObject var viewModel: OnboardingViewModel
 
     var body: some View {
-        VStack(spacing: NapletSpacing.lg) {
+        VStack(spacing: 0) {
             // Back button
             HStack {
                 OnboardingBackButton { viewModel.previousStep() }
@@ -527,72 +521,88 @@ struct BabyBirthStepView: View {
             }
             .padding(.horizontal, NapletSpacing.md)
 
-            Spacer()
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: NapletSpacing.lg) {
+                    Spacer(minLength: NapletSpacing.xl)
 
-            // Illustration
-            Image(systemName: "birthday.cake.fill")
-                .font(.system(size: 80))
-                .foregroundStyle(
-                    LinearGradient(
-                        colors: [NapletColors.primaryPink, NapletColors.warning],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
+                    // Illustration
+                    Image(systemName: "birthday.cake.fill")
+                        .font(.system(size: 80))
+                        .foregroundStyle(
+                            LinearGradient(
+                                colors: [NapletColors.primaryPink, NapletColors.warning],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
 
-            // Header
-            VStack(spacing: NapletSpacing.sm) {
-                Text(String(format: "onboarding_baby_birth_title".localized, viewModel.babyName))
-                    .font(NapletTypography.title1())
-                    .foregroundColor(NapletColors.textPrimary)
-                    .multilineTextAlignment(.center)
+                    // Header
+                    VStack(spacing: NapletSpacing.sm) {
+                        Text(String(format: "onboarding_baby_birth_title".localized, viewModel.babyName))
+                            .font(NapletTypography.title1())
+                            .foregroundColor(NapletColors.textPrimary)
+                            .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
 
-                Text(String(format: "onboarding_baby_birth_subtitle".localized, viewModel.babyName))
-                    .font(NapletTypography.body())
-                    .foregroundColor(NapletColors.textSecondary)
-                    .multilineTextAlignment(.center)
+                        Text(String(format: "onboarding_baby_birth_subtitle".localized, viewModel.babyName))
+                            .font(NapletTypography.body())
+                            .foregroundColor(NapletColors.textSecondary)
+                            .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding(.horizontal, NapletSpacing.lg)
+
+                        MicrocopyText(
+                            text: "onboarding_baby_birth_microcopy".localized,
+                            iconName: "info.circle"
+                        )
+                    }
+
+                    // Toggle for not born yet
+                    Toggle(isOn: $viewModel.babyNotBornYet) {
+                        Text("onboarding_baby_not_born".localized)
+                            .font(NapletTypography.body())
+                            .foregroundColor(NapletColors.textPrimary)
+                    }
+                    .toggleStyle(SwitchToggleStyle(tint: NapletColors.primaryPurple))
+                    .padding(.horizontal, NapletSpacing.xl)
+                    .padding(.vertical, NapletSpacing.md)
+                    .background(NapletColors.backgroundSecondary)
+                    .cornerRadius(12)
                     .padding(.horizontal, NapletSpacing.lg)
+                    .onChange(of: viewModel.babyNotBornYet) { _, newValue in
+                        if newValue {
+                            viewModel.birthDateWasSelected = true
+                        }
+                    }
 
-                MicrocopyText(
-                    text: "onboarding_baby_birth_microcopy".localized,
-                    iconName: "info.circle"
-                )
+                    // Date Picker
+                    if !viewModel.babyNotBornYet {
+                        DatePicker(
+                            "",
+                            selection: $viewModel.babyBirthDate,
+                            in: ...Date(),
+                            displayedComponents: .date
+                        )
+                        .datePickerStyle(.wheel)
+                        .labelsHidden()
+                        .colorScheme(.dark)
+                        .padding(.horizontal, NapletSpacing.lg)
+                        .onChange(of: viewModel.babyBirthDate) { _, _ in
+                            viewModel.birthDateWasSelected = true
+                        }
+                    }
+
+                    Spacer(minLength: NapletSpacing.xl)
+                }
             }
 
-            // Toggle for not born yet
-            Toggle(isOn: $viewModel.babyNotBornYet) {
-                Text("onboarding_baby_not_born".localized)
-                    .font(NapletTypography.body())
-                    .foregroundColor(NapletColors.textPrimary)
-            }
-            .toggleStyle(SwitchToggleStyle(tint: NapletColors.primaryPurple))
-            .padding(.horizontal, NapletSpacing.xl)
-            .padding(.vertical, NapletSpacing.md)
-            .background(NapletColors.backgroundSecondary)
-            .cornerRadius(12)
-            .padding(.horizontal, NapletSpacing.lg)
-
-            // Date Picker
-            if !viewModel.babyNotBornYet {
-                DatePicker(
-                    "",
-                    selection: $viewModel.babyBirthDate,
-                    in: ...Date(),
-                    displayedComponents: .date
-                )
-                .datePickerStyle(.wheel)
-                .labelsHidden()
-                .colorScheme(.dark)
-                .padding(.horizontal, NapletSpacing.lg)
-            }
-
-            Spacer()
-
-            OnboardingPrimaryButton("common.next".localized, icon: "arrow.right") {
+            OnboardingPrimaryButton(
+                "common.next".localized,
+                icon: "arrow.right",
+                isDisabled: !viewModel.isValidBirthDate
+            ) {
                 viewModel.nextStep()
             }
-            .disabled(!viewModel.isValidBirthDate)
-            .opacity(!viewModel.isValidBirthDate ? 0.5 : 1.0)
             .padding(.bottom, NapletSpacing.xxl)
         }
     }
@@ -603,7 +613,7 @@ struct BabyGenderStepView: View {
     @ObservedObject var viewModel: OnboardingViewModel
 
     var body: some View {
-        VStack(spacing: NapletSpacing.lg) {
+        VStack(spacing: 0) {
             // Back button
             HStack {
                 OnboardingBackButton { viewModel.previousStep() }
@@ -611,64 +621,77 @@ struct BabyGenderStepView: View {
             }
             .padding(.horizontal, NapletSpacing.md)
 
-            Spacer()
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: NapletSpacing.lg) {
+                    Spacer(minLength: NapletSpacing.xl)
 
-            // Illustration
-            Image(systemName: "figure.2.and.child.holdinghands")
-                .font(.system(size: 80))
-                .foregroundStyle(
-                    LinearGradient(
-                        colors: [NapletColors.primaryBlue, NapletColors.primaryPink],
-                        startPoint: .leading,
-                        endPoint: .trailing
-                    )
-                )
+                    // Illustration
+                    Image(systemName: "figure.2.and.child.holdinghands")
+                        .font(.system(size: 80))
+                        .foregroundStyle(
+                            LinearGradient(
+                                colors: [NapletColors.primaryBlue, NapletColors.primaryPink],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
 
-            // Header
-            VStack(spacing: NapletSpacing.sm) {
-                Text(String(format: "onboarding_baby_gender_title".localized, viewModel.babyName))
-                    .font(NapletTypography.title1())
-                    .foregroundColor(NapletColors.textPrimary)
-                    .multilineTextAlignment(.center)
+                    // Header
+                    VStack(spacing: NapletSpacing.sm) {
+                        Text(String(format: "onboarding_baby_gender_title".localized, viewModel.babyName))
+                            .font(NapletTypography.title1())
+                            .foregroundColor(NapletColors.textPrimary)
+                            .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding(.horizontal, NapletSpacing.lg)
+
+                        Text("onboarding_baby_gender_subtitle".localized)
+                            .font(NapletTypography.body())
+                            .foregroundColor(NapletColors.textSecondary)
+                            .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+
+                    // Gender Options
+                    VStack(spacing: NapletSpacing.md) {
+                        SelectableOptionCard(
+                            "onboarding_gender_male".localized,
+                            icon: "figure.stand",
+                            isSelected: viewModel.babyGender == .male
+                        ) {
+                            viewModel.babyGender = .male
+                            viewModel.genderWasSelected = true
+                        }
+
+                        SelectableOptionCard(
+                            "onboarding_gender_female".localized,
+                            icon: "figure.stand.dress",
+                            isSelected: viewModel.babyGender == .female
+                        ) {
+                            viewModel.babyGender = .female
+                            viewModel.genderWasSelected = true
+                        }
+
+                        SelectableOptionCard(
+                            "onboarding_gender_not_specified".localized,
+                            icon: "questionmark.circle",
+                            isSelected: viewModel.genderWasSelected && viewModel.babyGender == nil
+                        ) {
+                            viewModel.babyGender = nil
+                            viewModel.genderWasSelected = true
+                        }
+                    }
                     .padding(.horizontal, NapletSpacing.lg)
 
-                Text("onboarding_baby_gender_subtitle".localized)
-                    .font(NapletTypography.body())
-                    .foregroundColor(NapletColors.textSecondary)
-                    .multilineTextAlignment(.center)
-            }
-
-            // Gender Options
-            VStack(spacing: NapletSpacing.md) {
-                SelectableOptionCard(
-                    "onboarding_gender_male".localized,
-                    icon: "figure.stand",
-                    isSelected: viewModel.babyGender == .male
-                ) {
-                    viewModel.babyGender = .male
-                }
-
-                SelectableOptionCard(
-                    "onboarding_gender_female".localized,
-                    icon: "figure.stand.dress",
-                    isSelected: viewModel.babyGender == .female
-                ) {
-                    viewModel.babyGender = .female
-                }
-
-                SelectableOptionCard(
-                    "onboarding_gender_not_specified".localized,
-                    icon: "questionmark.circle",
-                    isSelected: viewModel.babyGender == nil
-                ) {
-                    viewModel.babyGender = nil
+                    Spacer(minLength: NapletSpacing.xl)
                 }
             }
-            .padding(.horizontal, NapletSpacing.lg)
 
-            Spacer()
-
-            OnboardingPrimaryButton("common.next".localized, icon: "arrow.right") {
+            OnboardingPrimaryButton(
+                "common.next".localized,
+                icon: "arrow.right",
+                isDisabled: !viewModel.genderWasSelected
+            ) {
                 viewModel.nextStep()
             }
             .padding(.bottom, NapletSpacing.xxl)
@@ -681,7 +704,7 @@ struct RelationshipStepView: View {
     @ObservedObject var viewModel: OnboardingViewModel
 
     var body: some View {
-        VStack(spacing: NapletSpacing.lg) {
+        VStack(spacing: 0) {
             // Back button
             HStack {
                 OnboardingBackButton { viewModel.previousStep() }
@@ -689,48 +712,54 @@ struct RelationshipStepView: View {
             }
             .padding(.horizontal, NapletSpacing.md)
 
-            Spacer()
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: NapletSpacing.lg) {
+                    Spacer(minLength: NapletSpacing.xl)
 
-            // Illustration
-            Image(systemName: "heart.fill")
-                .font(.system(size: 80))
-                .foregroundStyle(
-                    LinearGradient(
-                        colors: [NapletColors.primaryPink, NapletColors.primaryPurple],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
+                    // Illustration
+                    Image(systemName: "heart.fill")
+                        .font(.system(size: 80))
+                        .foregroundStyle(
+                            LinearGradient(
+                                colors: [NapletColors.primaryPink, NapletColors.primaryPurple],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
 
-            // Header
-            VStack(spacing: NapletSpacing.sm) {
-                Text(String(format: "onboarding_relationship_title".localized, viewModel.babyName))
-                    .font(NapletTypography.title1())
-                    .foregroundColor(NapletColors.textPrimary)
-                    .multilineTextAlignment(.center)
+                    // Header
+                    VStack(spacing: NapletSpacing.sm) {
+                        Text(String(format: "onboarding_relationship_title".localized, viewModel.babyName))
+                            .font(NapletTypography.title1())
+                            .foregroundColor(NapletColors.textPrimary)
+                            .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding(.horizontal, NapletSpacing.lg)
+
+                        Text("onboarding_relationship_subtitle".localized)
+                            .font(NapletTypography.body())
+                            .foregroundColor(NapletColors.textSecondary)
+                            .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+
+                    // Relationship Options
+                    VStack(spacing: NapletSpacing.sm) {
+                        ForEach(OnboardingViewModel.CaregiverRelationship.allCases) { relationship in
+                            SelectableOptionCard(
+                                relationship.displayName,
+                                icon: relationship.icon,
+                                isSelected: viewModel.relationship == relationship
+                            ) {
+                                viewModel.relationship = relationship
+                            }
+                        }
+                    }
                     .padding(.horizontal, NapletSpacing.lg)
 
-                Text("onboarding_relationship_subtitle".localized)
-                    .font(NapletTypography.body())
-                    .foregroundColor(NapletColors.textSecondary)
-                    .multilineTextAlignment(.center)
-            }
-
-            // Relationship Options
-            VStack(spacing: NapletSpacing.sm) {
-                ForEach(OnboardingViewModel.CaregiverRelationship.allCases) { relationship in
-                    SelectableOptionCard(
-                        relationship.displayName,
-                        icon: relationship.icon,
-                        isSelected: viewModel.relationship == relationship
-                    ) {
-                        viewModel.relationship = relationship
-                    }
+                    Spacer(minLength: NapletSpacing.xl)
                 }
             }
-            .padding(.horizontal, NapletSpacing.lg)
-
-            Spacer()
 
             OnboardingPrimaryButton("common.next".localized, icon: "arrow.right") {
                 viewModel.nextStep()
@@ -815,7 +844,11 @@ struct ConfirmationStepView: View {
 
             Spacer()
 
-            OnboardingPrimaryButton("onboarding_confirm_cta".localized, icon: "checkmark") {
+            OnboardingPrimaryButton(
+                "onboarding_confirm_cta".localized,
+                icon: "checkmark",
+                isDisabled: !viewModel.canConfirmOnboarding
+            ) {
                 viewModel.goToStep(.loading)
                 Task {
                     await viewModel.startLoadingSequence()

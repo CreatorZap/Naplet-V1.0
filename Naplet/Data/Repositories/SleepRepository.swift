@@ -393,6 +393,7 @@ struct NightWakingUpdateDTO: Encodable {
 }
 
 // MARK: - Mock Repository (for testing/preview)
+#if DEBUG
 final class MockSleepRepository {
     var records: [SleepRecord] = []
 
@@ -437,3 +438,4 @@ final class MockSleepRepository {
         records.removeAll { $0.id == id }
     }
 }
+#endif

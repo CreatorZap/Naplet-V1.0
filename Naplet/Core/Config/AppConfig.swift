@@ -55,27 +55,29 @@ enum AppConfig {
     // ============================================
     enum OpenAI {
         /// Chave API do OpenAI
-        /// ⚠️ NOTA: Chave embutida para funcionar no TestFlight/Production
-        /// Variáveis de ambiente do Scheme NÃO funcionam em builds distribuídos
-        private static let embeddedAPIKey = "REDACTED_OPENAI_KEY_REVOKED_2026_05"
+        /// Lida de Info.plist via Build Settings (User-Defined: OPENAI_API_KEY)
+        /// Em Debug, tenta variavel de ambiente primeiro
 
         static var apiKey: String {
-            // 1. Em Debug, tenta variável de ambiente primeiro (para testes locais)
+            // 1. Em Debug, tenta variavel de ambiente primeiro (para testes locais)
             #if DEBUG
             if let key = ProcessInfo.processInfo.environment["OPENAI_API_KEY"]?
                 .trimmingCharacters(in: .whitespacesAndNewlines),
                !key.isEmpty,
                key.hasPrefix("sk-") {
-                print("[OpenAI] Key loaded from Environment")
                 return key
             }
             #endif
 
-            // 2. Usa chave embutida (funciona em Debug, TestFlight e Production)
-            #if DEBUG
-            print("[OpenAI] Using embedded API Key")
-            #endif
-            return embeddedAPIKey
+            // 2. Le de Info.plist (injetada via Build Settings)
+            if let key = Bundle.main.infoDictionary?["OpenAIAPIKey"] as? String,
+               !key.isEmpty,
+               key.hasPrefix("sk-"),
+               !key.contains("$(") {
+                return key
+            }
+
+            return ""
         }
 
         /// Verifica se a API está configurada
@@ -134,7 +136,7 @@ enum AppConfig {
         static let enableSounds = false
         
         /// Habilita exportação para PDF
-        static let enablePDFExport = false
+        static let enablePDFExport = true
         
         /// Habilita widgets para Home Screen
         static let enableWidgets = true
@@ -211,7 +213,7 @@ enum AppConfig {
         static let foundersOfferingId = "founders"
 
         /// Duração do trial (dias)
-        static let trialDays = 14
+        static let trialDays = 7
 
         /// Data de fim do período Founders
         /// ⚠️ AJUSTAR CONFORME DATA DE LANÇAMENTO

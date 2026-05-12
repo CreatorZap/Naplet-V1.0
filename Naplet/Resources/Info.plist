@@ -38,6 +38,8 @@
 	</dict>
 	<key>UIBackgroundModes</key>
 	<array/>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Naplet needs access to save your referral QR code to your photos.</string>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>

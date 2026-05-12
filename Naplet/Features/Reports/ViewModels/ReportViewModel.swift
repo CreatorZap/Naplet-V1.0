@@ -38,7 +38,7 @@ class ReportViewModel: ObservableObject {
         do {
             let calendar = Calendar.current
             let endDate = Date()
-            let startDate = calendar.date(byAdding: .day, value: -selectedPeriod.days, to: endDate)!
+            guard let startDate = calendar.date(byAdding: .day, value: -selectedPeriod.days, to: endDate) else { return }
 
             // Fetch all records in parallel
             async let sleepRecordsTask = fetchSleepRecords(startDate: startDate, endDate: endDate)
@@ -199,8 +199,22 @@ struct ShareSheet: UIViewControllerRepresentable {
     let items: [Any]
 
     func makeUIViewController(context: Context) -> UIActivityViewController {
-        UIActivityViewController(activityItems: items, applicationActivities: nil)
+        let controller = UIActivityViewController(activityItems: items, applicationActivities: nil)
+
+        // iPad requer popover configurado para nao crashar
+        if let popover = controller.popoverPresentationController {
+            popover.permittedArrowDirections = .any
+            popover.sourceView = UIView()
+        }
+
+        return controller
     }
 
-    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
+        // Atualiza sourceRect para o centro da tela no iPad
+        if let popover = uiViewController.popoverPresentationController,
+           let sourceView = popover.sourceView {
+            popover.sourceRect = sourceView.bounds
+        }
+    }
 }

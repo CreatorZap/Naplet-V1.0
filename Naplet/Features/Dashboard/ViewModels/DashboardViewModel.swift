@@ -85,6 +85,7 @@ class DashboardViewModel: ObservableObject {
     private let bathRepository = BathRepository.shared
     private let healthRepository = HealthRepository.shared
     private let notificationService = NotificationService.shared
+    private let wakeWindowNotificationManager = WakeWindowNotificationManager.shared
     private let watchConnectivity = iOSConnectivityManager.shared
     private let learningService = SleepLearningService.shared
 
@@ -193,6 +194,15 @@ class DashboardViewModel: ObservableObject {
                 // Iniciar timer de wake window se nao estiver dormindo
                 if !isSleeping {
                     startWakeWindowTimer()
+
+                    // Reschedule nap reminder on app open if baby is awake
+                    if wakeWindowAlertsEnabled {
+                        wakeWindowNotificationManager.rescheduleIfNeeded(
+                            baby: baby,
+                            lastWakeTime: lastWakeTime,
+                            isSleeping: false
+                        )
+                    }
                 }
             }
         } catch is CancellationError {
@@ -315,6 +325,7 @@ class DashboardViewModel: ObservableObject {
 
             // Cancelar lembretes de soneca (já está dormindo)
             notificationService.cancelNapReminders(for: baby.id)
+            wakeWindowNotificationManager.cancelNapReminder(babyId: baby.id)
 
             // Agendar lembrete para acordar (se for nap, não night sleep)
             if type == .nap {
@@ -359,6 +370,11 @@ class DashboardViewModel: ObservableObject {
                 // Agendar alertas de wake window (se habilitado)
                 await scheduleWakeWindowNotification()
 
+                // Agendar nap reminder via WakeWindowCalculator (30 min antes da janela)
+                if wakeWindowAlertsEnabled {
+                    wakeWindowNotificationManager.scheduleNapReminder(baby: baby, lastWakeTime: Date())
+                }
+
                 // Atualizar lastWakeTime para agora (bebe acabou de acordar)
                 lastWakeTime = Date()
 
@@ -391,8 +407,9 @@ class DashboardViewModel: ObservableObject {
 
         // Pega o último horário que o bebê acordou
         let lastWakeTime: Date
-        if let lastSleep = todaysSleepRecords.first(where: { $0.endTime != nil }) {
-            lastWakeTime = lastSleep.endTime!
+        if let lastSleep = todaysSleepRecords.first(where: { $0.endTime != nil }),
+           let endTime = lastSleep.endTime {
+            lastWakeTime = endTime
         } else {
             // Se não tem registro, assume que acordou agora
             lastWakeTime = Date()

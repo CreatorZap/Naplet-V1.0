@@ -61,6 +61,7 @@
 		1100000000000142 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000142 /* ChatViewModel.swift */; };
 		1100000000000143 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000143 /* ChatView.swift */; };
 		1100000000000144 /* ChatHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000144 /* ChatHistoryView.swift */; };
+		1100000000000145 /* AIConsentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000145 /* AIConsentView.swift */; };
 		1100000000000150 /* PDFReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000150 /* PDFReportService.swift */; };
 		1100000000000151 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000151 /* ReportViewModel.swift */; };
 		1100000000000152 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000152 /* ReportView.swift */; };
@@ -110,6 +111,8 @@
 		1100000000000900 /* SleepEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000900 /* SleepEnums.swift */; };
 		1100000000000901 /* SleepLocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000901 /* SleepLocationPicker.swift */; };
 		1100000000000902 /* SleepMoodPickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000902 /* SleepMoodPickers.swift */; };
+		1100000000000903 /* WakeWindowCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000903 /* WakeWindowCalculator.swift */; };
+		1100000000000904 /* WakeWindowCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000904 /* WakeWindowCardView.swift */; };
 		1100000000000A01 /* ActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000000A01 /* ActivityItem.swift */; };
 		1100000000001000 /* SupportModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000001000 /* SupportModels.swift */; };
 		1100000000001001 /* SupportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000001001 /* SupportViewModel.swift */; };
@@ -148,8 +151,19 @@
 		1100000000008002 /* SleepLearningService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000008002 /* SleepLearningService.swift */; };
 		1100000000009001 /* SleepScheduleSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000009001 /* SleepScheduleSettingsView.swift */; };
 		1100000000009002 /* SleepScheduleSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000009002 /* SleepScheduleSettingsViewModel.swift */; };
+		1100000000006100 /* MilestoneModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000006100 /* MilestoneModels.swift */; };
+		1100000000006101 /* MilestoneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000006101 /* MilestoneRepository.swift */; };
+		1100000000006102 /* MilestonesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000006102 /* MilestonesViewModel.swift */; };
+		1100000000006103 /* MilestonesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000006103 /* MilestonesView.swift */; };
+		1100000000006200 /* GrowthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000006200 /* GrowthModels.swift */; };
+		1100000000006201 /* GrowthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000006201 /* GrowthRepository.swift */; };
+		1100000000006202 /* GrowthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000006202 /* GrowthViewModel.swift */; };
+		1100000000006203 /* GrowthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000006203 /* GrowthView.swift */; };
+		1100000000006204 /* AddGrowthRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000006204 /* AddGrowthRecordView.swift */; };
+		1100000000006300 /* WakeWindowNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100000000006300 /* WakeWindowNotificationManager.swift */; };
 		A419034B2F2EEE6700FFC095 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = A419034A2F2EEE6700FFC095 /* GoogleSignIn */; };
 		A419034D2F2EEE6700FFC095 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A419034C2F2EEE6700FFC095 /* GoogleSignInSwift */; };
+		A4PRIVACY002 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A4PRIVACY001 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -233,6 +247,7 @@
 		2100000000000142 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		2100000000000143 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		2100000000000144 /* ChatHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHistoryView.swift; sourceTree = "<group>"; };
+		2100000000000145 /* AIConsentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIConsentView.swift; sourceTree = "<group>"; };
 		2100000000000150 /* PDFReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFReportService.swift; sourceTree = "<group>"; };
 		2100000000000151 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
 		2100000000000152 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
@@ -280,6 +295,8 @@
 		2100000000000900 /* SleepEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepEnums.swift; sourceTree = "<group>"; };
 		2100000000000901 /* SleepLocationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepLocationPicker.swift; sourceTree = "<group>"; };
 		2100000000000902 /* SleepMoodPickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepMoodPickers.swift; sourceTree = "<group>"; };
+		2100000000000903 /* WakeWindowCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeWindowCalculator.swift; sourceTree = "<group>"; };
+		2100000000000904 /* WakeWindowCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeWindowCardView.swift; sourceTree = "<group>"; };
 		2100000000000A01 /* ActivityItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityItem.swift; sourceTree = "<group>"; };
 		2100000000001000 /* SupportModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportModels.swift; sourceTree = "<group>"; };
 		2100000000001001 /* SupportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewModel.swift; sourceTree = "<group>"; };
@@ -318,6 +335,16 @@
 		2100000000008002 /* SleepLearningService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepLearningService.swift; sourceTree = "<group>"; };
 		2100000000009001 /* SleepScheduleSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepScheduleSettingsView.swift; sourceTree = "<group>"; };
 		2100000000009002 /* SleepScheduleSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepScheduleSettingsViewModel.swift; sourceTree = "<group>"; };
+		2100000000006100 /* MilestoneModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneModels.swift; sourceTree = "<group>"; };
+		2100000000006101 /* MilestoneRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneRepository.swift; sourceTree = "<group>"; };
+		2100000000006102 /* MilestonesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestonesViewModel.swift; sourceTree = "<group>"; };
+		2100000000006103 /* MilestonesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestonesView.swift; sourceTree = "<group>"; };
+		2100000000006200 /* GrowthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthModels.swift; sourceTree = "<group>"; };
+		2100000000006201 /* GrowthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthRepository.swift; sourceTree = "<group>"; };
+		2100000000006202 /* GrowthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthViewModel.swift; sourceTree = "<group>"; };
+		2100000000006203 /* GrowthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthView.swift; sourceTree = "<group>"; };
+		2100000000006204 /* AddGrowthRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGrowthRecordView.swift; sourceTree = "<group>"; };
+		2100000000006300 /* WakeWindowNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeWindowNotificationManager.swift; sourceTree = "<group>"; };
 		3100000000000001 /* Naplet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Naplet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A420A0B22F2441C200B950DB /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		A420A0B42F2441C200B950DB /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -335,6 +362,7 @@
 		A4A29F322F2467EB00CD8BFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A4A29F332F2467EB00CD8BFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4A29F342F2467EB00CD8BFF /* NapletWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapletWatchApp.swift; sourceTree = "<group>"; };
+		A4PRIVACY001 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -512,6 +540,8 @@
 				5100000000002000 /* Referral */,
 				5100000000004000 /* Vaccination */,
 				5100000000005000 /* Documents */,
+				5100000000006100 /* Milestones */,
+				5100000000006200 /* Growth */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -575,6 +605,7 @@
 				5100000000000058 /* Views */,
 				5100000000000059 /* ViewModels */,
 				5100000000000900 /* Models */,
+				5100000000006300 /* Services */,
 			);
 			path = Sleep;
 			sourceTree = "<group>";
@@ -583,6 +614,7 @@
 			isa = PBXGroup;
 			children = (
 				2100000000000080 /* SleepTrackingView.swift */,
+				2100000000000904 /* WakeWindowCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -593,6 +625,14 @@
 				2100000000000081 /* SleepTrackingViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000006300 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000006300 /* WakeWindowNotificationManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		5100000000000060 /* Settings */ = {
@@ -784,6 +824,7 @@
 				2100000000000100 /* Assets.xcassets */,
 				2100000000000101 /* Localizable.strings */,
 				2100000000000102 /* Info.plist */,
+				A4PRIVACY001 /* PrivacyInfo.xcprivacy */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -818,6 +859,7 @@
 			children = (
 				2100000000000143 /* ChatView.swift */,
 				2100000000000144 /* ChatHistoryView.swift */,
+				2100000000000145 /* AIConsentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1056,6 +1098,7 @@
 			isa = PBXGroup;
 			children = (
 				2100000000000900 /* SleepEnums.swift */,
+				2100000000000903 /* WakeWindowCalculator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1228,6 +1271,93 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		5100000000006100 /* Milestones */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000006101 /* Models */,
+				5100000000006102 /* ViewModels */,
+				5100000000006103 /* Views */,
+				5100000000006104 /* Repositories */,
+			);
+			path = Milestones;
+			sourceTree = "<group>";
+		};
+		5100000000006101 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000006100 /* MilestoneModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5100000000006102 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000006102 /* MilestonesViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000006103 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000006103 /* MilestonesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000006104 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000006101 /* MilestoneRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		5100000000006200 /* Growth */ = {
+			isa = PBXGroup;
+			children = (
+				5100000000006201 /* Models */,
+				5100000000006202 /* ViewModels */,
+				5100000000006203 /* Views */,
+				5100000000006204 /* Repositories */,
+			);
+			path = Growth;
+			sourceTree = "<group>";
+		};
+		5100000000006201 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000006200 /* GrowthModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5100000000006202 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000006202 /* GrowthViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5100000000006203 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000006203 /* GrowthView.swift */,
+				2100000000006204 /* AddGrowthRecordView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5100000000006204 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				2100000000006201 /* GrowthRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		5100000000006000 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1386,6 +1516,7 @@
 			files = (
 				1100000000000100 /* Assets.xcassets in Resources */,
 				1100000000000101 /* Localizable.strings in Resources */,
+				A4PRIVACY002 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1451,6 +1582,7 @@
 				1100000000000142 /* ChatViewModel.swift in Sources */,
 				1100000000000143 /* ChatView.swift in Sources */,
 				1100000000000144 /* ChatHistoryView.swift in Sources */,
+				1100000000000145 /* AIConsentView.swift in Sources */,
 				1100000000000150 /* PDFReportService.swift in Sources */,
 				1100000000000151 /* ReportViewModel.swift in Sources */,
 				1100000000000152 /* ReportView.swift in Sources */,
@@ -1498,6 +1630,8 @@
 				1100000000000900 /* SleepEnums.swift in Sources */,
 				1100000000000901 /* SleepLocationPicker.swift in Sources */,
 				1100000000000902 /* SleepMoodPickers.swift in Sources */,
+				1100000000000903 /* WakeWindowCalculator.swift in Sources */,
+				1100000000000904 /* WakeWindowCardView.swift in Sources */,
 				1100000000001000 /* SupportModels.swift in Sources */,
 				1100000000001001 /* SupportViewModel.swift in Sources */,
 				1100000000001002 /* SupportView.swift in Sources */,
@@ -1533,6 +1667,16 @@
 				1100000000008002 /* SleepLearningService.swift in Sources */,
 				1100000000009001 /* SleepScheduleSettingsView.swift in Sources */,
 				1100000000009002 /* SleepScheduleSettingsViewModel.swift in Sources */,
+				1100000000006100 /* MilestoneModels.swift in Sources */,
+				1100000000006101 /* MilestoneRepository.swift in Sources */,
+				1100000000006102 /* MilestonesViewModel.swift in Sources */,
+				1100000000006103 /* MilestonesView.swift in Sources */,
+				1100000000006200 /* GrowthModels.swift in Sources */,
+				1100000000006201 /* GrowthRepository.swift in Sources */,
+				1100000000006202 /* GrowthViewModel.swift in Sources */,
+				1100000000006203 /* GrowthView.swift in Sources */,
+				1100000000006204 /* AddGrowthRecordView.swift in Sources */,
+				1100000000006300 /* WakeWindowNotificationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1687,18 +1831,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Naplet/Naplet.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9335JM8ZTU;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 19;
+				DEVELOPMENT_TEAM = 9335JM8ZTU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Naplet/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Naplet;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Naplet precisa de acesso a camera para tirar fotos do seu bebe.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Naplet precisa de acesso as suas fotos para salvar o QR Code de indicacao e fotos do seu bebe.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Naplet needs access to your photos to set your baby's profile picture.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arm64;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1708,11 +1850,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
+				OPENAI_API_KEY = "REDACTED_OPENAI_KEY_REVOKED_2026_05";
 				PRODUCT_BUNDLE_IDENTIFIER = app.naplet.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Naplet App Store";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1728,18 +1870,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Naplet/Naplet.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9335JM8ZTU;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 19;
+				DEVELOPMENT_TEAM = 9335JM8ZTU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Naplet/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Naplet;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Naplet precisa de acesso a camera para tirar fotos do seu bebe.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Naplet precisa de acesso as suas fotos para salvar o QR Code de indicacao e fotos do seu bebe.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Naplet needs access to your photos to set your baby's profile picture.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arm64;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1749,11 +1889,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
+				OPENAI_API_KEY = "REDACTED_OPENAI_KEY_REVOKED_2026_05";
 				PRODUCT_BUNDLE_IDENTIFIER = app.naplet.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Naplet App Store";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

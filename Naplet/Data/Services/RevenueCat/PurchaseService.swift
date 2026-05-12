@@ -1,5 +1,6 @@
 import Foundation
 import RevenueCat
+import StoreKit
 
 // MARK: - Founders Manager
 /// Gerencia o período especial "Founders" do Naplet
@@ -18,21 +19,9 @@ final class FoundersManager: ObservableObject {
     private let foundersKey = "naplet_user_is_founder"
     private let purchaseDateKey = "naplet_founder_purchase_date"
 
-    /// Data de lançamento do app - AJUSTAR QUANDO LANÇAR
-    private let launchDate: Date = {
-        var components = DateComponents()
-        components.year = 2026
-        components.month = 2
-        components.day = 1
-        return Calendar.current.date(from: components) ?? Date()
-    }()
-
-    /// 90 dias = 3 meses de período Founders
-    private let foundersPeriodDays = 90
-
-    /// Data de término do período Founders
+    /// Data de término do período Founders (unificada com AppConfig)
     var foundersEndDate: Date {
-        Calendar.current.date(byAdding: .day, value: foundersPeriodDays, to: launchDate) ?? launchDate
+        AppConfig.Subscription.foundersEndDate
     }
 
     // MARK: - Initialization
@@ -369,6 +358,43 @@ final class PurchaseService: NSObject, ObservableObject {
     /// Check if subscription will renew
     var willRenew: Bool {
         customerInfo?.entitlements[AppConfig.Subscription.premiumEntitlement]?.willRenew == true
+    }
+
+    // MARK: - StoreKit 2 Fallback
+
+    /// Direct StoreKit 2 purchase when RevenueCat is unavailable (e.g., sandbox issues)
+    func purchaseViaStoreKit(productID: String) async throws -> Bool {
+        let products = try await Product.products(for: [productID])
+        guard let product = products.first else {
+            throw PurchaseError.productNotFound
+        }
+
+        let result = try await product.purchase()
+        switch result {
+        case .success(let verification):
+            switch verification {
+            case .verified(let transaction):
+                await transaction.finish()
+                isSubscribed = true
+
+                // Sync with RevenueCat if possible
+                Task {
+                    await refreshCustomerInfo()
+                }
+
+                Logger.info("StoreKit 2 purchase successful: \(productID)")
+                return true
+            case .unverified:
+                Logger.warning("StoreKit 2 purchase unverified: \(productID)")
+                return false
+            }
+        case .userCancelled:
+            return false
+        case .pending:
+            return false
+        @unknown default:
+            return false
+        }
     }
 
     // MARK: - Developer Access

@@ -59,7 +59,7 @@ struct AvatarView: View {
                         initialsView
                     }
                 }
-            } else if name != nil && !name!.isEmpty {
+            } else if let name = name, !name.isEmpty {
                 // Iniciais do nome
                 initialsView
             } else {

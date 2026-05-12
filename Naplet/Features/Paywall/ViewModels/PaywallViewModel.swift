@@ -1,5 +1,6 @@
 import Foundation
 import RevenueCat
+import StoreKit
 import Combine
 
 // MARK: - Paywall View Model
@@ -30,15 +31,24 @@ final class PaywallViewModel: ObservableObject {
     // MARK: - Plan Selection (for regular period)
     @Published var selectedPlanType: PlanType = .annual
 
-    // MARK: - Fallback Prices (until Apple approves products)
+    // MARK: - Loading State
+    @Published var isLoadingPrices = true
+    @Published var loadError = false
+    @Published var retryCount = 0
+
+    // MARK: - StoreKit 2 Fallback Prices (localized)
+    private var storeKitProducts: [String: Product] = [:]
+
+    // MARK: - Fallback Display (USD prices matching App Store Connect)
     private enum FallbackPrices {
-        static let foundersAnnual = "R$ 59,90"
-        static let foundersMonthlyEquivalent = "R$ 4,99"
-        static let premiumAnnual = "R$ 89,90"
-        static let premiumMonthlyEquivalent = "R$ 7,49"
-        static let premiumMonthly = "R$ 12,90"
-        static let foundersDiscountPercent = 33 // (89.90 - 59.90) / 89.90 ≈ 33%
-        static let annualSavingsPercent = 42 // (12.90 * 12 - 89.90) / (12.90 * 12) ≈ 42%
+        static let foundersAnnual = "$14.99"
+        static let foundersMonthlyEquivalent = "$1.25"
+        static let premiumAnnual = "$21.99"
+        static let premiumMonthlyEquivalent = "$1.83"
+        static let premiumMonthly = "$3.49"
+        static let foundersSavingsAmount = "$7.00"
+        static let foundersDiscountPercent = 32
+        static let annualSavingsPercent = 42
     }
 
     // MARK: - Benefits
@@ -125,26 +135,35 @@ final class PaywallViewModel: ObservableObject {
         regularAnnualPackage ?? purchaseService.annualPackage
     }
 
-    /// Preço formatado do pacote mensal (com fallback)
+    /// Preço formatado do pacote mensal (RevenueCat → StoreKit 2 → USD fallback)
     var monthlyPriceString: String {
-        if let price = monthlyPackage?.localizedPriceString, !price.isEmpty, price != "--" {
+        if let price = monthlyPackage?.localizedPriceString, !price.isEmpty, price != "--", price != "---" {
             return price
+        }
+        if let product = storeKitProducts["naplet_premium_monthly"] {
+            return product.displayPrice
         }
         return FallbackPrices.premiumMonthly
     }
 
-    /// Preço formatado do pacote anual regular (com fallback)
+    /// Preço formatado do pacote anual regular (RevenueCat → StoreKit 2 → USD fallback)
     var annualPriceString: String {
-        if let price = annualPackage?.localizedPriceString, !price.isEmpty, price != "--" {
+        if let price = annualPackage?.localizedPriceString, !price.isEmpty, price != "--", price != "---" {
             return price
+        }
+        if let product = storeKitProducts["naplet_premium_annual"] {
+            return product.displayPrice
         }
         return FallbackPrices.premiumAnnual
     }
 
-    /// Preço formatado do pacote Founders (com fallback)
+    /// Preço formatado do pacote Founders (RevenueCat → StoreKit 2 → USD fallback)
     var foundersPriceString: String {
-        if let price = foundersPackage?.localizedPriceString, !price.isEmpty, price != "--" {
+        if let price = foundersPackage?.localizedPriceString, !price.isEmpty, price != "--", price != "---" {
             return price
+        }
+        if let product = storeKitProducts["naplet_founders_annual"] {
+            return product.displayPrice
         }
         return FallbackPrices.foundersAnnual
     }
@@ -158,49 +177,74 @@ final class PaywallViewModel: ObservableObject {
                 return formatted
             }
         }
+        // StoreKit 2 fallback: calculate monthly from annual
+        if let product = storeKitProducts["naplet_founders_annual"] {
+            let monthly = product.price / 12
+            return monthly.formatted(product.priceFormatStyle)
+        }
         return FallbackPrices.foundersMonthlyEquivalent
     }
 
     /// Economia do plano Founders em relação ao regular (com fallback)
     var foundersSavingsAmount: String {
-        guard let founders = foundersPackage,
-              let regular = annualPackage,
-              let priceFormatter = founders.storeProduct.priceFormatter else {
-            return "R$ 30,00" // Fallback: 89.90 - 59.90
+        // RevenueCat path
+        if let founders = foundersPackage,
+           let regular = annualPackage,
+           let priceFormatter = founders.storeProduct.priceFormatter {
+            let savings = (regular.storeProduct.price as Decimal) - (founders.storeProduct.price as Decimal)
+            if let formatted = priceFormatter.string(from: savings as NSNumber) {
+                return formatted
+            }
         }
-
-        let savings = (regular.storeProduct.price as Decimal) - (founders.storeProduct.price as Decimal)
-        return priceFormatter.string(from: savings as NSNumber) ?? "R$ 30,00"
+        // StoreKit 2 fallback
+        if let founders = storeKitProducts["naplet_founders_annual"],
+           let regular = storeKitProducts["naplet_premium_annual"] {
+            let savings = regular.price - founders.price
+            return savings.formatted(founders.priceFormatStyle)
+        }
+        return FallbackPrices.foundersSavingsAmount
     }
 
     /// Porcentagem de desconto Founders (com fallback)
     var foundersDiscountPercentage: Int {
-        guard let founders = foundersPackage,
-              let regular = annualPackage else {
-            return FallbackPrices.foundersDiscountPercent
+        // RevenueCat path
+        if let founders = foundersPackage,
+           let regular = annualPackage {
+            let foundersPrice = founders.storeProduct.price as Decimal
+            let regularPrice = regular.storeProduct.price as Decimal
+            guard regularPrice > 0 else { return FallbackPrices.foundersDiscountPercent }
+            let discount = ((regularPrice - foundersPrice) / regularPrice) * 100
+            return Int(truncating: discount as NSNumber)
         }
-
-        let foundersPrice = founders.storeProduct.price as Decimal
-        let regularPrice = regular.storeProduct.price as Decimal
-
-        guard regularPrice > 0 else { return FallbackPrices.foundersDiscountPercent }
-
-        let discount = ((regularPrice - foundersPrice) / regularPrice) * 100
-        return Int(truncating: discount as NSNumber)
+        // StoreKit 2 fallback
+        if let founders = storeKitProducts["naplet_founders_annual"],
+           let regular = storeKitProducts["naplet_premium_annual"] {
+            guard regular.price > 0 else { return FallbackPrices.foundersDiscountPercent }
+            let discount = ((regular.price - founders.price) / regular.price) * 100
+            return Int(truncating: discount as NSNumber)
+        }
+        return FallbackPrices.foundersDiscountPercent
     }
 
     /// Economia do plano anual em porcentagem (com fallback)
     var annualSavingsPercentage: Int {
-        guard let monthly = monthlyPackage?.storeProduct.price as Decimal?,
-              let annual = annualPackage?.storeProduct.price as Decimal? else {
-            return FallbackPrices.annualSavingsPercent
+        // RevenueCat path
+        if let monthly = monthlyPackage?.storeProduct.price as Decimal?,
+           let annual = annualPackage?.storeProduct.price as Decimal? {
+            let monthlyTotal = monthly * 12
+            guard monthlyTotal > 0 else { return FallbackPrices.annualSavingsPercent }
+            let savings = ((monthlyTotal - annual) / monthlyTotal) * 100
+            return Int(truncating: savings as NSNumber)
         }
-
-        let monthlyTotal = monthly * 12
-        guard monthlyTotal > 0 else { return FallbackPrices.annualSavingsPercent }
-
-        let savings = ((monthlyTotal - annual) / monthlyTotal) * 100
-        return Int(truncating: savings as NSNumber)
+        // StoreKit 2 fallback
+        if let monthly = storeKitProducts["naplet_premium_monthly"],
+           let annual = storeKitProducts["naplet_premium_annual"] {
+            let monthlyTotal = monthly.price * 12
+            guard monthlyTotal > 0 else { return FallbackPrices.annualSavingsPercent }
+            let savings = ((monthlyTotal - annual.price) / monthlyTotal) * 100
+            return Int(truncating: savings as NSNumber)
+        }
+        return FallbackPrices.annualSavingsPercent
     }
 
     /// Preço mensal equivalente do plano anual (com fallback)
@@ -211,6 +255,11 @@ final class PaywallViewModel: ObservableObject {
             if let formatted = priceFormatter.string(from: monthlyPrice as NSNumber), !formatted.isEmpty {
                 return formatted
             }
+        }
+        // StoreKit 2 fallback
+        if let product = storeKitProducts["naplet_premium_annual"] {
+            let monthly = product.price / 12
+            return monthly.formatted(product.priceFormatStyle)
         }
         return FallbackPrices.premiumMonthlyEquivalent
     }
@@ -261,6 +310,8 @@ final class PaywallViewModel: ObservableObject {
     // MARK: - Load Packages
     func loadPackages() {
         Task {
+            isLoadingPrices = true
+            loadError = false
             isLoading = true
 
             // Carrega offerings
@@ -271,7 +322,108 @@ final class PaywallViewModel: ObservableObject {
                 await loadFoundersOffering()
             }
 
+            // Verifica se carregou pacotes
+            if packages.isEmpty && foundersPackage == nil {
+                loadError = true
+                // Fallback: load localized prices via StoreKit 2
+                await loadStoreKitPrices()
+            }
+
             isLoading = false
+            isLoadingPrices = false
+        }
+    }
+
+    /// Retry loading offerings after failure
+    func retryLoadOfferings() {
+        loadPackages()
+    }
+
+    /// Load localized prices via StoreKit 2 when RevenueCat is unavailable
+    private func loadStoreKitPrices() async {
+        do {
+            let productIDs: Set<String> = [
+                "naplet_founders_annual",
+                "naplet_premium_annual",
+                "naplet_premium_monthly"
+            ]
+            let products = try await Product.products(for: productIDs)
+            for product in products {
+                storeKitProducts[product.id] = product
+            }
+            if !storeKitProducts.isEmpty {
+                Logger.info("StoreKit 2 fallback prices loaded: \(storeKitProducts.keys.joined(separator: ", "))")
+            }
+        } catch {
+            Logger.error(error, context: "Failed to load StoreKit 2 fallback prices")
+        }
+    }
+
+    /// Called by CTA button — always attempts purchase, never gets stuck
+    func ctaAction() async {
+        // Has RevenueCat package: buy normally
+        if selectedPackage != nil {
+            await purchase()
+            return
+        }
+
+        // No package — try one silent RevenueCat reload, then StoreKit 2
+        if retryCount == 0 {
+            retryCount += 1
+            isPurchasing = true
+
+            // Silent retry: reload offerings from RevenueCat
+            await purchaseService.fetchOfferings()
+            if isFoundersPeriod {
+                await loadFoundersOffering()
+            }
+
+            // If reload worked, buy via RevenueCat
+            if selectedPackage != nil {
+                isPurchasing = false
+                await purchase()
+                return
+            }
+
+            isPurchasing = false
+        }
+
+        // RevenueCat unavailable — purchase directly via StoreKit 2
+        await purchaseWithStoreKit2()
+    }
+
+    /// Direct StoreKit 2 purchase (no RevenueCat dependency)
+    func purchaseWithStoreKit2() async {
+        isPurchasing = true
+        errorMessage = nil
+        defer { isPurchasing = false }
+
+        let productID: String
+        if isFoundersPeriod {
+            productID = "naplet_founders_annual"
+        } else if selectedPlanType == .annual {
+            productID = "naplet_premium_annual"
+        } else {
+            productID = "naplet_premium_monthly"
+        }
+
+        do {
+            let success = try await purchaseService.purchaseViaStoreKit(productID: productID)
+
+            if success {
+                purchaseSuccess = true
+                Logger.info("StoreKit 2 direct purchase completed - Product: \(productID)")
+
+                if isFoundersPeriod {
+                    await markUserAsFounder()
+                }
+                trackPurchaseConversion()
+            } else {
+                Logger.info("StoreKit 2 purchase cancelled by user")
+            }
+        } catch {
+            errorMessage = "paywall.error.purchaseFailed".localized
+            Logger.error(error, context: "StoreKit 2 direct purchase failed")
         }
     }
 
