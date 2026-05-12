@@ -327,6 +327,14 @@
 "dashboard.noRecords" = "Sin registros de sueño aún";
 "dashboard.noRecordsSubtitle" = "Comienza a monitorear para ver los patrones de sueño de tu bebé";
 "dashboard.wakeWindow" = "Ventana de sueño recomendada: %d min";
+
+// Wake Window: card title and status labels
+"wakeWindow.card.title" = "VENTANA DE SUEÑO";
+"wakeWindow.status.sleeping" = "Durmiendo";
+"wakeWindow.status.fresh" = "Energía al máximo";
+"wakeWindow.status.optimal" = "Ventana ideal";
+"wakeWindow.status.closing" = "Ventana cerrándose";
+"wakeWindow.status.overdue" = "Pasó del momento";
 "dashboard.startSleep" = "Iniciar Sueño";
 "dashboard.wakeUp" = "Despertar";
 "dashboard.nextNapIn" = "Próxima siesta en";
@@ -516,6 +524,13 @@
 "aiConsent.enable" = "Activar Chat IA";
 "aiConsent.notNow" = "Ahora No";
 "aiConsent.readPrivacyPolicy" = "Leer Politica de Privacidad";
+
+// AI Consent: pulido profesional (tarjeta neverShared + pie)
+"aiConsent.neverShared.title" = "LO QUE NUNCA COMPARTIMOS";
+"aiConsent.neverShared.location" = "Tu ubicación";
+"aiConsent.neverShared.media" = "Fotos o videos del bebé";
+"aiConsent.neverShared.payment" = "Datos de pago";
+"aiConsent.poweredBy" = "Powered by OpenAI · Procesado en servidores certificados SOC 2";
 "settings.privacy" = "Privacidad";
 "settings.aiDataSharing" = "Uso Compartido de Datos IA";
 "settings.aiDataSharing.subtitle" = "Compartir datos con OpenAI para el Chat IA";
@@ -963,7 +978,7 @@
 "chat.welcome.message" = "¡Hola! Soy el asistente de sueño de Naplet. Estoy aquí para ayudarte con consejos sobre el sueño de tu bebé. ¿Cómo puedo ayudarte?";
 "chat.error.noBaby" = "Ningún bebé seleccionado";
 "chat.error.limitReached" = "Has alcanzado el límite de %d mensajes gratuitos este mes.";
-"chat.error.notConfigured" = "El chat AI aún no está configurado.";
+"chat.error.notConfigured" = "Inicia sesión para usar el Chat IA.";
 "chat.error.rateLimited" = "Demasiadas solicitudes. Espera unos minutos.";
 "chat.error.unauthorized" = "Error de autenticación de la API.";
 "chat.error.generic" = "No se pudo obtener respuesta. Inténtalo de nuevo.";
@@ -1952,6 +1967,13 @@
 "milestones.mark_achieved" = "Marcar como Logrado";
 "milestones.cancel" = "Cancelar";
 "milestones.remove" = "Eliminar Registro";
+
+// Categorías del catálogo reducido (MilestoneModels.swift)
+"milestones.category.grossMotor" = "Motora gruesa";
+"milestones.category.fineMotor" = "Motora fina";
+"milestones.category.socialEmotional" = "Social y emocional";
+"milestones.category.language" = "Lenguaje";
+"milestones.category.cognitive" = "Cognitivo";
 
 // Milestone Categories
 "milestone.category.motor" = "Motor";

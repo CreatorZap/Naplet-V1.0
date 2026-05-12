@@ -41,20 +41,18 @@ struct BabyContext {
 actor OpenAIService {
     static let shared = OpenAIService()
 
-    private let baseURL = "https://api.openai.com/v1/chat/completions"
+    /// Endpoint da Edge Function do Supabase que faz proxy para a OpenAI.
+    /// O app NUNCA tem acesso à chave OpenAI, apenas o servidor.
+    private let baseURL = "https://exwqjrdlanlqcthwjflt.supabase.co/functions/v1/openai-proxy"
 
     private var model: String {
         AppConfig.OpenAI.model
     }
 
-    private var apiKey: String {
-        AppConfig.OpenAI.apiKey
-    }
-
-    /// Verifica se o serviço está configurado
-    nonisolated var isConfigured: Bool {
-        AppConfig.OpenAI.isConfigured
-    }
+    /// Sempre considerado configurado: a chave vive no servidor.
+    /// A autorização real depende de o usuário ter sessão Supabase válida,
+    /// validada em runtime via JWT pelo proxy.
+    nonisolated var isConfigured: Bool { true }
 
     private init() {}
 
@@ -93,10 +91,8 @@ actor OpenAIService {
         conversationHistory: [Message]
     ) async throws -> String {
 
-        // Check if API key is configured
-        guard AppConfig.OpenAI.isConfigured else {
-            throw OpenAIError.notConfigured
-        }
+        // O proxy exige JWT do usuário Supabase. Sem sessão, sem chat.
+        let accessToken = try await currentAccessToken()
 
         let systemPrompt = buildSystemPrompt(babyContext: babyContext)
 
@@ -119,7 +115,7 @@ actor OpenAIService {
 
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
-        urlRequest.addValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
+        urlRequest.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.timeoutInterval = AppConfig.API.timeout
 
@@ -154,6 +150,20 @@ actor OpenAIService {
         return content
     }
 
+    // MARK: - Auth helper
+
+    /// Recupera o JWT da sessão Supabase atual.
+    /// Lança `.notConfigured` se não houver sessão (usuário não autenticado).
+    private func currentAccessToken() async throws -> String {
+        do {
+            let session = try await SupabaseService.shared.client.auth.session
+            return session.accessToken
+        } catch {
+            Logger.warning("OpenAIService: nenhuma sessão Supabase ativa (\(error.localizedDescription))")
+            throw OpenAIError.notConfigured
+        }
+    }
+
     // MARK: - Errors
     enum OpenAIError: Error, LocalizedError {
         case notConfigured
@@ -166,7 +176,7 @@ actor OpenAIService {
         var errorDescription: String? {
             switch self {
             case .notConfigured:
-                return "API OpenAI não configurada. Adicione sua chave em AppConfig."
+                return "chat.error.notConfigured".localized
             case .invalidURL:
                 return "URL inválida"
             case .apiError(let message):

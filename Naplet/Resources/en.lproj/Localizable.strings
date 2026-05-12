@@ -267,6 +267,14 @@
 "dashboard.noRecords" = "No sleep records yet";
 "dashboard.noRecordsSubtitle" = "Start tracking to see your baby's sleep patterns";
 "dashboard.wakeWindow" = "Recommended wake window: %d min";
+
+// Wake Window: card title and status labels
+"wakeWindow.card.title" = "WAKE WINDOW";
+"wakeWindow.status.sleeping" = "Sleeping";
+"wakeWindow.status.fresh" = "Fully awake";
+"wakeWindow.status.optimal" = "Sweet spot";
+"wakeWindow.status.closing" = "Window closing";
+"wakeWindow.status.overdue" = "Overdue for nap";
 "dashboard.startSleep" = "Start Sleep";
 "dashboard.wakeUp" = "Wake Up";
 "dashboard.nextNapIn" = "Next nap in";
@@ -456,6 +464,13 @@
 "aiConsent.enable" = "Enable AI Chat";
 "aiConsent.notNow" = "Not Now";
 "aiConsent.readPrivacyPolicy" = "Read Privacy Policy";
+
+// AI Consent: professional polish (neverShared card + footer)
+"aiConsent.neverShared.title" = "WHAT WE NEVER SHARE";
+"aiConsent.neverShared.location" = "Your location";
+"aiConsent.neverShared.media" = "Photos or videos of your baby";
+"aiConsent.neverShared.payment" = "Payment data";
+"aiConsent.poweredBy" = "Powered by OpenAI · Processed on SOC 2 certified servers";
 "settings.privacy" = "Privacy";
 "settings.aiDataSharing" = "AI Data Sharing";
 "settings.aiDataSharing.subtitle" = "Share data with OpenAI for AI Chat";
@@ -903,7 +918,7 @@
 "chat.welcome.message" = "Hi! I'm Naplet's sleep assistant. I'm here to help with tips about your baby's sleep. How can I help?";
 "chat.error.noBaby" = "No baby selected";
 "chat.error.limitReached" = "You've reached the limit of %d free messages this month.";
-"chat.error.notConfigured" = "AI chat is not configured yet.";
+"chat.error.notConfigured" = "Sign in to use AI Chat.";
 "chat.error.rateLimited" = "Too many requests. Please wait a few minutes.";
 "chat.error.unauthorized" = "API authentication error.";
 "chat.error.generic" = "Could not get a response. Please try again.";
@@ -1892,6 +1907,13 @@
 "milestones.mark_achieved" = "Mark as Achieved";
 "milestones.cancel" = "Cancel";
 "milestones.remove" = "Remove Achievement";
+
+// Categories of the lean catalog (MilestoneModels.swift)
+"milestones.category.grossMotor" = "Gross Motor";
+"milestones.category.fineMotor" = "Fine Motor";
+"milestones.category.socialEmotional" = "Social & Emotional";
+"milestones.category.language" = "Language";
+"milestones.category.cognitive" = "Cognitive";
 
 // Milestone Categories
 "milestone.category.motor" = "Motor";
