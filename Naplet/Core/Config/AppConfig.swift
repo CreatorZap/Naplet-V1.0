@@ -50,42 +50,13 @@ enum AppConfig {
 
     // MARK: - OpenAI Configuration
     // ============================================
-    // Para o assistente de sono com IA
-    // https://platform.openai.com/api-keys
+    // O cliente NÃO carrega chave de API. Toda chamada à OpenAI passa pela
+    // Edge Function `openai-proxy` no Supabase, autenticada via JWT do usuário.
+    // A chave OpenAI vive como secret no Supabase, nunca no binário do app.
+    // Endpoint: https://exwqjrdlanlqcthwjflt.supabase.co/functions/v1/openai-proxy
     // ============================================
     enum OpenAI {
-        /// Chave API do OpenAI
-        /// Lida de Info.plist via Build Settings (User-Defined: OPENAI_API_KEY)
-        /// Em Debug, tenta variavel de ambiente primeiro
-
-        static var apiKey: String {
-            // 1. Em Debug, tenta variavel de ambiente primeiro (para testes locais)
-            #if DEBUG
-            if let key = ProcessInfo.processInfo.environment["OPENAI_API_KEY"]?
-                .trimmingCharacters(in: .whitespacesAndNewlines),
-               !key.isEmpty,
-               key.hasPrefix("sk-") {
-                return key
-            }
-            #endif
-
-            // 2. Le de Info.plist (injetada via Build Settings)
-            if let key = Bundle.main.infoDictionary?["OpenAIAPIKey"] as? String,
-               !key.isEmpty,
-               key.hasPrefix("sk-"),
-               !key.contains("$(") {
-                return key
-            }
-
-            return ""
-        }
-
-        /// Verifica se a API está configurada
-        static var isConfigured: Bool {
-            !apiKey.isEmpty && apiKey.hasPrefix("sk-")
-        }
-
-        /// Modelo a ser usado
+        /// Modelo OpenAI usado nas chamadas via proxy.
         static let model = "gpt-4o-mini"
     }
     
