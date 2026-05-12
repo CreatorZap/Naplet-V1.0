@@ -390,7 +390,11 @@ final class MedicationScheduleRepository: ObservableObject {
 
         for schedule in schedules where schedule.canReceiveReminders {
             if let nextTime = schedule.nextReminder {
-                if nextMed == nil || nextTime < nextMed!.nextTime {
+                if let current = nextMed {
+                    if nextTime < current.nextTime {
+                        nextMed = (schedule, nextTime)
+                    }
+                } else {
                     nextMed = (schedule, nextTime)
                 }
             }

@@ -301,6 +301,7 @@ struct SleepPreferencesUpdateDTO: Encodable {
 }
 
 // MARK: - Mock Repository (for testing/preview)
+#if DEBUG
 final class MockBabyRepository {
     var babies: [Baby] = Baby.previewList
 
@@ -328,3 +329,4 @@ final class MockBabyRepository {
         babies.removeAll { $0.id == id }
     }
 }
+#endif

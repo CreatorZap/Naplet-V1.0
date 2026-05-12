@@ -77,14 +77,18 @@ struct TimelineView: View {
                             Text(next.label)
                                 .font(.system(size: NapletTypography.subheadline, weight: .semibold))
                                 .foregroundColor(NapletColors.textPrimary)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.7)
 
                             Text("timeline.at".localized)
                                 .font(.system(size: NapletTypography.caption))
                                 .foregroundColor(NapletColors.textMuted)
+                                .layoutPriority(1)
 
                             Text(next.timeFormatted)
                                 .font(.system(size: NapletTypography.subheadline, weight: .medium, design: .monospaced))
                                 .foregroundColor(next.type.color)
+                                .layoutPriority(1)
                         }
                     } else {
                         Text("timeline.noMoreEvents".localized)
@@ -226,6 +230,8 @@ struct TimelineEventRow: View {
                     Text(event.label)
                         .font(.system(size: NapletTypography.subheadline, weight: .medium))
                         .foregroundColor(event.isPast ? NapletColors.textMuted : NapletColors.textPrimary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.7)
 
                     if let duration = event.durationFormatted {
                         Text("(\(duration))")

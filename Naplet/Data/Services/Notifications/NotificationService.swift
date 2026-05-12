@@ -322,11 +322,13 @@ class NotificationService: ObservableObject {
         dateComponents.minute = bedtimeMinute - reminderMinutesBefore
 
         // Ajusta se minutos ficarem negativos
-        if dateComponents.minute! < 0 {
-            dateComponents.minute! += 60
-            dateComponents.hour! -= 1
-            if dateComponents.hour! < 0 {
-                dateComponents.hour! = 23
+        let currentMinute = dateComponents.minute ?? 0
+        let currentHour = dateComponents.hour ?? 0
+        if currentMinute < 0 {
+            dateComponents.minute = currentMinute + 60
+            dateComponents.hour = currentHour - 1
+            if (dateComponents.hour ?? 0) < 0 {
+                dateComponents.hour = 23
             }
         }
 

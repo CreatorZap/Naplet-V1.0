@@ -16,7 +16,7 @@ struct ReferralCode: Codable, Identifiable {
 
     /// URL completa para compartilhar
     var shareURL: URL {
-        URL(string: "https://naplet.app/r/\(code)")!
+        URL(string: "https://naplet.app/r/\(code)") ?? URL(string: "https://naplet.app")!
     }
 }
 

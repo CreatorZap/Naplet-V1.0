@@ -33,6 +33,8 @@ struct ContentView: View {
         }
         .animation(.easeInOut(duration: 0.3), value: appState.isLoading)
         .animation(.easeInOut(duration: 0.3), value: appState.hasCompletedOnboarding)
+        .animation(.easeInOut(duration: 0.3), value: appState.authState.isAuthenticated)
+        .animation(.easeInOut(duration: 0.3), value: appState.isRefreshingAfterLogin)
         #if DEBUG
         .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("BypassLogin"))) { _ in
             withAnimation {
@@ -55,16 +57,19 @@ struct ContentView: View {
     // MARK: - Production Mode Flow
     @ViewBuilder
     private var productionModeFlow: some View {
-        if supabaseService.currentUser != nil {
-            // User is authenticated
-            if appState.hasCompletedOnboarding {
+        switch appState.authState {
+        case .authenticated:
+            if appState.isRefreshingAfterLogin {
+                loadingView
+            } else if appState.hasCompletedOnboarding {
                 MainTabView()
             } else {
                 OnboardingView()
             }
-        } else {
-            // User is not authenticated - show Sign In with Apple
+        case .unauthenticated:
             SignInView()
+        case .unknown:
+            loadingView
         }
     }
 

@@ -106,9 +106,12 @@ enum Logger {
         function: String = #function,
         line: Int = #line
     ) {
-        let message = context != nil
-            ? "\(context!): \(error.localizedDescription)"
-            : error.localizedDescription
+        let message: String
+        if let context = context {
+            message = "\(context): \(error.localizedDescription)"
+        } else {
+            message = error.localizedDescription
+        }
         log(message, level: .error, file: file, function: function, line: line)
     }
 }

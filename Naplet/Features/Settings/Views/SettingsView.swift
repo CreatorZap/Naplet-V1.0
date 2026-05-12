@@ -17,6 +17,8 @@ struct SettingsView: View {
     @State private var showSupportView = false
     @State private var babyToEdit: Baby?
     @State private var showNotificationSettings = false
+    @State private var showDeleteAccountAlert = false
+    @State private var showPaywall = false
 
     var body: some View {
         ScrollView {
@@ -47,6 +49,11 @@ struct SettingsView: View {
                 // Profile Section
                 profileSection
 
+                // Upgrade to Premium (only for non-premium users)
+                if !subscriptionManager.hasPremiumAccess {
+                    upgradeSection
+                }
+
                 // Baby Section
                 babySection
 
@@ -55,6 +62,9 @@ struct SettingsView: View {
 
                 // Preferences Section
                 preferencesSection
+
+                // Privacy Section
+                privacySection
 
                 // Notifications Section
                 notificationsSection
@@ -104,9 +114,19 @@ struct SettingsView: View {
                                 .font(NapletTypography.subheadline())
                                 .foregroundColor(NapletColors.textSecondary)
 
-                            Text(subscriptionStatusDisplayName)
-                                .font(NapletTypography.caption(weight: .medium))
-                                .foregroundColor(NapletColors.primaryPurple)
+                            HStack(spacing: NapletSpacing.xs) {
+                                Image(systemName: subscriptionManager.isPremium ? "crown.fill" : "person.fill")
+                                    .font(.system(size: 10))
+                                Text(subscriptionStatusDisplayName)
+                                    .font(NapletTypography.caption(weight: .semibold))
+                            }
+                            .foregroundColor(subscriptionManager.isPremium ? NapletColors.primaryPurple : NapletColors.textMuted)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 3)
+                            .background(
+                                Capsule()
+                                    .fill(subscriptionManager.isPremium ? NapletColors.primaryPurple.opacity(0.15) : NapletColors.backgroundTertiary)
+                            )
                         }
 
                         Spacer()
@@ -116,6 +136,84 @@ struct SettingsView: View {
                 }
             }
             .buttonStyle(.plain)
+        }
+    }
+
+    // MARK: - Upgrade Section
+    private var upgradeSection: some View {
+        Button {
+            showPaywall = true
+        } label: {
+            VStack(spacing: NapletSpacing.md) {
+                HStack(spacing: NapletSpacing.md) {
+                    ZStack {
+                        Circle()
+                            .fill(
+                                LinearGradient(
+                                    colors: [NapletColors.primaryPurple.opacity(0.3), NapletColors.primaryPink.opacity(0.2)],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .frame(width: 48, height: 48)
+
+                        Image(systemName: "crown.fill")
+                            .font(.system(size: 22))
+                            .foregroundStyle(
+                                LinearGradient(
+                                    colors: [NapletColors.primaryPurple, NapletColors.primaryPink],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                    }
+
+                    VStack(alignment: .leading, spacing: NapletSpacing.xs) {
+                        Text("settings.upgrade.title".localized)
+                            .font(NapletTypography.headline())
+                            .foregroundColor(NapletColors.textPrimary)
+
+                        Text("settings.upgrade.subtitle".localized)
+                            .font(NapletTypography.caption())
+                            .foregroundColor(NapletColors.textSecondary)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+
+                    Spacer()
+
+                    NapletIcon("chevron.right", size: .small, color: .white.opacity(0.7))
+                }
+            }
+            .padding(NapletSpacing.md)
+            .background(
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(
+                        LinearGradient(
+                            colors: [
+                                NapletColors.primaryPurple.opacity(0.25),
+                                NapletColors.primaryPink.opacity(0.15)
+                            ],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(
+                                LinearGradient(
+                                    colors: [NapletColors.primaryPurple.opacity(0.5), NapletColors.primaryPink.opacity(0.3)],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                ),
+                                lineWidth: 1
+                            )
+                    )
+            )
+        }
+        .buttonStyle(.plain)
+        .sheet(isPresented: $showPaywall) {
+            PaywallView(trigger: .settingsUpgrade)
+                .presentationBackground(NapletColors.background)
         }
     }
 
@@ -449,6 +547,55 @@ struct SettingsView: View {
         }
     }
 
+    // MARK: - Privacy Section
+    private var privacySection: some View {
+        SettingsSection(title: "settings.privacy".localized) {
+            VStack(spacing: NapletSpacing.sm) {
+                NapletCard {
+                    HStack {
+                        NapletIcon("brain.head.profile", size: .medium, color: NapletColors.primaryPurple)
+
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("settings.aiDataSharing".localized)
+                                .font(NapletTypography.body())
+                                .foregroundColor(NapletColors.textPrimary)
+
+                            Text("settings.aiDataSharing.subtitle".localized)
+                                .font(NapletTypography.caption())
+                                .foregroundColor(NapletColors.textMuted)
+                        }
+
+                        Spacer()
+
+                        Toggle("", isOn: $viewModel.aiDataSharingEnabled)
+                            .labelsHidden()
+                            .tint(NapletColors.primaryPurple)
+                    }
+                }
+
+                if viewModel.aiDataSharingEnabled, let date = AIConsentManager.consentDate {
+                    HStack(spacing: NapletSpacing.xs) {
+                        Image(systemName: "checkmark.shield.fill")
+                            .font(.system(size: 12))
+                            .foregroundColor(NapletColors.success)
+
+                        Text("settings.aiDataSharing.consentDate".localized(with: formattedConsentDate(date)))
+                            .font(NapletTypography.caption())
+                            .foregroundColor(NapletColors.textMuted)
+                    }
+                    .padding(.horizontal, NapletSpacing.sm)
+                }
+            }
+        }
+    }
+
+    private func formattedConsentDate(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        return formatter.string(from: date)
+    }
+
     // MARK: - Notifications Section
     private var notificationsSection: some View {
         SettingsSection(title: L10n.Settings.notifications.localized) {
@@ -584,9 +731,17 @@ struct SettingsView: View {
         }
     }
 
-    // MARK: - Logout Button
+    // MARK: - Account Actions (Delete Account + Sign Out)
     private var logoutButton: some View {
         VStack(spacing: NapletSpacing.sm) {
+            // Error messages
+            if let error = viewModel.deleteAccountError {
+                Text(error)
+                    .font(NapletTypography.footnote())
+                    .foregroundColor(NapletColors.error)
+                    .multilineTextAlignment(.center)
+            }
+
             if let error = viewModel.signOutError {
                 Text(error)
                     .font(NapletTypography.footnote())
@@ -594,6 +749,40 @@ struct SettingsView: View {
                     .multilineTextAlignment(.center)
             }
 
+            // Delete Account button (BEFORE Sign Out per Apple requirement)
+            Button {
+                showDeleteAccountAlert = true
+            } label: {
+                NapletCard {
+                    HStack {
+                        NapletIcon("person.crop.circle.badge.xmark", size: .medium, color: NapletColors.error)
+
+                        Text("settings.deleteAccount".localized)
+                            .font(NapletTypography.body())
+                            .foregroundColor(NapletColors.error)
+
+                        Spacer()
+
+                        if viewModel.isDeletingAccount {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: NapletColors.error))
+                        } else {
+                            NapletIcon("chevron.right", size: .small, color: NapletColors.error.opacity(0.5))
+                        }
+                    }
+                }
+            }
+            .disabled(viewModel.isDeletingAccount)
+            .alert("settings.deleteAccount.title".localized, isPresented: $showDeleteAccountAlert) {
+                Button(L10n.Common.cancel.localized, role: .cancel) {}
+                Button("settings.deleteAccount.confirm".localized, role: .destructive) {
+                    viewModel.deleteAccount()
+                }
+            } message: {
+                Text("settings.deleteAccount.message".localized)
+            }
+
+            // Sign Out button
             NapletButton(
                 L10n.Settings.signOut.localized,
                 style: .destructive,

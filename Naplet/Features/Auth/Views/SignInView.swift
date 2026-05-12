@@ -17,6 +17,8 @@ struct SignInView: View {
     @State private var loadingProvider: AuthProvider?
     @State private var errorMessage: String?
     @State private var agreedToTerms = true
+    @State private var showTermsSheet = false
+    @State private var showPrivacySheet = false
     
     // Animations
     @State private var logoScale: CGFloat = 0.8
@@ -71,6 +73,12 @@ struct SignInView: View {
             EmailSignInView()
                 .environmentObject(supabaseService)
                 .environmentObject(appState)
+        }
+        .sheet(isPresented: $showTermsSheet) {
+            TermsOfServiceView()
+        }
+        .sheet(isPresented: $showPrivacySheet) {
+            PrivacyPolicyView()
         }
     }
     
@@ -167,118 +175,74 @@ struct SignInView: View {
     
     // MARK: - Social Proof Section
     private var socialProofSection: some View {
-        VStack(spacing: 16) {
-            // Stars
-            HStack(spacing: 6) {
-                ForEach(0..<5, id: \.self) { _ in
-                    Image(systemName: "star.fill")
-                        .font(.system(size: 22))
-                        .foregroundColor(NapletColors.primaryPurple.opacity(0.8))
-                }
-            }
-            
-            // Rating text
-            Text("auth.socialProof.headline".localized)
-                .font(.system(size: 15, weight: .semibold))
-                .foregroundColor(NapletColors.textSecondary)
-            
-            // Badges
-            HStack(spacing: 24) {
-                // Badge 1
-                badgeView(
-                    topText: "App Store",
-                    mainText: "auth.badge.editorsChoice.main".localized,
-                    bottomText: "auth.badge.editorsChoice.sub".localized
-                )
-                
-                // Badge 2
-                badgeView(
-                    topText: "App Store",
-                    mainText: "auth.badge.appOfDay.main".localized,
-                    bottomText: "auth.badge.appOfDay.sub".localized
-                )
-            }
-            .padding(.top, 8)
-        }
-        .opacity(contentOpacity)
-    }
-    
-    private func badgeView(topText: String, mainText: String, bottomText: String) -> some View {
-        HStack(spacing: 8) {
-            // Laurel left
-            Image(systemName: "laurel.leading")
-                .font(.system(size: 28))
-                .foregroundColor(NapletColors.textMuted.opacity(0.5))
-            
-            VStack(spacing: 2) {
-                Text(topText)
-                    .font(.system(size: 10, weight: .medium))
-                    .foregroundColor(NapletColors.textMuted)
-                
-                Text(mainText)
-                    .font(.system(size: 13, weight: .bold))
-                    .foregroundColor(NapletColors.textSecondary)
-                
-                Text(bottomText)
-                    .font(.system(size: 11, weight: .semibold))
-                    .foregroundColor(NapletColors.textSecondary)
-            }
-            
-            // Laurel right
-            Image(systemName: "laurel.trailing")
-                .font(.system(size: 28))
-                .foregroundColor(NapletColors.textMuted.opacity(0.5))
-        }
+        Text("auth.socialProof.headline".localized)
+            .font(.system(size: 15, weight: .semibold))
+            .foregroundColor(NapletColors.textSecondary)
+            .multilineTextAlignment(.center)
+            .opacity(contentOpacity)
     }
     
     // MARK: - Terms Agreement
     private var termsAgreement: some View {
-        Button(action: {
-            withAnimation(.spring(response: 0.3)) {
-                agreedToTerms.toggle()
-            }
-            HapticManager.shared.lightImpact()
-        }) {
-            HStack(alignment: .top, spacing: 12) {
-                // Checkbox
+        HStack(alignment: .top, spacing: 12) {
+            // Checkbox (tappable to toggle)
+            Button(action: {
+                withAnimation(.spring(response: 0.3)) {
+                    agreedToTerms.toggle()
+                }
+                HapticManager.shared.lightImpact()
+            }) {
                 ZStack {
                     RoundedRectangle(cornerRadius: 6)
                         .stroke(agreedToTerms ? NapletColors.primaryPurple : NapletColors.textMuted.opacity(0.5), lineWidth: 2)
                         .frame(width: 24, height: 24)
-                    
+
                     if agreedToTerms {
                         RoundedRectangle(cornerRadius: 6)
                             .fill(NapletColors.primaryPurple.opacity(0.2))
                             .frame(width: 24, height: 24)
-                        
+
                         Image(systemName: "checkmark")
                             .font(.system(size: 12, weight: .bold))
                             .foregroundColor(NapletColors.primaryPurple)
                     }
                 }
-                
-                // Text
-                Group {
+            }
+            .buttonStyle(PlainButtonStyle())
+
+            // Text with tappable links
+            VStack(alignment: .leading, spacing: 2) {
+                HStack(spacing: 0) {
                     Text("auth.terms.agree".localized + " ")
-                        .foregroundColor(NapletColors.textMuted) +
-                    Text("auth.terms.termsAndConditions".localized)
-                        .foregroundColor(NapletColors.primaryPurple)
-                        .underline() +
-                    Text(" " + "auth.terms.and".localized + " ")
-                        .foregroundColor(NapletColors.textMuted) +
-                    Text("auth.terms.privacyPolicy".localized)
-                        .foregroundColor(NapletColors.primaryPurple)
-                        .underline() +
+                        .foregroundColor(NapletColors.textMuted)
+
+                    Button(action: { showTermsSheet = true }) {
+                        Text("auth.terms.termsAndConditions".localized)
+                            .foregroundColor(NapletColors.primaryPurple)
+                            .underline()
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+
+                HStack(spacing: 0) {
+                    Text("auth.terms.and".localized + " ")
+                        .foregroundColor(NapletColors.textMuted)
+
+                    Button(action: { showPrivacySheet = true }) {
+                        Text("auth.terms.privacyPolicy".localized)
+                            .foregroundColor(NapletColors.primaryPurple)
+                            .underline()
+                    }
+                    .buttonStyle(PlainButtonStyle())
+
                     Text(" " + "auth.terms.ofNaplet".localized)
                         .foregroundColor(NapletColors.textMuted)
                 }
-                .font(.system(size: 14))
-                .multilineTextAlignment(.leading)
-                .lineSpacing(2)
             }
-            .padding(.horizontal, 24)
+            .font(.system(size: 14))
+            .lineSpacing(2)
         }
-        .buttonStyle(PlainButtonStyle())
+        .padding(.horizontal, 24)
         .opacity(contentOpacity)
     }
     
@@ -446,7 +410,9 @@ struct SignInView: View {
             
             Task {
                 do {
-                    _ = try await supabaseService.signInWithApple(idToken: idTokenString, nonce: nonce)
+                    let user = try await supabaseService.signInWithApple(idToken: idTokenString, nonce: nonce)
+                    appState.updateAuthState(user: Profile(id: user.id, email: user.email))
+                    await appState.refreshAfterLogin()
                     await MainActor.run {
                         HapticManager.shared.success()
                     }
@@ -479,6 +445,14 @@ struct SignInView: View {
         Task {
             do {
                 try await supabaseService.signInWithGoogle()
+                // Garantir que authState é atualizado antes do refresh
+                if let currentUser = supabaseService.currentUser {
+                    appState.updateAuthState(user: Profile(id: currentUser.id, email: currentUser.email))
+                }
+                await appState.refreshAfterLogin()
+                await MainActor.run {
+                    HapticManager.shared.success()
+                }
             } catch {
                 await MainActor.run {
                     errorMessage = error.localizedDescription
@@ -518,8 +492,13 @@ class AppleSignInCoordinator: NSObject, ASAuthorizationControllerDelegate, ASAut
     var onCompletion: ((Result<ASAuthorization, Error>) -> Void)?
     
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let window = scene.windows.first else {
+        guard let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene,
+              let window = scene.windows.first(where: { $0.isKeyWindow }) ?? scene.windows.first else {
+            // Fallback: tenta qualquer scene disponivel
+            if let fallbackScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let fallbackWindow = fallbackScene.windows.first {
+                return fallbackWindow
+            }
             return UIWindow()
         }
         return window
@@ -759,7 +738,9 @@ struct EmailSignInView: View {
                         HapticManager.shared.success()
                     }
                 } else {
-                    _ = try await supabaseService.signIn(email: email, password: password)
+                    let user = try await supabaseService.signIn(email: email, password: password)
+                    appState.updateAuthState(user: Profile(id: user.id, email: user.email))
+                    await appState.refreshAfterLogin()
                     await MainActor.run {
                         HapticManager.shared.success()
                         dismiss()

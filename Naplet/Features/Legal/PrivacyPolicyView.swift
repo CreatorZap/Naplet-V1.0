@@ -73,6 +73,11 @@ struct PrivacyPolicyView: View {
                             title: "legal.privacy.section6.title".localized,
                             content: "legal.privacy.section6.content".localized
                         )
+
+                        LegalSectionView(
+                            title: "legal.privacy.section7.title".localized,
+                            content: "legal.privacy.section7.content".localized
+                        )
                     }
                 }
                 .padding(NapletSpacing.lg)

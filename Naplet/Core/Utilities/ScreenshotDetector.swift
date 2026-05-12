@@ -26,9 +26,11 @@ struct ScreenshotDetectorModifier: ViewModifier {
     
     private func openInstagram() {
         // Try to open Instagram app directly to @naplet.app profile
-        let instagramURL = URL(string: "instagram://user?username=naplet.app")!
-        let webURL = URL(string: "https://instagram.com/naplet.app")!
-        
+        guard let instagramURL = URL(string: "instagram://user?username=naplet.app"),
+              let webURL = URL(string: "https://instagram.com/naplet.app") else {
+            return
+        }
+
         if UIApplication.shared.canOpenURL(instagramURL) {
             UIApplication.shared.open(instagramURL)
         } else {

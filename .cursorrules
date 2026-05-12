@@ -1,87 +1,298 @@
-# Cursor Rules - Naplet iOS App
+# NAPLET — REGRAS OBRIGATORIAS PARA CURSOR
+# Lido automaticamente pelo Cursor antes de cada tarefa.
 
-## Project Overview
-Naplet is a baby care tracking iOS app built with SwiftUI and Supabase.
-The app is 95% complete and ready for launch - be extremely careful with changes.
+## CONTEXTO DO PROJETO
+- App: Naplet (iOS baby sleep tracker)
+- Stack: SwiftUI + Supabase + RevenueCat + OpenAI
+- Bundle ID: app.naplet.ios
+- Target: iPhone only (TARGETED_DEVICE_FAMILY = 1)
+- Apple testa no iPad Air 11-inch (M3) em modo compatibilidade
+- Idiomas: PT-BR, EN, ES
 
-## Critical Rules
+---
 
-### 1. DO NOT Break Existing Functionality
-- NEVER remove code that "seems unused"
-- NEVER replace entire functions without understanding context
-- NEVER refactor working code
-- NEVER change names of existing variables/functions
-- NEVER alter execution order of async code
+## REGRA #1 — NAO QUEBRE O QUE FUNCIONA
 
-### 2. Always Ask Before Modifying Critical Files
-Critical files that require permission:
-- AppDelegate.swift, ContentView.swift, NapletApp.swift
-- SupabaseService.swift, AppConfig.swift
-- Any *ViewModel.swift file
-- Any *Repository.swift file
-- Any *Service.swift file
+Antes de QUALQUER alteracao de codigo:
 
-### 3. Working Features - DO NOT Touch
-These features are 100% working:
-- Authentication (Sign in with Apple + Email)
-- Baby registration
-- Sleep tracking (start/stop timer)
-- Feeding tracking
-- Diaper tracking
-- Bath tracking
-- Temperature tracking
-- Medication tracking
-- AI Chat
-- History with charts
-- Supabase sync
-- Complete onboarding
+1. **LEIA o arquivo INTEIRO** antes de editar
+2. **ENTENDA as dependencias** — quais outros arquivos importam ou usam este codigo
+3. **FACA APENAS a mudanca solicitada** — nada mais, nada menos
+4. **LISTE todas as mudancas** que voce vai fazer ANTES de executar
+5. **PECA CONFIRMACAO** antes de modificar arquivos criticos (Auth, Navigation, AppConfig)
+
+### Arquivos PROIBIDOS de modificar sem autorizacao explicita:
+- `ContentView.swift` (navegacao principal)
+- `AppDelegate.swift` / `NapletApp.swift` (entry point)
+- `AppConfig.swift` (configuracoes)
+- `AuthViewModel.swift` (autenticacao)
+- `SignInView.swift` (tela de login)
+- `SupabaseService.swift` (conexao Supabase)
+- `*.xcodeproj` / `*.pbxproj` (configuracoes de build)
+- `Info.plist` (configuracoes do app)
+- Qualquer arquivo em `Core/Config/`
+
+---
+
+## REGRA #2 — PRINCIPIO DA MUDANCA MINIMA
+
+### Ao corrigir um bug:
+- Identifique a causa raiz EXATA (linha especifica)
+- Faca a MENOR mudanca possivel para corrigir
+- NAO refatore codigo adjacente
+- NAO "melhore" codigo que nao faz parte do bug
+- NAO mude imports, formatacao ou comentarios existentes
+
+### Ao adicionar uma feature:
+- Crie NOVOS arquivos sempre que possivel
+- NAO modifique arquivos existentes sem necessidade
+- Se precisar modificar, mostre o diff ANTES de aplicar
+- Adicione strings em TODOS os 3 idiomas (PT-BR, EN, ES)
+
+---
+
+## REGRA #3 — PROIBICOES ABSOLUTAS
+
+- NUNCA remova funcionalidades existentes
+- NUNCA mude logica de autenticacao sem pedido explicito
+- NUNCA altere a estrutura de navegacao (ContentView, TabView, NavigationStack)
+- NUNCA modifique configuracoes de build/signing/capabilities
+- NUNCA mude Bundle ID, Team ID, ou App Groups
+- NUNCA delete ou renomeie arquivos sem confirmacao
+- NUNCA "limpe" ou "otimize" codigo que esta funcionando
+- NUNCA remova #if DEBUG guards
+- NUNCA substitua implementacoes completas por stubs/placeholders
+- NUNCA mude a ordem de inicializacao do app (AppDelegate, Scene)
+- NUNCA altere as configuracoes do Supabase (URL, Keys)
+- NUNCA modifique as RLS policies do Supabase
+
+---
+
+## REGRA #4 — FORMATO DE RESPOSTA OBRIGATORIO
+
+Toda resposta que envolva alteracao de codigo DEVE seguir este formato:
+
+### 1. DIAGNOSTICO
+```
+PROBLEMA: [descricao clara do problema]
+CAUSA RAIZ: [arquivo:linha — o que esta errado]
+```
+
+### 2. PLANO DE ACAO
+```
+ARQUIVOS A MODIFICAR:
+- [arquivo1.swift] — [o que sera mudado]
+- [arquivo2.swift] — [o que sera mudado]
+
+ARQUIVOS QUE NAO SERAO TOCADOS:
+- [arquivo3.swift] — [motivo: nao relacionado]
+
+RISCOS:
+- [possivel efeito colateral e como mitigar]
+```
+
+### 3. CODIGO
+```
+[Codigo com comentarios claros indicando o que mudou]
+// MUDANCA: descricao do que foi alterado
+// ATENCAO: motivo da mudanca
+```
+
+### 4. VERIFICACAO
+```
+COMO TESTAR:
+1. [Passo de teste 1]
+2. [Passo de teste 2]
+3. [Verificar que X continua funcionando]
+```
+
+---
+
+## REGRA #5 — FUNCIONALIDADES 100% PRONTAS (NAO TOCAR)
+
+Estas funcionalidades estao 100% funcionando:
+- Autenticacao (Sign in with Apple + Email + Google)
+- Cadastro de bebe
+- Registro de sono (iniciar/parar timer)
+- Registro de alimentacao
+- Registro de fralda
+- Registro de banho
+- Registro de temperatura
+- Registro de medicamento
+- Chat IA
+- Historico com graficos
+- Sincronizacao Supabase
+- Onboarding completo
 - Paywall
 - Settings
-- Multi-caregiver
+- Multi-cuidador
 
-### 4. Async Code Rules
-- Maintain execution order (await A before await B)
-- Do not move await calls to different locations
-- Do not remove await from existing functions
-- Do not add await where there was none
+---
 
-### 5. Icons and Emojis - IMPORTANT
-- NEVER use emojis anywhere in the code
-- ALWAYS use SF Symbols for icons
-- Use simple bullets (•) for PDF lists
+## REGRA #6 — TESTES ANTES DE SUBMISSAO
 
-Icon mapping:
-| Meaning | SF Symbol |
-|---------|-----------|
-| Love/Happy | heart.fill |
-| Sad/Cried | cloud.rain.fill |
+Antes de QUALQUER submissao para App Store, verificar:
+
+### Autenticacao (CRITICO — Apple testa TUDO)
+- [ ] Sign in with Apple funciona no iPhone
+- [ ] Sign in with Apple funciona no iPad (simulador)
+- [ ] Sign in with Google funciona no iPhone
+- [ ] Sign in with Google funciona no iPad (simulador)
+- [ ] Login com email funciona
+- [ ] Conta demo (review@naplet.app / Review123) funciona
+- [ ] Logout funciona
+- [ ] Delete account funciona
+
+### Onboarding
+- [ ] Todas 12 telas carregam sem truncar texto
+- [ ] Funciona no iPhone SE (tela menor)
+- [ ] Funciona no iPad (modo compatibilidade)
+- [ ] Bebe e criado corretamente no Supabase
+
+### Paywall / Assinatura
+- [ ] Mostra nome da assinatura
+- [ ] Mostra duracao (mensal/anual)
+- [ ] Mostra preco
+- [ ] Link Terms of Use funciona e abre
+- [ ] Link Privacy Policy funciona e abre
+- [ ] Restore Purchases funciona
+
+### Features Core
+- [ ] Registrar sono funciona
+- [ ] Registrar alimentacao funciona
+- [ ] Registrar fralda funciona
+- [ ] Chat IA funciona
+- [ ] PDF funciona
+- [ ] Historico carrega
+- [ ] Estatisticas carregam
+
+### Metadata App Store Connect
+- [ ] Privacy Policy URL funcional
+- [ ] EULA/Terms configurado
+- [ ] Screenshots atualizados
+- [ ] Demo account nas notas do revisor
+- [ ] Descricao inclui link Terms of Use
+
+---
+
+## REGRA #7 — PADROES DO PROJETO
+
+### Design System
+- Cores: usar `NapletColors.*` (NUNCA hex direto)
+- Tipografia: SF Pro (sistema)
+- Icones: SF Symbols (NUNCA emojis em features core)
+- Cards: glassmorphism com `NapletColors.cardBackground`
+- Espacamento: usar `NapletSpacing.*`
+
+### Icones SF Symbols
+| Significado | SF Symbol |
+|-------------|-----------|
+| Coracao/Amor | heart.fill |
+| Triste/Chorou | cloud.rain.fill |
 | OK/Normal | hand.thumbsup.fill |
-| Sleep | moon.zzz.fill |
-| Alert | exclamationmark.triangle.fill |
-| Clock | clock.fill |
-| Sunrise | sunrise.fill |
-| Bell | bell.fill |
+| Sono | moon.zzz.fill |
+| Alerta | exclamationmark.triangle.fill |
+| Relogio | clock.fill |
+| Sol | sunrise.fill |
+| Sino | bell.fill |
 
-### 6. Before Any Task
-Ask yourself:
-1. Which files will I modify?
-2. Are any critical files involved?
-3. Can my change affect working features?
-4. Am I ADDING code or MODIFYING existing code?
-5. Should I ask before proceeding?
+### Arquitetura
+- MVVM (Model-View-ViewModel)
+- Views em `Features/[Nome]/Views/`
+- ViewModels em `Features/[Nome]/ViewModels/`
+- Models em `Data/Models/`
+- Repositories em `Data/Repositories/`
 
-### 7. If Something Goes Wrong
-1. STOP immediately
-2. SHOW exactly what you changed
-3. REVERT the change if possible
-4. ASK how to proceed
+### Localizacao
+- TODA string visivel ao usuario DEVE ser localizada
+- Usar `.localized` extension
+- Adicionar em pt-BR.lproj, en.lproj, es.lproj
+- Chave no formato: "feature_screen_element"
 
-### 8. Code Style
-- Use Swift best practices
-- Follow existing patterns in the codebase
-- Use NapletColors, NapletTypography, NapletSpacing for styling
-- Maintain consistent naming conventions
+### Codigo
+- Swift conventions (camelCase)
+- @MainActor para ViewModels
+- async/await para operacoes assincronas
+- Errors tratados com do/catch (NUNCA force unwrap `!`)
+- Print statements em `#if DEBUG` guard
 
-## Response Format
-When starting any task, confirm:
-"I understand the rules. I will preserve existing code and use only SF Symbols."
+---
+
+## REGRA #8 — DEVICE COMPATIBILITY
+
+O app e iPhone-only MAS a Apple testa no iPad em modo compatibilidade.
+
+### Obrigatorio em TODAS as telas:
+- ScrollView para conteudo que pode exceder a tela
+- `.fixedSize(horizontal: false, vertical: true)` em textos longos
+- Nao usar alturas fixas que possam cortar conteudo
+- Testar com Dynamic Type (acessibilidade)
+- Botoes com area de toque minima 44x44pt
+
+### Layout
+- Preferir `Spacer(minLength:)` sobre `Spacer()`
+- Usar `.frame(maxWidth: .infinity)` ao inves de larguras fixas
+- Padding consistente: `NapletSpacing.*`
+
+---
+
+## REGRA #9 — CODIGO ASSINCRONO (async/await)
+
+O app usa muito codigo assincrono. CUIDADO com:
+
+- Ordem de execucao (await A antes de await B)
+- Nao mover chamadas await para lugares diferentes
+- Nao remover await de funcoes existentes
+- Nao adicionar await onde nao tinha
+
+Se precisar modificar codigo async:
+1. Mostre o fluxo ATUAL
+2. Mostre o fluxo NOVO
+3. Explique por que a ordem e importante
+
+---
+
+## NOTAS ESPECIAIS PARA O CONTEXTO ATUAL
+
+1. **A Apple testa SEMPRE no iPad Air 11-inch (M3) com iPadOS**
+2. **Login DEVE funcionar perfeitamente** — e o primeiro fluxo que testam
+3. **Paywall DEVE mostrar todas as informacoes de assinatura** (Guideline 3.1.2)
+4. **Links de Terms e Privacy DEVEM funcionar** tanto no app quanto no App Store Connect
+5. **Conta demo DEVE existir e funcionar** (review@naplet.app / Review123)
+
+---
+
+## CHECKLIST RAPIDO (COPIAR PARA CADA TASK)
+
+```
+PRE-IMPLEMENTACAO:
+- Li o arquivo inteiro
+- Entendi as dependencias
+- Listei as mudancas necessarias
+- Identifiquei riscos
+
+DURANTE:
+- Fiz apenas as mudancas listadas
+- Nao toquei em codigo adjacente
+- Adicionei strings nos 3 idiomas (se UI)
+- Usei NapletColors/NapletSpacing
+
+POS-IMPLEMENTACAO:
+- Codigo compila sem erros
+- Testei no iPhone
+- Testei no iPad (simulador)
+- Funcionalidades existentes continuam OK
+```
+
+---
+
+## RESUMO: A REGRA DE OURO
+
+> **Faca o MINIMO necessario para completar a tarefa.**
+> **Leia antes de mudar. Mude cirurgicamente. Nao toque no que funciona.**
+> **Na duvida, PERGUNTE ao usuario antes de modificar.**
+
+---
+
+*Ultima atualizacao: 12 de Fevereiro de 2026*
+*Motivo: Rejeicoes repetidas na App Store por quebra de funcionalidades*

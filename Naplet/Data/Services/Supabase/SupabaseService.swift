@@ -22,12 +22,16 @@ final class SupabaseService: ObservableObject {
         currentUser?.id
     }
 
+    // MARK: - Auth Callback
+    var onSignedIn: ((User) -> Void)?
+
     // MARK: - Init
     private init() {
         let environment = AppEnvironment.current
 
         // Use a valid URL for initialization (will run in mock mode if useMockData is true)
-        let supabaseURL = URL(string: environment.supabaseURL) ?? URL(string: "https://mock.supabase.co")!
+        let fallbackURL = URL(string: "https://mock.supabase.co")
+        let supabaseURL = URL(string: environment.supabaseURL) ?? fallbackURL ?? URL(fileURLWithPath: "")
 
         client = SupabaseClient(
             supabaseURL: supabaseURL,
@@ -74,7 +78,15 @@ final class SupabaseService: ObservableObject {
             for await (event, session) in client.auth.authStateChanges {
                 Logger.debug("Auth state changed: \(event)")
                 self.currentSession = session
-                self.currentUser = session?.user
+                if let user = session?.user {
+                    self.currentUser = user
+                }
+                // NÃO setar nil aqui — só setar nil no signOut() explícito
+
+                // Notificar AppState sobre sign-in via callback
+                if event == .signedIn, let user = session?.user {
+                    self.onSignedIn?(user)
+                }
             }
         }
     }
@@ -105,9 +117,19 @@ final class SupabaseService: ObservableObject {
         let config = GIDConfiguration(clientID: AppConfig.Google.iOSClientID)
         GIDSignIn.sharedInstance.configuration = config
         
-        // 3. Get the root view controller
-        guard let windowScene = await UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let rootViewController = await windowScene.windows.first?.rootViewController else {
+        // 3. Get the root view controller (iPad-safe: prefer active scene + key window)
+        let scenes = UIApplication.shared.connectedScenes
+        let activeScene = scenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene
+        let fallbackScene = scenes.first as? UIWindowScene
+        guard let windowScene = activeScene ?? fallbackScene else {
+            throw NSError(
+                domain: "SupabaseService",
+                code: -1,
+                userInfo: [NSLocalizedDescriptionKey: "Não foi possível obter a janela principal"]
+            )
+        }
+        let keyWindow = windowScene.windows.first(where: { $0.isKeyWindow }) ?? windowScene.windows.first
+        guard let rootViewController = keyWindow?.rootViewController else {
             throw NSError(
                 domain: "SupabaseService",
                 code: -1,
@@ -208,6 +230,55 @@ final class SupabaseService: ObservableObject {
         try await client.auth.signOut()
         currentUser = nil
         currentSession = nil
+    }
+
+    /// Delete account and all associated data
+    func deleteAccount() async throws {
+        guard let userId = currentUser?.id else {
+            throw NSError(domain: "SupabaseService", code: 401, userInfo: [NSLocalizedDescriptionKey: "No authenticated user"])
+        }
+
+        // 1. Get all baby IDs owned by this user
+        struct BabyId: Decodable { let id: UUID }
+        let babies: [BabyId] = (try? await client.from("babies")
+            .select("id")
+            .eq("owner_id", value: userId.uuidString)
+            .execute()
+            .value) ?? []
+
+        let babyIds = babies.map { $0.id.uuidString }
+
+        // 2. Delete child records for each baby (in case no CASCADE)
+        for babyId in babyIds {
+            try? await client.from("sleep_records").delete().eq("baby_id", value: babyId).execute()
+            try? await client.from("night_wakings").delete().eq("baby_id", value: babyId).execute()
+            try? await client.from("feeding_records").delete().eq("baby_id", value: babyId).execute()
+            try? await client.from("diaper_records").delete().eq("baby_id", value: babyId).execute()
+            try? await client.from("bath_records").delete().eq("baby_id", value: babyId).execute()
+            try? await client.from("health_records").delete().eq("baby_id", value: babyId).execute()
+            try? await client.from("medication_schedules").delete().eq("baby_id", value: babyId).execute()
+            try? await client.from("documents").delete().eq("baby_id", value: babyId).execute()
+            try? await client.from("chat_messages").delete().eq("baby_id", value: babyId).execute()
+        }
+
+        // 3. Delete caregiver relationships
+        try? await client.from("caregivers").delete().eq("user_id", value: userId.uuidString).execute()
+
+        // 4. Delete babies
+        try? await client.from("babies").delete().eq("owner_id", value: userId.uuidString).execute()
+
+        // 5. Delete support tickets
+        try? await client.from("support_tickets").delete().eq("user_id", value: userId.uuidString).execute()
+
+        // 6. Delete profile
+        try? await client.from("profiles").delete().eq("id", value: userId.uuidString).execute()
+
+        // 7. Sign out (clears local session and Keychain tokens)
+        try await client.auth.signOut()
+        currentUser = nil
+        currentSession = nil
+
+        Logger.info("Account deleted successfully for user: \(userId)")
     }
 
     /// Get current user

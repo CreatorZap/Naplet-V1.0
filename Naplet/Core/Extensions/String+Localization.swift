@@ -277,6 +277,21 @@ enum L10n {
         static let suggestedQuestions = "aiChat.suggestedQuestions"
     }
 
+    // MARK: - AI Consent
+    enum AIConsent {
+        static let title = "aiConsent.title"
+        static let description = "aiConsent.description"
+        static let dataShared = "aiConsent.dataShared"
+        static let dataBabyInfo = "aiConsent.data.babyInfo"
+        static let dataSleepRecords = "aiConsent.data.sleepRecords"
+        static let dataChatMessages = "aiConsent.data.chatMessages"
+        static let processingNote = "aiConsent.processingNote"
+        static let checkbox = "aiConsent.checkbox"
+        static let enable = "aiConsent.enable"
+        static let notNow = "aiConsent.notNow"
+        static let readPrivacyPolicy = "aiConsent.readPrivacyPolicy"
+    }
+
     // MARK: - Report
     enum Report {
         static let title = "report.title"

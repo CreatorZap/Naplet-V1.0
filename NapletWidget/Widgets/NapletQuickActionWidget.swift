@@ -59,7 +59,7 @@ struct QuickActionWidgetView: View {
                     .foregroundColor(WidgetColors.textSecondary)
 
                 // Action button (Deep Link)
-                Link(destination: URL(string: entry.data.isSleeping ? "naplet://stopSleep" : "naplet://startSleep")!) {
+                Link(destination: URL(string: entry.data.isSleeping ? "naplet://stopSleep" : "naplet://startSleep") ?? URL(string: "naplet://home")!) {
                     VStack(spacing: 8) {
                         ZStack {
                             Circle()

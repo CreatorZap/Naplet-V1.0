@@ -106,3 +106,14 @@ https://naplet.app/privacy
 - "Watch them grow"
 - "Personalized sleep tips"
 - "Care together as a family"
+
+---
+
+## What's New in v1.1
+
+What's New in v1.1:
+- Nap Prediction — See when the next nap should be
+- Developmental Milestones — Track your baby's 30 milestones
+- Growth Tracking — Record weight, height and head circumference with charts
+- Smart Notifications — Alerts before nap time
+- Prices in local currency

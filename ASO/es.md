@@ -106,3 +106,14 @@ https://naplet.app/privacidad
 - "Acompaña su crecimiento"
 - "Consejos personalizados de sueño"
 - "Cuiden juntos en familia"
+
+---
+
+## Novedades v1.1
+
+Novedades v1.1:
+- Prediccion de Siesta — Vea cuando sera la proxima siesta
+- Hitos del Desarrollo — Acompane los 30 hitos de su bebe
+- Crecimiento — Registre peso, altura y perimetro con graficos
+- Notificaciones Inteligentes — Alertas antes de la siesta
+- Precios en moneda local

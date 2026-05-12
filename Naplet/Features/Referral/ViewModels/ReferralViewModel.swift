@@ -20,7 +20,7 @@ final class ReferralViewModel: ObservableObject {
     // MARK: - Computed Properties
 
     var shareURL: URL {
-        URL(string: "https://naplet.app/r/\(referralCode)")!
+        URL(string: "https://naplet.app/r/\(referralCode)") ?? URL(string: "https://naplet.app")!
     }
 
     var shareMessage: String {

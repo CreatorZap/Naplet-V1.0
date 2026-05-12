@@ -15,6 +15,8 @@ class OnboardingViewModel: ObservableObject {
     @Published var babyBirthDate: Date = Date()
     @Published var babyGender: Baby.Gender? = nil
     @Published var babyNotBornYet: Bool = false
+    @Published var birthDateWasSelected: Bool = false
+    @Published var genderWasSelected: Bool = false
 
     // MARK: - User Data
     @Published var relationship: CaregiverRelationship = .mother
@@ -193,30 +195,53 @@ class OnboardingViewModel: ObservableObject {
 
     // MARK: - Birth Date Validation
     var isValidBirthDate: Bool {
-        // Se o bebê ainda não nasceu, é válido (está usando a data esperada)
         if babyNotBornYet {
             return true
         }
-        
-        // Se nasceu, a data deve ser no passado e não muito antiga (máximo 5 anos)
+
+        guard birthDateWasSelected else { return false }
+
         let now = Date()
         let fiveYearsAgo = Calendar.current.date(byAdding: .year, value: -5, to: now) ?? now
-        
+
         return babyBirthDate <= now && babyBirthDate >= fiveYearsAgo
+    }
+
+    var canConfirmOnboarding: Bool {
+        let nameValid = !babyName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        let birthValid = isValidBirthDate
+        return nameValid && birthValid
     }
 
     // MARK: - Navigation Methods
 
     func nextStep() {
+        guard canProceedFromCurrentStep() else { return }
+
         guard let currentIndex = OnboardingStep.allCases.firstIndex(of: currentStep),
               currentIndex < OnboardingStep.allCases.count - 1 else {
             return
         }
-        // Haptic feedback para transição
+
         HapticManager.shared.lightImpact()
 
         withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
             currentStep = OnboardingStep.allCases[currentIndex + 1]
+        }
+    }
+
+    private func canProceedFromCurrentStep() -> Bool {
+        switch currentStep {
+        case .babyName:
+            return canProceedFromBabyName
+        case .babyBirth:
+            return isValidBirthDate
+        case .babyGender:
+            return genderWasSelected
+        case .confirmation:
+            return canConfirmOnboarding
+        default:
+            return true
         }
     }
 

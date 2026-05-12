@@ -183,6 +183,8 @@ struct FeedbackFormView: View {
 
 #Preview("Feedback Form") {
     FeedbackFormView(feedbackText: .constant("")) {
+        #if DEBUG
         print("Submitted")
+        #endif
     }
 }

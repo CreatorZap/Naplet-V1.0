@@ -74,7 +74,7 @@
 
 // Auth - New Premium Login Screen
 "auth.tagline" = "Track your baby's sleep\nwith artificial intelligence";
-"auth.socialProof.headline" = "The #1 baby sleep app";
+"auth.socialProof.headline" = "Peaceful sleep for the whole family";
 "auth.badge.editorsChoice.main" = "Editors'";
 "auth.badge.editorsChoice.sub" = "Choice";
 "auth.badge.appOfDay.main" = "App of";
@@ -113,7 +113,7 @@
 "onboarding_welcome_cta" = "Get started";
 "onboarding_welcome_invite" = "I have an invite code";
 "onboarding_welcome_login" = "Already have an account? Sign in";
-"onboarding_welcome_social_proof" = "Over 10,000 families have already transformed their nights";
+"onboarding_welcome_social_proof" = "Trusted by families to track their baby's sleep";
 
 // Benefits Screen
 "onboarding_benefits_title" = "Hello!";
@@ -226,6 +226,15 @@
 "onboarding.babyInfo.gender" = "Gender (optional)";
 "onboarding.babyInfo.gender.male" = "Boy";
 "onboarding.babyInfo.gender.female" = "Girl";
+
+// Add Baby View (aliases for AddBabyView.swift)
+"onboarding.babyName.label" = "Baby's name";
+"onboarding.babyName.placeholder" = "Enter name";
+"onboarding.babyBirth.label" = "Birth date";
+"onboarding.babyGender.label" = "Gender (optional)";
+"onboarding.gender.boy" = "Boy";
+"onboarding.gender.girl" = "Girl";
+
 "onboarding.goals.title" = "What's your sleep goal?";
 "onboarding.goals.subtitle" = "Select all that apply";
 "onboarding.notifications.title" = "Stay on track";
@@ -370,6 +379,10 @@
 "settings.signOut" = "Sign Out";
 "settings.signOut.confirm" = "Are you sure you want to sign out?";
 "settings.deleteAccount" = "Delete Account";
+"settings.deleteAccount.title" = "Delete Account?";
+"settings.deleteAccount.message" = "Are you sure? This action cannot be undone. All your data, including baby profiles, sleep records, and chat history, will be permanently deleted.";
+"settings.deleteAccount.confirm" = "Delete Account";
+"settings.deleteAccount.error" = "Failed to delete account. Please try again.";
 "settings.resetOnboarding" = "Reset Onboarding";
 "settings.sleepSchedule" = "Sleep Schedule";
 "settings.sleepSchedule.subtitle" = "Customize wake, bedtime and naps";
@@ -430,6 +443,23 @@
 "aiChat.remainingMessages" = "%d messages remaining this month";
 "aiChat.limitReached" = "Message limit reached";
 "aiChat.suggestedQuestions" = "Suggested questions";
+
+// MARK: - AI Consent
+"aiConsent.title" = "AI Chat - Data Sharing";
+"aiConsent.description" = "To provide personalized sleep guidance, the AI Chat feature sends the following data to OpenAI:";
+"aiConsent.dataShared" = "Data shared with OpenAI";
+"aiConsent.data.babyInfo" = "Baby's name and age";
+"aiConsent.data.sleepRecords" = "Sleep records and patterns";
+"aiConsent.data.chatMessages" = "Your chat messages";
+"aiConsent.processingNote" = "OpenAI processes this data to generate responses. Data is not stored by OpenAI after processing.";
+"aiConsent.checkbox" = "I understand and consent to sharing this data with OpenAI for personalized sleep guidance";
+"aiConsent.enable" = "Enable AI Chat";
+"aiConsent.notNow" = "Not Now";
+"aiConsent.readPrivacyPolicy" = "Read Privacy Policy";
+"settings.privacy" = "Privacy";
+"settings.aiDataSharing" = "AI Data Sharing";
+"settings.aiDataSharing.subtitle" = "Share data with OpenAI for AI Chat";
+"settings.aiDataSharing.consentDate" = "Consent given on %@";
 
 // MARK: - PDF Report
 "report.title" = "Sleep Report";
@@ -798,6 +828,7 @@
 "paywall.terms" = "Terms of Use";
 "paywall.privacy" = "Privacy";
 "paywall.trialInfo" = "7 days free, then charged automatically";
+"paywall.auto_renew_disclaimer" = "Subscription automatically renews unless canceled at least 24 hours before the end of the current period. Payment will be charged to your iTunes account. You can manage and cancel your subscriptions in App Store settings.";
 "paywall.bestValue" = "Save %d%%";
 "paywall.monthlyEquivalent" = "equivalent to %@/month";
 "paywall.annual" = "Annual";
@@ -839,7 +870,7 @@
 "paywall.founders.badgeProfile" = "Founder";
 
 // MARK: - Paywall Trust
-"paywall.trust.trial" = "14 days free";
+"paywall.trust.trial" = "7 days free";
 "paywall.trust.cancel" = "Cancel anytime";
 "paywall.trust.priceLocked" = "Price locked";
 
@@ -929,6 +960,9 @@
 
 "legal.privacy.section6.title" = "6. Contact";
 "legal.privacy.section6.content" = "For privacy questions:\ncontact@naplet.app";
+
+"legal.privacy.section7.title" = "7. AI Chat & Third-Party Data Sharing";
+"legal.privacy.section7.content" = "Our AI Chat feature uses OpenAI's API to provide personalized baby sleep guidance. When you use the AI Chat, the following data may be sent to OpenAI:\n\n• Your baby's name and age\n• Sleep records and patterns\n• Your chat messages and questions\n\nThis data is sent only when you actively use the AI Chat feature and only after you have granted explicit consent.\n\nOpenAI processes this data solely to generate responses and does not retain personal data after processing, in accordance with OpenAI's data usage policy.\n\nYou can revoke your consent at any time in Settings > AI Data Sharing. Revoking consent will disable the AI Chat feature.\n\nWe ensure that OpenAI, as our third-party data processor, provides equal protection of your data as described in this privacy policy.";
 
 // Terms of Service Sections
 "legal.terms.section1.title" = "1. Acceptance of Terms";
@@ -1130,7 +1164,7 @@
 
 // Benefits
 "referral.benefit.friend.title" = "Your friend gets";
-"referral.benefit.friend.subtitle" = "30 days of Premium free (instead of 14)";
+"referral.benefit.friend.subtitle" = "30 days of Premium free (instead of 7)";
 "referral.benefit.you.title" = "You get";
 "referral.benefit.you.subtitle" = "Ambassador badge after 5 referrals";
 
@@ -1502,22 +1536,12 @@
 "paywall.period.lifetime" = "one-time payment";
 "paywall.cta.founders" = "Lock in Founder price";
 "paywall.cta.subscribe" = "Subscribe Now";
-"paywall.social.app_store_rating" = "4.9 ON APP STORE";
-"paywall.social.families_title" = "+10,000 families\nsleeping better";
-"paywall.social.subtitle" = "See what parents are saying";
-"paywall.review1.title" = "Changed our nights!";
-"paywall.review1.description" = "Finally understood my baby's sleep patterns. The AI Chat is an incredible feature!";
-"paywall.review1.author" = "Sarah M.";
-"paywall.review1.role" = "mom of Sophia";
-"paywall.review2.title" = "Better than Napper!";
-"paywall.review2.description" = "Used Napper for 6 months. Naplet has everything + AI + cheaper. 10/10";
-"paywall.review2.author" = "Peter R.";
-"paywall.review2.role" = "dad of Michael";
-"paywall.review3.title" = "The PDF saved my appointment!";
-"paywall.review3.description" = "The pediatrician was impressed with the report. Super professional!";
-"paywall.review3.author" = "Anna C.";
-"paywall.review3.role" = "first-time mom";
-"paywall.trust.free_trial" = "14 days\nfree";
+"paywall.cta.tryAgain" = "Try Again";
+"paywall.error.loadFailed" = "Unable to load prices. Please check your internet connection and try again.";
+"paywall.error.purchaseFailed" = "Unable to complete purchase. Please try again.";
+"paywall.social.join_family" = "Join the Naplet Family";
+"paywall.social.join_subtitle" = "Better sleep tracking for your little one";
+"paywall.trust.free_trial" = "7 days\nfree";
 "paywall.trust.cancel_anytime" = "Cancel\nanytime";
 "paywall.trust.locked_price" = "Price\nlocked";
 "paywall.loading" = "Loading...";
@@ -1767,6 +1791,21 @@
 "wakeWindow.tip.tired" = "Put to sleep now for a perfect nap!";
 "wakeWindow.tip.overtired" = "Warm cuddles and white noise can help. You got this!";
 
+// MARK: - Wake Window Card
+"wake_window.title" = "Sleep Window";
+"wake_window.sleeping" = "Sleeping for %@ min";
+"wake_window.sleeping_subtitle" = "Sweet dreams! Rest while you can.";
+"wake_window.next_nap" = "Next nap in ~%@ min";
+"wake_window.nap_time" = "Nap time!";
+"wake_window.nap_window" = "Nap window";
+"wake_window.awake" = "Awake";
+"wake_window.overdue" = "Nap overdue!";
+"wake_window.overdue_subtitle" = "Overdue by %@ min. Try to put baby down now.";
+"wake_window.in_window_subtitle" = "In the ideal window for %@ min";
+"wake_window.no_data" = "Log a sleep to see predictions";
+"wake_window.no_data_subtitle" = "Tap the button above to start tracking";
+"wake_window.recommended" = "Recommended window: %@-%@ min";
+
 // MARK: - Bedtime Status
 "bedtime.recommendedTime" = "Bedtime: %@";
 "bedtime.prepare.title" = "Time to Prepare";
@@ -1833,3 +1872,138 @@
 "sleepSchedule.learned.title" = "Learned Data";
 "sleepSchedule.learned.description" = "Based on %d days of use";
 "sleepSchedule.reset" = "Reset to defaults";
+
+// MARK: - Settings Upgrade
+"settings.upgrade.title" = "Upgrade to Premium";
+"settings.upgrade.subtitle" = "Unlock AI chat, detailed reports, multiple caregivers and more";
+
+// MARK: - Milestones
+"milestones.title" = "Milestones";
+"milestones.dashboard.title" = "Milestones";
+"milestones.dashboard.subtitle" = "Development";
+"milestones.progress" = "Development Progress";
+"milestones.filter.all" = "All";
+"milestones.achieved_on" = "Achieved on %@";
+"milestones.expected_age" = "Expected: %@ months";
+"milestones.achieve_title" = "Mark Achievement";
+"milestones.achieve_date" = "When did it happen?";
+"milestones.notes" = "Notes (optional)";
+"milestones.notes_placeholder" = "Add any details...";
+"milestones.mark_achieved" = "Mark as Achieved";
+"milestones.cancel" = "Cancel";
+"milestones.remove" = "Remove Achievement";
+
+// Milestone Categories
+"milestone.category.motor" = "Motor";
+"milestone.category.cognitive" = "Cognitive";
+"milestone.category.social" = "Social";
+"milestone.category.language" = "Language";
+"milestone.category.feeding" = "Feeding";
+
+// Motor Milestones
+"milestone.motor_head_control.name" = "Head Control";
+"milestone.motor_head_control.desc" = "Holds head steady when upright";
+"milestone.motor_roll_over.name" = "Roll Over";
+"milestone.motor_roll_over.desc" = "Rolls from tummy to back";
+"milestone.motor_sit_support.name" = "Sit with Support";
+"milestone.motor_sit_support.desc" = "Sits with help or leaning on hands";
+"milestone.motor_sit_alone.name" = "Sit Alone";
+"milestone.motor_sit_alone.desc" = "Sits without support";
+"milestone.motor_crawl.name" = "Crawl";
+"milestone.motor_crawl.desc" = "Moves on hands and knees";
+"milestone.motor_stand_support.name" = "Stand with Support";
+"milestone.motor_stand_support.desc" = "Pulls up to stand holding furniture";
+"milestone.motor_first_steps.name" = "First Steps";
+"milestone.motor_first_steps.desc" = "Takes first steps with support";
+"milestone.motor_walk_alone.name" = "Walk Alone";
+"milestone.motor_walk_alone.desc" = "Walks independently";
+
+// Cognitive Milestones
+"milestone.cognitive_follow_objects.name" = "Follow Objects";
+"milestone.cognitive_follow_objects.desc" = "Follows moving objects with eyes";
+"milestone.cognitive_reach_objects.name" = "Reach for Objects";
+"milestone.cognitive_reach_objects.desc" = "Reaches out to grab toys";
+"milestone.cognitive_object_permanence.name" = "Object Permanence";
+"milestone.cognitive_object_permanence.desc" = "Looks for hidden objects";
+"milestone.cognitive_pincer_grasp.name" = "Pincer Grasp";
+"milestone.cognitive_pincer_grasp.desc" = "Picks up small objects with thumb and finger";
+"milestone.cognitive_point_objects.name" = "Point at Objects";
+"milestone.cognitive_point_objects.desc" = "Points to things of interest";
+"milestone.cognitive_stack_blocks.name" = "Stack Blocks";
+"milestone.cognitive_stack_blocks.desc" = "Stacks 2 or more blocks";
+
+// Social Milestones
+"milestone.social_first_smile.name" = "First Smile";
+"milestone.social_first_smile.desc" = "Smiles at people";
+"milestone.social_laugh.name" = "First Laugh";
+"milestone.social_laugh.desc" = "Laughs out loud";
+"milestone.social_recognize_faces.name" = "Recognize Faces";
+"milestone.social_recognize_faces.desc" = "Recognizes familiar faces";
+"milestone.social_stranger_anxiety.name" = "Stranger Awareness";
+"milestone.social_stranger_anxiety.desc" = "Shows shyness around strangers";
+"milestone.social_wave_bye.name" = "Wave Bye-Bye";
+"milestone.social_wave_bye.desc" = "Waves goodbye";
+"milestone.social_imitate_actions.name" = "Imitate Actions";
+"milestone.social_imitate_actions.desc" = "Copies gestures and actions";
+
+// Language Milestones
+"milestone.language_coo.name" = "Cooing";
+"milestone.language_coo.desc" = "Makes cooing sounds";
+"milestone.language_babble.name" = "Babbling";
+"milestone.language_babble.desc" = "Babbles with consonant sounds";
+"milestone.language_respond_name.name" = "Respond to Name";
+"milestone.language_respond_name.desc" = "Turns when name is called";
+"milestone.language_mama_dada.name" = "Mama/Dada";
+"milestone.language_mama_dada.desc" = "Says mama or dada with meaning";
+"milestone.language_first_words.name" = "First Words";
+"milestone.language_first_words.desc" = "Says 1-3 words besides mama/dada";
+"milestone.language_two_words.name" = "Two-Word Phrases";
+"milestone.language_two_words.desc" = "Combines two words together";
+
+// Feeding Milestones
+"milestone.feeding_hold_bottle.name" = "Hold Bottle";
+"milestone.feeding_hold_bottle.desc" = "Holds bottle independently";
+"milestone.feeding_first_solids.name" = "First Solids";
+"milestone.feeding_first_solids.desc" = "Eats pureed or mashed foods";
+"milestone.feeding_finger_foods.name" = "Finger Foods";
+"milestone.feeding_finger_foods.desc" = "Picks up and eats small food pieces";
+"milestone.feeding_use_spoon.name" = "Use Spoon";
+"milestone.feeding_use_spoon.desc" = "Feeds self with a spoon";
+
+// MARK: - Growth Tracking
+"growth.title" = "Growth";
+"growth.dashboard.title" = "Growth";
+"growth.dashboard.subtitle" = "Weight & Height";
+"growth.weight" = "Weight";
+"growth.height" = "Height";
+"growth.head" = "Head";
+"growth.chart.weight" = "Weight";
+"growth.chart.height" = "Height";
+"growth.chart.head" = "Head Circ.";
+"growth.chart.age" = "Age";
+"growth.chart.age_days" = "Age (days)";
+"growth.chart.empty" = "No measurements yet";
+"growth.chart.need_more" = "Add more measurements to see the chart";
+"growth.add_first" = "Add First Measurement";
+"growth.add_title" = "New Measurement";
+"growth.date" = "Date";
+"growth.notes" = "Notes (optional)";
+"growth.notes_placeholder" = "Pediatrician visit, observations...";
+"growth.save" = "Save Measurement";
+"growth.cancel" = "Cancel";
+"growth.done" = "Done";
+"growth.delete" = "Delete";
+"growth.history" = "History";
+"growth.no_records" = "No measurements recorded yet";
+"growth.age_days" = "%@ days";
+"growth.age_months" = "%@ months";
+"growth.unit.metric" = "Switch to metric";
+"growth.unit.imperial" = "Switch to imperial";
+"growth.switch_imperial" = "Switch to lb/in";
+"growth.switch_metric" = "Switch to kg/cm";
+
+// MARK: - Wake Window Nap Reminders
+"nap_reminder.title" = "Nap time approaching!";
+"nap_reminder.body" = "%@ should be getting sleepy soon";
+"nap_reminder.window_title" = "Nap time!";
+"nap_reminder.window_body" = "%@ is in the ideal nap window now. Time to sleep!";
