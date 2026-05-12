@@ -190,10 +190,13 @@ enum AppConfig {
         /// ⚠️ AJUSTAR CONFORME DATA DE LANÇAMENTO
         /// Formato: 3 meses após o lançamento
         static let foundersEndDate: Date = {
-            // Aproximadamente 22 de Abril de 2026 (3 meses após lançamento em Jan 2026)
+            // Extensão de 3 meses (de 22-Abr-2026 → 22-Jul-2026) decidida em
+            // 12-Mai-2026 após constatar que o prazo original expirou sem
+            // campanha de marketing. Janela usada para rodar testes do paywall
+            // (Bloco 1.3 do Sprint 1) antes de travar pricing regular.
             var components = DateComponents()
             components.year = 2026
-            components.month = 4
+            components.month = 7
             components.day = 22
             components.hour = 23
             components.minute = 59
