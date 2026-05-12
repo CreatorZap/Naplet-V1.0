@@ -164,11 +164,11 @@ final class PurchaseService: NSObject, ObservableObject {
         // Set delegate for customer info updates
         Purchases.shared.delegate = self
 
-        #if DEBUG
-        print("✅ RevenueCat configurado!")
-        print("🔑 API Key: \(String(AppConfig.revenueCatAPIKey.prefix(20)))...")
-        #endif
         Logger.info("RevenueCat configured successfully")
+
+        #if DEBUG
+        logRuntimeValidation()
+        #endif
 
         // Fetch initial data
         Task {
@@ -176,6 +176,64 @@ final class PurchaseService: NSObject, ObservableObject {
             await fetchOfferings()
         }
     }
+
+#if DEBUG
+    /// Loga ao console informações para confirmar que o RevenueCat está
+    /// rodando em PRODUCTION (não sandbox por engano), os offerings esperados
+    /// estão presentes, e o período Founders ainda está dentro da janela.
+    /// Apenas DEBUG. Substitui prints antigos que mostravam só "✅ configurado"
+    /// e prefix da chave.
+    private func logRuntimeValidation() {
+        let key = AppConfig.revenueCatAPIKey
+        let keyPrefix = String(key.prefix(8))
+
+        let keyMode: String
+        if key.hasPrefix("appl_") {
+            keyMode = "PRODUCTION (key prefix appl_)"
+        } else if key.hasPrefix("test_") {
+            keyMode = "⚠️ SANDBOX/TEST (key prefix test_)"
+        } else {
+            keyMode = "⚠️ UNKNOWN (key prefix \(keyPrefix))"
+        }
+
+        print("[RevenueCat] === Runtime Validation ===")
+        print("[RevenueCat] Key prefix: \(keyPrefix)...")
+        print("[RevenueCat] Key mode: \(keyMode)")
+
+        // Receipt context é mais robusto que o prefixo da chave:
+        // pega caso de chave de produção rodando em testflight/sandbox.
+        if let receiptURL = Bundle.main.appStoreReceiptURL {
+            let isSandboxReceipt = receiptURL.lastPathComponent == "sandboxReceipt"
+            print("[RevenueCat] Receipt URL: \(receiptURL.lastPathComponent)")
+            print("[RevenueCat] Receipt context: \(isSandboxReceipt ? "SANDBOX" : "PRODUCTION")")
+        } else {
+            print("[RevenueCat] Receipt URL: not available yet (will populate after first purchase)")
+        }
+
+        print("[RevenueCat] Premium entitlement ID: \(AppConfig.Subscription.premiumEntitlement)")
+        print("[RevenueCat] Expected offerings: default, founders")
+
+        // Founders period check
+        let foundersEndDate = AppConfig.Subscription.foundersEndDate
+        let now = Date()
+        let isFoundersActive = now < foundersEndDate
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .none
+
+        print("[RevenueCat] Today: \(dateFormatter.string(from: now))")
+        print("[RevenueCat] Founders end: \(dateFormatter.string(from: foundersEndDate))")
+
+        if isFoundersActive {
+            let days = Calendar.current.dateComponents([.day], from: now, to: foundersEndDate).day ?? 0
+            print("[RevenueCat] Founders status: ACTIVE (\(days) days remaining)")
+        } else {
+            let days = Calendar.current.dateComponents([.day], from: foundersEndDate, to: now).day ?? 0
+            print("[RevenueCat] Founders status: ⚠️ EXPIRED (\(days) days ago)")
+        }
+    }
+#endif
 
     // MARK: - Mock Methods (for development)
     #if DEBUG
@@ -208,6 +266,23 @@ final class PurchaseService: NSObject, ObservableObject {
             customerInfo = info
             isSubscribed = info.entitlements[AppConfig.Subscription.premiumEntitlement]?.isActive == true
             Logger.info("Subscription status: \(isSubscribed)")
+
+            #if DEBUG
+            print("[RevenueCat] User ID: \(info.originalAppUserId)")
+            if let entitlement = info.entitlements[AppConfig.Subscription.premiumEntitlement] {
+                print("[RevenueCat] Entitlement '\(AppConfig.Subscription.premiumEntitlement)':")
+                print("[RevenueCat]   active: \(entitlement.isActive)")
+                print("[RevenueCat]   willRenew: \(entitlement.willRenew)")
+                print("[RevenueCat]   product: \(entitlement.productIdentifier)")
+                print("[RevenueCat]   store: \(entitlement.store.rawValue)")
+                print("[RevenueCat]   periodType: \(entitlement.periodType.rawValue)")
+                if entitlement.isSandbox {
+                    print("[RevenueCat]   ⚠️ SANDBOX entitlement")
+                }
+            } else {
+                print("[RevenueCat] Entitlement '\(AppConfig.Subscription.premiumEntitlement)': not present (free user)")
+            }
+            #endif
         } catch {
             Logger.error(error, context: "Failed to fetch customer info")
         }
@@ -240,6 +315,18 @@ final class PurchaseService: NSObject, ObservableObject {
             }
 
             Logger.info("Fetched offerings: \(offerings.all.count)")
+
+            #if DEBUG
+            let ids = offerings.all.keys.sorted().joined(separator: ", ")
+            print("[RevenueCat] Offerings: [\(ids)]")
+            for (id, offering) in offerings.all.sorted(by: { $0.key < $1.key }) {
+                print("[RevenueCat]   - \(id): \(offering.availablePackages.count) packages")
+                for package in offering.availablePackages {
+                    print("[RevenueCat]       \(package.identifier) → \(package.storeProduct.productIdentifier) (\(package.localizedPriceString))")
+                }
+            }
+            print("[RevenueCat] Current offering: \(offerings.current?.identifier ?? "nil")")
+            #endif
         } catch {
             Logger.error(error, context: "Failed to fetch offerings")
         }
