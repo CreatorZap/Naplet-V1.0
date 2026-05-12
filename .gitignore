@@ -27,3 +27,6 @@ Secrets.swift
 
 # macOS metadata files (AppleDouble)
 ._*
+
+# Claude Code local worktrees
+.claude/worktrees/
