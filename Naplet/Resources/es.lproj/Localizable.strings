@@ -2111,9 +2111,9 @@
 "onboarding.paywall.cta.primary" = "Empezar 7 días gratis";
 "onboarding.paywall.cta.secondary" = "Continuar con versión gratuita";
 "onboarding.paywall.cta.purchasing" = "Procesando...";
-"onboarding.paywall.fineprint.restore" = "Restaurar compras";
-"onboarding.paywall.fineprint.terms" = "Términos de uso";
-"onboarding.paywall.fineprint.privacy" = "Política de privacidad";
+"onboarding.paywall.fineprint.restore" = "Restaurar";
+"onboarding.paywall.fineprint.terms" = "Términos";
+"onboarding.paywall.fineprint.privacy" = "Privacidad";
 "onboarding.paywall.fineprint.autorenewal" = "Renovación automática. Cancela cuando quieras en los ajustes de la App Store.";
 "onboarding.paywall.error.purchaseFailed" = "No se pudo procesar la compra. Intenta nuevamente.";
 "onboarding.paywall.error.networkFailed" = "Sin conexión a internet. Verifica tu conexión e intenta nuevamente.";

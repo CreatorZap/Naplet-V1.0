@@ -2051,9 +2051,9 @@
 "onboarding.paywall.cta.primary" = "Start 7-day free trial";
 "onboarding.paywall.cta.secondary" = "Continue with free version";
 "onboarding.paywall.cta.purchasing" = "Processing...";
-"onboarding.paywall.fineprint.restore" = "Restore purchases";
-"onboarding.paywall.fineprint.terms" = "Terms of use";
-"onboarding.paywall.fineprint.privacy" = "Privacy policy";
+"onboarding.paywall.fineprint.restore" = "Restore";
+"onboarding.paywall.fineprint.terms" = "Terms";
+"onboarding.paywall.fineprint.privacy" = "Privacy";
 "onboarding.paywall.fineprint.autorenewal" = "Auto-renewal. Cancel anytime in your App Store settings.";
 "onboarding.paywall.error.purchaseFailed" = "Could not process purchase. Please try again.";
 "onboarding.paywall.error.networkFailed" = "No internet connection. Check your connection and try again.";
