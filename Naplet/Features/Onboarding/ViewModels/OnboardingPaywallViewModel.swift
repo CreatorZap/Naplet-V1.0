@@ -18,6 +18,7 @@ final class OnboardingPaywallViewModel: ObservableObject {
     @Published private(set) var foundersPackage: Package?
     @Published private(set) var isLoading: Bool = true
     @Published private(set) var isPurchasing: Bool = false
+    @Published private(set) var isRestoring: Bool = false
     @Published var errorMessage: String?
 
     // MARK: - Computed
@@ -120,6 +121,42 @@ final class OnboardingPaywallViewModel: ObservableObject {
         Logger.warning("[OnboardingPaywall] no Founders package available, purchase blocked")
         errorMessage = "onboarding.paywall.error.unavailable".localized
         return false
+    }
+
+    // MARK: - Restore
+
+    /// Restaura compras anteriores via RevenueCat.
+    /// Retorna `true` se o entitlement premium ficou ativo após o restore.
+    func restorePurchases() async -> Bool {
+        AnalyticsService.track("onboarding_paywall_restore_tap")
+
+        isRestoring = true
+        defer { isRestoring = false }
+
+        do {
+            let customerInfo = try await Purchases.shared.restorePurchases()
+
+            let isPremiumActive = customerInfo
+                .entitlements[AppConfig.Subscription.premiumEntitlement]?
+                .isActive == true
+
+            if isPremiumActive {
+                AnalyticsService.track("onboarding_paywall_restore_success")
+                Logger.info("[OnboardingPaywall] Restore successful — premium active")
+                return true
+            } else {
+                AnalyticsService.track("onboarding_paywall_restore_no_purchases")
+                errorMessage = "onboarding.paywall.restore.noPurchases".localized
+                return false
+            }
+        } catch {
+            AnalyticsService.track("onboarding_paywall_restore_failed", properties: [
+                "error": error.localizedDescription
+            ])
+            Logger.error(error, context: "[OnboardingPaywall] restore failed")
+            errorMessage = mapErrorToUserMessage(error)
+            return false
+        }
     }
 
     // MARK: - Skip / Track

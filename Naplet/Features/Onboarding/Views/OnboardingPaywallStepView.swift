@@ -307,11 +307,20 @@ struct OnboardingPaywallStepView: View {
                 .padding(.vertical, 8)
 
             HStack(spacing: 16) {
-                Button("onboarding.paywall.fineprint.restore".localized) {
-                    Task { await handleRestore() }
+                Button {
+                    handleRestore()
+                } label: {
+                    if viewModel.isRestoring {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: NapletColors.textMuted))
+                            .scaleEffect(0.6)
+                    } else {
+                        Text("onboarding.paywall.fineprint.restore".localized)
+                            .font(.system(size: 12))
+                            .foregroundColor(NapletColors.textMuted)
+                    }
                 }
-                .font(.system(size: 12))
-                .foregroundColor(NapletColors.textMuted)
+                .disabled(viewModel.isRestoring || viewModel.isPurchasing)
 
                 Text("·")
                     .foregroundColor(NapletColors.textMuted)
@@ -358,9 +367,14 @@ struct OnboardingPaywallStepView: View {
         advanceToCompletion()
     }
 
-    private func handleRestore() async {
-        // Reusa lógica existente do PurchaseService — TODO Sessão B
-        Logger.info("[OnboardingPaywall] Restore tapped (not implemented in Sessão A)")
+    private func handleRestore() {
+        Task {
+            let success = await viewModel.restorePurchases()
+            if success {
+                advanceToCompletion()
+            }
+            // Se não houve compra anterior ou deu erro, errorMessage já foi setado e alert vai aparecer
+        }
     }
 
     private func advanceToCompletion() {

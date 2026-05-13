@@ -2030,3 +2030,5 @@
 "onboarding.paywall.error.purchaseFailed" = "Não foi possível processar a compra. Tente novamente.";
 "onboarding.paywall.error.networkFailed" = "Sem conexão com a internet. Verifique sua conexão e tente novamente.";
 "onboarding.paywall.error.unavailable" = "Oferta temporariamente indisponível. Tente mais tarde.";
+"onboarding.paywall.restore.noPurchases" = "Nenhuma compra anterior encontrada nesta conta.";
+"onboarding.paywall.restore.success" = "Compras restauradas com sucesso!";
