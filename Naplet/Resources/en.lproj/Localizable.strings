@@ -2029,3 +2029,32 @@
 "nap_reminder.body" = "%@ should be getting sleepy soon";
 "nap_reminder.window_title" = "Nap time!";
 "nap_reminder.window_body" = "%@ is in the ideal nap window now. Time to sleep!";
+
+// MARK: - Onboarding Paywall (Bloco 1.3)
+"onboarding.paywall.header.title" = "Your Naplet experience is ready";
+"onboarding.paywall.header.subtitle" = "%@ deserves the best to grow while sleeping well";
+"onboarding.paywall.founders.badge" = "FOUNDERS OFFER";
+"onboarding.paywall.founders.deadline" = "Only until July 22, 2026";
+"onboarding.paywall.founders.priceAnnual" = "$14.99 /year";
+"onboarding.paywall.founders.priceLabel" = "first year";
+"onboarding.paywall.founders.priceRegular" = "Then $21.99 /year";
+"onboarding.paywall.founders.countdownPlural" = "%d days remaining";
+"onboarding.paywall.founders.countdownSingular" = "1 day remaining";
+"onboarding.paywall.pillar.ai.title" = "24/7 AI Assistant";
+"onboarding.paywall.pillar.ai.body" = "Ask anything anytime, answers personalized for %@";
+"onboarding.paywall.pillar.pdf.title" = "Pediatrician reports";
+"onboarding.paywall.pillar.pdf.body" = "Professional PDFs ready to impress at checkups";
+"onboarding.paywall.pillar.family.title" = "Family in sync";
+"onboarding.paywall.pillar.family.body" = "Mom, dad, grandparents and nannies on the same page in real time";
+"onboarding.paywall.trial.title" = "7 days free to try";
+"onboarding.paywall.trial.body" = "No commitment. Cancel in 1 tap before the trial ends.";
+"onboarding.paywall.cta.primary" = "Start 7-day free trial";
+"onboarding.paywall.cta.secondary" = "Continue with free version";
+"onboarding.paywall.cta.purchasing" = "Processing...";
+"onboarding.paywall.fineprint.restore" = "Restore purchases";
+"onboarding.paywall.fineprint.terms" = "Terms of use";
+"onboarding.paywall.fineprint.privacy" = "Privacy policy";
+"onboarding.paywall.fineprint.autorenewal" = "Auto-renewal. Cancel anytime in your App Store settings.";
+"onboarding.paywall.error.purchaseFailed" = "Could not process purchase. Please try again.";
+"onboarding.paywall.error.networkFailed" = "No internet connection. Check your connection and try again.";
+"onboarding.paywall.error.unavailable" = "Offer temporarily unavailable. Try again later.";

@@ -2089,3 +2089,32 @@
 "nap_reminder.body" = "%@ deberia tener sueno pronto";
 "nap_reminder.window_title" = "Hora de la siesta!";
 "nap_reminder.window_body" = "%@ esta en la ventana ideal de sueno ahora. Hora de dormir!";
+
+// MARK: - Onboarding Paywall (Bloco 1.3)
+"onboarding.paywall.header.title" = "Tu experiencia Naplet está lista";
+"onboarding.paywall.header.subtitle" = "%@ merece lo mejor para crecer durmiendo bien";
+"onboarding.paywall.founders.badge" = "OFERTA FUNDADORES";
+"onboarding.paywall.founders.deadline" = "Solo hasta el 22 de julio de 2026";
+"onboarding.paywall.founders.priceAnnual" = "$14.99 /año";
+"onboarding.paywall.founders.priceLabel" = "primer año";
+"onboarding.paywall.founders.priceRegular" = "Luego $21.99 /año";
+"onboarding.paywall.founders.countdownPlural" = "%d días restantes";
+"onboarding.paywall.founders.countdownSingular" = "1 día restante";
+"onboarding.paywall.pillar.ai.title" = "Asistente de IA 24h";
+"onboarding.paywall.pillar.ai.body" = "Pregunta lo que quieras cuando quieras, respuestas personalizadas para %@";
+"onboarding.paywall.pillar.pdf.title" = "Informes para el pediatra";
+"onboarding.paywall.pillar.pdf.body" = "PDFs profesionales listos para impresionar en las consultas";
+"onboarding.paywall.pillar.family.title" = "Familia sincronizada";
+"onboarding.paywall.pillar.family.body" = "Mamá, papá, abuelos y niñeras en la misma página en tiempo real";
+"onboarding.paywall.trial.title" = "7 días gratis para probar";
+"onboarding.paywall.trial.body" = "Sin compromiso. Cancela en 1 toque antes de que termine el período.";
+"onboarding.paywall.cta.primary" = "Empezar 7 días gratis";
+"onboarding.paywall.cta.secondary" = "Continuar con versión gratuita";
+"onboarding.paywall.cta.purchasing" = "Procesando...";
+"onboarding.paywall.fineprint.restore" = "Restaurar compras";
+"onboarding.paywall.fineprint.terms" = "Términos de uso";
+"onboarding.paywall.fineprint.privacy" = "Política de privacidad";
+"onboarding.paywall.fineprint.autorenewal" = "Renovación automática. Cancela cuando quieras en los ajustes de la App Store.";
+"onboarding.paywall.error.purchaseFailed" = "No se pudo procesar la compra. Intenta nuevamente.";
+"onboarding.paywall.error.networkFailed" = "Sin conexión a internet. Verifica tu conexión e intenta nuevamente.";
+"onboarding.paywall.error.unavailable" = "Oferta temporalmente no disponible. Intenta más tarde.";
