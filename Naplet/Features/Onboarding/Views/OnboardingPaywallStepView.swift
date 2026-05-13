@@ -15,6 +15,9 @@ struct OnboardingPaywallStepView: View {
     @ObservedObject var onboardingViewModel: OnboardingViewModel
     @StateObject private var viewModel = OnboardingPaywallViewModel()
 
+    @State private var showTerms: Bool = false
+    @State private var showPrivacy: Bool = false
+
     /// Nome do bebê para personalização da copy.
     /// Cai para "seu bebê" se não disponível.
     private var babyName: String {
@@ -58,6 +61,14 @@ struct OnboardingPaywallStepView: View {
             Button("OK", role: .cancel) { viewModel.errorMessage = nil }
         } message: {
             Text(viewModel.errorMessage ?? "")
+        }
+        .sheet(isPresented: $showTerms) {
+            TermsOfServiceView()
+                .modifier(SheetBackgroundCompat())
+        }
+        .sheet(isPresented: $showPrivacy) {
+            PrivacyPolicyView()
+                .modifier(SheetBackgroundCompat())
         }
     }
 
@@ -326,7 +337,8 @@ struct OnboardingPaywallStepView: View {
                     .foregroundColor(NapletColors.textMuted)
 
                 Button("onboarding.paywall.fineprint.terms".localized) {
-                    // TODO Sessão B: abrir Termos (link existente do PaywallView)
+                    AnalyticsService.track("onboarding_paywall_terms_tap")
+                    showTerms = true
                 }
                 .font(.system(size: 12))
                 .foregroundColor(NapletColors.textMuted)
@@ -335,7 +347,8 @@ struct OnboardingPaywallStepView: View {
                     .foregroundColor(NapletColors.textMuted)
 
                 Button("onboarding.paywall.fineprint.privacy".localized) {
-                    // TODO Sessão B: abrir Política de Privacidade
+                    AnalyticsService.track("onboarding_paywall_privacy_tap")
+                    showPrivacy = true
                 }
                 .font(.system(size: 12))
                 .foregroundColor(NapletColors.textMuted)

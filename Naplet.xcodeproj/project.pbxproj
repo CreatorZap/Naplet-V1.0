@@ -167,6 +167,7 @@
 		A419034D2F2EEE6700FFC095 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A419034C2F2EEE6700FFC095 /* GoogleSignInSwift */; };
 		A4PRIVACY002 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A4PRIVACY001 /* PrivacyInfo.xcprivacy */; };
 		CA6063BCC6AE06F07DE5B42A /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02734EF74C9E76A1AB1D7E46 /* AnalyticsService.swift */; };
+		F148F3EFC4A7B17F2486959A /* SheetBackgroundCompat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A42D24CFB69D560FFEAB35 /* SheetBackgroundCompat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -351,6 +352,7 @@
 		2100000000009001 /* SleepScheduleSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepScheduleSettingsView.swift; sourceTree = "<group>"; };
 		2100000000009002 /* SleepScheduleSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepScheduleSettingsViewModel.swift; sourceTree = "<group>"; };
 		3100000000000001 /* Naplet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Naplet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55A42D24CFB69D560FFEAB35 /* SheetBackgroundCompat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SheetBackgroundCompat.swift; sourceTree = "<group>"; };
 		7072D668495D08072A0E8372 /* OnboardingPaywallViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OnboardingPaywallViewModel.swift; sourceTree = "<group>"; };
 		A420A0B22F2441C200B950DB /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		A420A0B42F2441C200B950DB /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -469,6 +471,7 @@
 			children = (
 				5100000000000022 /* Theme */,
 				5100000000000023 /* Components */,
+				55A42D24CFB69D560FFEAB35 /* SheetBackgroundCompat.swift */,
 			);
 			path = Design;
 			sourceTree = "<group>";
@@ -1708,6 +1711,7 @@
 				CA6063BCC6AE06F07DE5B42A /* AnalyticsService.swift in Sources */,
 				0020D21D5C95D197E1F51266 /* OnboardingPaywallViewModel.swift in Sources */,
 				2110284D8E36D8EE52FB0816 /* OnboardingPaywallStepView.swift in Sources */,
+				F148F3EFC4A7B17F2486959A /* SheetBackgroundCompat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

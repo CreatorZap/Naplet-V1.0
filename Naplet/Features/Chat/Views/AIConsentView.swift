@@ -41,21 +41,6 @@ enum AIConsentManager {
     }
 }
 
-// MARK: - Sheet Background Compat
-//
-// `.presentationBackground` é iOS 16.4+. O target do Naplet é iOS 16+.
-// Em iOS 16.0–16.3 cai no fallback de `.background(...)` para garantir o tom escuro.
-
-private struct SheetBackgroundCompat: ViewModifier {
-    func body(content: Content) -> some View {
-        if #available(iOS 16.4, *) {
-            content.presentationBackground(NapletColors.background)
-        } else {
-            content.background(NapletColors.background.ignoresSafeArea())
-        }
-    }
-}
-
 // MARK: - AI Consent View
 //
 // Apresentada como `.sheet` em duas situações (Apple Guideline 5.1.2(i)):
