@@ -55,7 +55,10 @@ struct OnboardingPaywallStepView: View {
             viewModel.trackShown()
         }
         .alert("Erro", isPresented: Binding(
-            get: { viewModel.errorMessage != nil },
+            get: {
+                guard let msg = viewModel.errorMessage else { return false }
+                return !msg.isEmpty
+            },
             set: { if !$0 { viewModel.errorMessage = nil } }
         )) {
             Button("OK", role: .cancel) { viewModel.errorMessage = nil }

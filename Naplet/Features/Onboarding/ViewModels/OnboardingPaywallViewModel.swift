@@ -179,11 +179,40 @@ final class OnboardingPaywallViewModel: ObservableObject {
     // MARK: - Helpers
 
     private func mapErrorToUserMessage(_ error: Error) -> String {
-        // Detecta erros de rede comuns
+        // 1. Erros de rede genéricos (URLSession)
         let nsError = error as NSError
         if nsError.domain == NSURLErrorDomain {
             return "onboarding.paywall.error.networkFailed".localized
         }
+
+        // 2. Erros específicos do RevenueCat
+        if let rcError = error as? RevenueCat.ErrorCode {
+            switch rcError {
+            case .purchaseCancelledError:
+                return "" // Cancelamento silencioso (não mostra alert)
+            case .paymentPendingError:
+                return "onboarding.paywall.error.paymentPending".localized
+            case .productNotAvailableForPurchaseError,
+                 .productAlreadyPurchasedError:
+                return "onboarding.paywall.error.productUnavailable".localized
+            case .receiptAlreadyInUseError:
+                return "onboarding.paywall.error.receiptInUse".localized
+            case .invalidReceiptError:
+                return "onboarding.paywall.error.invalidReceipt".localized
+            case .networkError:
+                return "onboarding.paywall.error.networkFailed".localized
+            case .storeProblemError:
+                return "onboarding.paywall.error.storeProblem".localized
+            case .invalidCredentialsError,
+                 .operationAlreadyInProgressForProductError:
+                return "onboarding.paywall.error.tryAgainLater".localized
+            case .ineligibleError:
+                return "onboarding.paywall.error.ineligible".localized
+            default:
+                return "onboarding.paywall.error.purchaseFailed".localized
+            }
+        }
+
         return "onboarding.paywall.error.purchaseFailed".localized
     }
 }

@@ -2120,3 +2120,10 @@
 "onboarding.paywall.error.unavailable" = "Oferta temporalmente no disponible. Intenta más tarde.";
 "onboarding.paywall.restore.noPurchases" = "No se encontraron compras anteriores en esta cuenta.";
 "onboarding.paywall.restore.success" = "¡Compras restauradas con éxito!";
+"onboarding.paywall.error.paymentPending" = "Pago pendiente. Verifica tu método de pago en la App Store.";
+"onboarding.paywall.error.productUnavailable" = "Esta oferta no está disponible en este momento. Intenta de nuevo más tarde.";
+"onboarding.paywall.error.receiptInUse" = "Esta compra ya está vinculada a otra cuenta Apple.";
+"onboarding.paywall.error.invalidReceipt" = "No se pudo validar la compra. Intenta restaurar las compras.";
+"onboarding.paywall.error.storeProblem" = "La App Store tiene problemas. Intenta nuevamente en unos minutos.";
+"onboarding.paywall.error.tryAgainLater" = "Intenta de nuevo en unos instantes.";
+"onboarding.paywall.error.ineligible" = "No eres elegible para esta oferta promocional.";
