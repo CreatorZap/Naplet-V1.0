@@ -44,7 +44,8 @@ class OnboardingViewModel: ObservableObject {
         case relationship = 8
         case confirmation = 9
         case loading = 10
-        case completion = 11
+        case paywall = 11
+        case completion = 12
     }
 
     // MARK: - Caregiver Relationship
@@ -177,7 +178,10 @@ class OnboardingViewModel: ObservableObject {
     }
 
     var showProgressIndicator: Bool {
-        currentStep != .welcome && currentStep != .loading && currentStep != .completion
+        currentStep != .welcome
+            && currentStep != .loading
+            && currentStep != .paywall
+            && currentStep != .completion
     }
 
     var formattedBirthDate: String {
@@ -304,12 +308,12 @@ class OnboardingViewModel: ObservableObject {
         // Save baby data first (but don't complete onboarding yet)
         await saveBabyData()
 
-        // Go to completion screen with success haptic
-        // User will see celebration and click button to finish
+        // Go to paywall screen with success haptic
+        // After paywall (purchase or skip), user advances to completion
         await MainActor.run {
             HapticManager.shared.success()
             withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
-                currentStep = .completion
+                currentStep = .paywall
             }
         }
     }

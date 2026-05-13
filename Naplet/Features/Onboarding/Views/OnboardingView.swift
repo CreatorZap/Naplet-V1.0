@@ -45,6 +45,8 @@ struct OnboardingView: View {
                         ConfirmationStepView(viewModel: viewModel)
                     case .loading:
                         LoadingStepView(viewModel: viewModel)
+                    case .paywall:
+                        OnboardingPaywallStepView(onboardingViewModel: viewModel)
                     case .completion:
                         CompletionStepView(viewModel: viewModel)
                     }
