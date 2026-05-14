@@ -110,6 +110,7 @@ struct WelcomeStepView: View {
                             .foregroundColor(NapletColors.textPrimary)
                             .multilineTextAlignment(.center)
                             .fixedSize(horizontal: false, vertical: true)
+                            .padding(.horizontal, NapletSpacing.lg)
 
                         Text("onboarding_welcome_subtitle".localized)
                             .font(NapletTypography.body())
