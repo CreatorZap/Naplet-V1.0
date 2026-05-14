@@ -454,16 +454,16 @@
 
 // MARK: - AI Consent
 "aiConsent.title" = "Chat IA - Compartilhamento de Dados";
-"aiConsent.description" = "Para fornecer orientacoes personalizadas sobre sono, o Chat IA envia os seguintes dados para a OpenAI:";
+"aiConsent.description" = "Para fornecer orientações personalizadas sobre sono, o Chat IA envia os seguintes dados para a OpenAI:";
 "aiConsent.dataShared" = "Dados compartilhados com a OpenAI";
-"aiConsent.data.babyInfo" = "Nome e idade do bebe";
-"aiConsent.data.sleepRecords" = "Registros e padroes de sono";
+"aiConsent.data.babyInfo" = "Nome e idade do bebê";
+"aiConsent.data.sleepRecords" = "Registros e padrões de sono";
 "aiConsent.data.chatMessages" = "Suas mensagens no chat";
-"aiConsent.processingNote" = "A OpenAI processa esses dados para gerar respostas. Os dados nao sao armazenados pela OpenAI apos o processamento.";
-"aiConsent.checkbox" = "Eu entendo e consinto com o compartilhamento desses dados com a OpenAI para orientacoes personalizadas de sono";
+"aiConsent.processingNote" = "A OpenAI processa esses dados para gerar respostas. Os dados não são armazenados pela OpenAI após o processamento.";
+"aiConsent.checkbox" = "Eu entendo e consinto com o compartilhamento desses dados com a OpenAI para orientações personalizadas de sono";
 "aiConsent.enable" = "Ativar Chat IA";
-"aiConsent.notNow" = "Agora Nao";
-"aiConsent.readPrivacyPolicy" = "Ler Politica de Privacidade";
+"aiConsent.notNow" = "Agora Não";
+"aiConsent.readPrivacyPolicy" = "Ler Política de Privacidade";
 
 // AI Consent: ajustes profissionais (neverShared card + footer)
 "aiConsent.neverShared.title" = "O QUE NUNCA ENVIAMOS";
@@ -1527,7 +1527,7 @@
 "paywall.error.loadFailed" = "Não foi possível carregar os preços. Verifique sua conexão com a internet e tente novamente.";
 "paywall.error.purchaseFailed" = "Não foi possível concluir a compra. Tente novamente.";
 "paywall.social.join_family" = "Junte-se a Familia Naplet";
-"paywall.social.join_subtitle" = "Acompanhe o sono do seu bebe de forma inteligente";
+"paywall.social.join_subtitle" = "Acompanhe o sono do seu bebê de forma inteligente";
 "paywall.trust.free_trial" = "7 dias\ngrátis";
 "paywall.trust.cancel_anytime" = "Cancele\nquando quiser";
 "paywall.trust.locked_price" = "Preço\ntravado";

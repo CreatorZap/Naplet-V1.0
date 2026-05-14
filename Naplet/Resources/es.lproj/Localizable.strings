@@ -514,16 +514,16 @@
 
 // MARK: - AI Consent
 "aiConsent.title" = "Chat IA - Uso Compartido de Datos";
-"aiConsent.description" = "Para brindar orientacion personalizada sobre el sueno, el Chat IA envia los siguientes datos a OpenAI:";
+"aiConsent.description" = "Para brindar orientación personalizada sobre el sueño, el Chat IA envía los siguientes datos a OpenAI:";
 "aiConsent.dataShared" = "Datos compartidos con OpenAI";
-"aiConsent.data.babyInfo" = "Nombre y edad del bebe";
-"aiConsent.data.sleepRecords" = "Registros y patrones de sueno";
+"aiConsent.data.babyInfo" = "Nombre y edad del bebé";
+"aiConsent.data.sleepRecords" = "Registros y patrones de sueño";
 "aiConsent.data.chatMessages" = "Tus mensajes en el chat";
-"aiConsent.processingNote" = "OpenAI procesa estos datos para generar respuestas. Los datos no son almacenados por OpenAI despues del procesamiento.";
-"aiConsent.checkbox" = "Entiendo y consiento compartir estos datos con OpenAI para orientacion personalizada sobre el sueno";
+"aiConsent.processingNote" = "OpenAI procesa estos datos para generar respuestas. Los datos no son almacenados por OpenAI después del procesamiento.";
+"aiConsent.checkbox" = "Entiendo y consiento compartir estos datos con OpenAI para orientación personalizada sobre el sueño";
 "aiConsent.enable" = "Activar Chat IA";
 "aiConsent.notNow" = "Ahora No";
-"aiConsent.readPrivacyPolicy" = "Leer Politica de Privacidad";
+"aiConsent.readPrivacyPolicy" = "Leer Política de Privacidad";
 
 // AI Consent: pulido profesional (tarjeta neverShared + pie)
 "aiConsent.neverShared.title" = "LO QUE NUNCA COMPARTIMOS";
@@ -1615,7 +1615,7 @@
 "paywall.error.loadFailed" = "No se pudieron cargar los precios. Verifica tu conexion a internet e intenta nuevamente.";
 "paywall.error.purchaseFailed" = "No se pudo completar la compra. Intenta nuevamente.";
 "paywall.social.join_family" = "Unete a la Familia Naplet";
-"paywall.social.join_subtitle" = "Mejor seguimiento del sueno para tu pequeno";
+"paywall.social.join_subtitle" = "Mejor seguimiento del sueño para tu pequeño";
 "paywall.trust.free_trial" = "7 días\ngratis";
 "paywall.trust.cancel_anytime" = "Cancela\ncuando quieras";
 "paywall.trust.locked_price" = "Precio\nbloqueado";
