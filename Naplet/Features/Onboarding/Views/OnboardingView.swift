@@ -137,10 +137,12 @@ struct WelcomeStepView: View {
                     showAcceptInvite = true
                 }
 
-                OnboardingTextButton(title: "onboarding_welcome_login".localized) {
-                    showLogin = true
+                if !appState.authState.isAuthenticated {
+                    OnboardingTextButton(title: "onboarding_welcome_login".localized) {
+                        showLogin = true
+                    }
+                    .padding(.top, NapletSpacing.sm)
                 }
-                .padding(.top, NapletSpacing.sm)
             }
             .padding(.bottom, NapletSpacing.xxl)
         }
