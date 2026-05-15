@@ -201,73 +201,76 @@ struct SolidFeedingSheet: View {
             NapletColors.background
                 .ignoresSafeArea()
 
-            VStack(spacing: NapletSpacing.xl) {
-                // Drag Indicator
-                Capsule()
-                    .fill(NapletColors.textMuted.opacity(0.3))
-                    .frame(width: 36, height: 5)
-                    .padding(.top, NapletSpacing.sm)
+            ScrollView {
+                VStack(spacing: NapletSpacing.xl) {
+                    // Drag Indicator
+                    Capsule()
+                        .fill(NapletColors.textMuted.opacity(0.3))
+                        .frame(width: 36, height: 5)
+                        .padding(.top, NapletSpacing.sm)
 
-                // Header
-                VStack(spacing: NapletSpacing.sm) {
-                    Image(systemName: "fork.knife")
-                        .font(.system(size: 48))
-                        .foregroundColor(NapletColors.warning)
+                    // Header
+                    VStack(spacing: NapletSpacing.sm) {
+                        Image(systemName: "fork.knife")
+                            .font(.system(size: 48))
+                            .foregroundColor(NapletColors.warning)
 
-                    Text("feeding.solid.title".localized)
-                        .font(NapletTypography.title2())
-                        .foregroundColor(NapletColors.textPrimary)
-
-                    Text("feeding.solid.subtitle".localized)
-                        .font(NapletTypography.body())
-                        .foregroundColor(NapletColors.textSecondary)
-                        .multilineTextAlignment(.center)
-                }
-                .padding(.top, NapletSpacing.md)
-                .padding(.horizontal, NapletSpacing.lg)
-
-                // Notes input
-                NapletCard {
-                    VStack(alignment: .leading, spacing: NapletSpacing.sm) {
-                        Text("feeding.solid.notes".localized)
-                            .font(NapletTypography.caption(weight: .semibold))
-                            .foregroundColor(NapletColors.textSecondary)
-
-                        TextField("feeding.solid.notesPlaceholder".localized, text: $notes, axis: .vertical)
-                            .font(NapletTypography.body())
+                        Text("feeding.solid.title".localized)
+                            .font(NapletTypography.title2())
                             .foregroundColor(NapletColors.textPrimary)
-                            .lineLimit(3...6)
-                            .padding(NapletSpacing.md)
-                            .background(NapletColors.background)
-                            .cornerRadius(8)
-                    }
-                }
-                .padding(.horizontal, NapletSpacing.lg)
 
-                // Quick food suggestions
-                NapletCard {
-                    VStack(alignment: .leading, spacing: NapletSpacing.md) {
-                        Text("feeding.solid.suggestions".localized)
-                            .font(NapletTypography.caption(weight: .semibold))
+                        Text("feeding.solid.subtitle".localized)
+                            .font(NapletTypography.body())
                             .foregroundColor(NapletColors.textSecondary)
+                            .multilineTextAlignment(.center)
+                    }
+                    .padding(.top, NapletSpacing.md)
+                    .padding(.horizontal, NapletSpacing.lg)
 
-                        FlowLayout(spacing: 8) {
-                            ForEach(foodSuggestions, id: \.self) { food in
-                                FoodSuggestionChip(food: food) {
-                                    if notes.isEmpty {
-                                        notes = food
-                                    } else {
-                                        notes += ", \(food)"
+                    // Notes input
+                    NapletCard {
+                        VStack(alignment: .leading, spacing: NapletSpacing.sm) {
+                            Text("feeding.solid.notes".localized)
+                                .font(NapletTypography.caption(weight: .semibold))
+                                .foregroundColor(NapletColors.textSecondary)
+
+                            TextField("feeding.solid.notesPlaceholder".localized, text: $notes, axis: .vertical)
+                                .font(NapletTypography.body())
+                                .foregroundColor(NapletColors.textPrimary)
+                                .lineLimit(3...6)
+                                .padding(NapletSpacing.md)
+                                .background(NapletColors.background)
+                                .cornerRadius(8)
+                        }
+                    }
+                    .padding(.horizontal, NapletSpacing.lg)
+
+                    // Quick food suggestions
+                    NapletCard {
+                        VStack(alignment: .leading, spacing: NapletSpacing.md) {
+                            Text("feeding.solid.suggestions".localized)
+                                .font(NapletTypography.caption(weight: .semibold))
+                                .foregroundColor(NapletColors.textSecondary)
+
+                            FlowLayout(spacing: 8) {
+                                ForEach(foodSuggestions, id: \.self) { food in
+                                    FoodSuggestionChip(food: food) {
+                                        if notes.isEmpty {
+                                            notes = food
+                                        } else {
+                                            notes += ", \(food)"
+                                        }
                                     }
                                 }
                             }
                         }
                     }
+                    .padding(.horizontal, NapletSpacing.lg)
                 }
-                .padding(.horizontal, NapletSpacing.lg)
-
-                Spacer()
-
+                .padding(.bottom, NapletSpacing.lg)
+            }
+            .scrollDismissesKeyboard(.interactively)
+            .safeAreaInset(edge: .bottom) {
                 // Save Button
                 Button {
                     Task {
