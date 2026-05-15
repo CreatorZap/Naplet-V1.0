@@ -27,7 +27,7 @@ struct WakeWindowCardView: View {
     private var statusColor: Color {
         switch status {
         case .sleeping: return NapletColors.primaryPurple
-        case .fresh:    return NapletColors.primaryBlue
+        case .fresh:    return NapletColors.primaryPink
         case .optimal:  return NapletColors.success
         case .closing:  return NapletColors.warning
         case .overdue:  return NapletColors.error
@@ -65,7 +65,7 @@ struct WakeWindowCardView: View {
     // MARK: - Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: NapletSpacing.md) {
+        VStack(alignment: .leading, spacing: NapletSpacing.sm) {
             header
             statusLabel
             progressBar
@@ -119,17 +119,21 @@ struct WakeWindowCardView: View {
         GeometryReader { geo in
             ZStack(alignment: .leading) {
                 // Trilho de fundo
-                RoundedRectangle(cornerRadius: 4)
+                RoundedRectangle(cornerRadius: 5)
                     .fill(NapletColors.backgroundTertiary)
 
-                // Preenchimento (largura clampada em 100%, cor do status)
-                RoundedRectangle(cornerRadius: 4)
+                // Preenchimento (largura clampada em 100%, cor do status).
+                // Garante uma largura mínima visível (10pt) quando progress > 0
+                // para que mesmo 1-3% de progresso apareça no card.
+                RoundedRectangle(cornerRadius: 5)
                     .fill(statusColor)
-                    .frame(width: geo.size.width * clampedProgress)
+                    .frame(width: clampedProgress > 0
+                        ? max(geo.size.width * clampedProgress, 10)
+                        : 0)
                     .animation(.easeInOut(duration: 0.4), value: clampedProgress)
             }
         }
-        .frame(height: 8)
+        .frame(height: 10)
     }
 }
 
