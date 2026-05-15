@@ -2067,3 +2067,4 @@
 "onboarding.paywall.error.storeProblem" = "The App Store is having issues. Please try again in a few minutes.";
 "onboarding.paywall.error.tryAgainLater" = "Please try again in a moment.";
 "onboarding.paywall.error.ineligible" = "You are not eligible for this promotional offer.";
+"onboarding.paywall.error.restoreFailed" = "We detected an active subscription on this Apple ID, but couldn't link it right now. Tap Restore and try again.";
