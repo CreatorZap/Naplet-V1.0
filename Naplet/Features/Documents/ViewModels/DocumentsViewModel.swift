@@ -120,7 +120,22 @@ class DocumentsViewModel: ObservableObject {
     }
 
     func refresh() async {
-        await loadData()
+        // Pull-to-refresh: faz fetch direto e silencia o erro se houver cache.
+        // Diferente de loadData(), NÃO seta isLoading=true (preserva conteúdo
+        // visível durante o swipe) nem mostra popup destrutivo quando já há
+        // documentos em cache. Popup só aparece se cache estiver vazio.
+        do {
+            if documentTypes.isEmpty {
+                documentTypes = try await repository.fetchDocumentTypes()
+            }
+            documents = try await repository.fetchDocuments(babyId: baby.id)
+        } catch {
+            Logger.error("Refresh failed: \(error.localizedDescription)")
+            if documents.isEmpty {
+                errorMessage = "documents.error.load".localized
+                showError = true
+            }
+        }
     }
 
     // MARK: - Document Actions
