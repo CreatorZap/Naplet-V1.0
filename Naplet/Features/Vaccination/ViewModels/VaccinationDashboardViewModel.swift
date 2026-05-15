@@ -102,6 +102,16 @@ class VaccinationDashboardViewModel: ObservableObject {
 
     // MARK: - Load Data
     func loadData() async {
+        // Re-entrancy guard: SwiftUI .task pode disparar 2x em re-renders
+        // (especialmente em NavigationStack/sheet iOS 17+). Sem isso,
+        // duas Tasks podem chamar initializeVaccinationsForBaby em paralelo
+        // e a segunda falha com UNIQUE constraint, mostrando popup de erro
+        // enquanto a primeira termina e popula a lista por baixo.
+        guard !isLoading else {
+            Logger.info("loadData() ignored: already loading for \(baby.name)")
+            return
+        }
+
         isLoading = true
         defer { isLoading = false }
 
@@ -109,11 +119,17 @@ class VaccinationDashboardViewModel: ObservableObject {
             // Fetch vaccinations with details
             vaccinationsWithDetails = try await repository.fetchVaccinationsWithDetails(babyId: baby.id)
 
-            // If no vaccinations exist for this baby, initialize them
+            // If no vaccinations exist for this baby, initialize them.
+            // Tolerate init failure (race condition: outra Task pode ter inicializado);
+            // o segundo fetch abaixo pega o resultado dela.
             if vaccinationsWithDetails.isEmpty {
                 Logger.info("No vaccinations found for \(baby.name), initializing...")
-                try await repository.initializeVaccinationsForBaby(babyId: baby.id)
-                // Fetch again after initialization
+                do {
+                    try await repository.initializeVaccinationsForBaby(babyId: baby.id)
+                } catch {
+                    Logger.warning("initializeVaccinationsForBaby failed (likely concurrent init): \(error.localizedDescription)")
+                }
+                // Fetch again after initialization (own or concurrent)
                 vaccinationsWithDetails = try await repository.fetchVaccinationsWithDetails(babyId: baby.id)
             }
 
@@ -123,8 +139,11 @@ class VaccinationDashboardViewModel: ObservableObject {
             Logger.info("Loaded \(vaccinationsWithDetails.count) vaccinations for \(baby.name)")
         } catch {
             Logger.error("Failed to load vaccinations: \(error)")
-            errorMessage = "vaccination.error.load".localized
-            showError = true
+            // Só mostra popup se a lista ainda está vazia (sem cache pra preservar).
+            if vaccinationsWithDetails.isEmpty {
+                errorMessage = "vaccination.error.load".localized
+                showError = true
+            }
         }
     }
 
