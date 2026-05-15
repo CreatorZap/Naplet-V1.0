@@ -23,12 +23,6 @@ struct SettingsView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: NapletSpacing.lg) {
-                // Drag Indicator
-                Capsule()
-                    .fill(NapletColors.textMuted.opacity(0.3))
-                    .frame(width: 36, height: 5)
-                    .padding(.top, NapletSpacing.sm)
-
                 // Header
                 VStack(spacing: NapletSpacing.sm) {
                     ZStack {
