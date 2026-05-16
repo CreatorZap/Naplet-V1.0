@@ -2128,3 +2128,4 @@
 "onboarding.paywall.error.tryAgainLater" = "Intenta de nuevo en unos instantes.";
 "onboarding.paywall.error.ineligible" = "No eres elegible para esta oferta promocional.";
 "onboarding.paywall.error.restoreFailed" = "Detectamos una suscripción activa en este Apple ID, pero no pudimos vincularla ahora. Toca Restaurar e intenta de nuevo.";
+"onboarding.paywall.error.alreadyPurchasedManualRestore" = "Detectamos una suscripción activa en este Apple ID. Toca Restaurar abajo para vincularla a tu cuenta actual.";

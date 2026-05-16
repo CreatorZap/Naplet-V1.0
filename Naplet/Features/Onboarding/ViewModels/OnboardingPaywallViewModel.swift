@@ -109,23 +109,25 @@ final class OnboardingPaywallViewModel: ObservableObject {
                 }
             } catch {
                 // Caso especial: productAlreadyPurchasedError.
-                // Ocorre quando o Apple ID já tem a assinatura ativa (outra conta
-                // Naplet ou sessão anterior). Sem este branch, a Apple devolve
-                // mensagem técnica de beta tester e a UI fica em "Processando..."
-                // até o defer resetar isPurchasing. Aqui transformamos o erro em
-                // restore silencioso: se o restore traz Premium, é como se a
-                // compra tivesse dado certo (return true → view avança).
+                // Ocorre quando o Apple ID já tem assinatura ativa (outra conta
+                // Naplet ou sessão anterior no mesmo device).
+                //
+                // REGRESSÃO BUILD 22: aqui chamávamos restorePurchases() automa-
+                // ticamente, mas o RevenueCat retorna o entitlement do Apple ID
+                // atual INDEPENDENTE da conta Supabase logada. Resultado: conta
+                // Naplet nova virava Premium grátis se o device tinha assinatura
+                // ativa de outro contexto. Vazamento de receita confirmado em
+                // teste.
+                //
+                // FIX BUILD 23: apenas pedir ao usuário usar o botão "Restaurar"
+                // do rodapé. Restore manual é ato consciente — se o usuário
+                // realmente é o dono da assinatura, ele toca. Não é o app que
+                // libera Premium sozinho.
                 if let rcError = error as? RevenueCat.ErrorCode,
                    rcError == .productAlreadyPurchasedError {
                     AnalyticsService.track("onboarding_paywall_already_purchased_detected")
-                    Logger.info("[OnboardingPaywall] productAlreadyPurchasedError → tentando restore automático")
-                    let restored = await attemptRestorePurchases()
-                    if restored {
-                        AnalyticsService.track("onboarding_paywall_already_purchased_restored")
-                        return true
-                    }
-                    AnalyticsService.track("onboarding_paywall_already_purchased_restore_failed")
-                    errorMessage = "onboarding.paywall.error.restoreFailed".localized
+                    Logger.info("[OnboardingPaywall] productAlreadyPurchasedError → pedindo restore manual ao usuário")
+                    errorMessage = "onboarding.paywall.error.alreadyPurchasedManualRestore".localized
                     return false
                 }
 
@@ -198,23 +200,6 @@ final class OnboardingPaywallViewModel: ObservableObject {
     }
 
     // MARK: - Helpers
-
-    /// Restore silencioso disparado a partir de purchaseFounders quando a Apple
-    /// retorna productAlreadyPurchasedError. Diferente do restorePurchases()
-    /// público (que mexe em isRestoring e analytics próprios), este NÃO toca
-    /// em isRestoring — o caller já segura isPurchasing via defer — e NÃO
-    /// seta errorMessage; quem decide o que mostrar é purchaseFounders.
-    private func attemptRestorePurchases() async -> Bool {
-        do {
-            let customerInfo = try await Purchases.shared.restorePurchases()
-            return customerInfo
-                .entitlements[AppConfig.Subscription.premiumEntitlement]?
-                .isActive == true
-        } catch {
-            Logger.error(error, context: "[OnboardingPaywall] auto-restore após productAlreadyPurchasedError falhou")
-            return false
-        }
-    }
 
     private func mapErrorToUserMessage(_ error: Error) -> String {
         // 1. Erros de rede genéricos (URLSession)

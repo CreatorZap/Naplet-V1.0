@@ -2068,3 +2068,4 @@
 "onboarding.paywall.error.tryAgainLater" = "Please try again in a moment.";
 "onboarding.paywall.error.ineligible" = "You are not eligible for this promotional offer.";
 "onboarding.paywall.error.restoreFailed" = "We detected an active subscription on this Apple ID, but couldn't link it right now. Tap Restore and try again.";
+"onboarding.paywall.error.alreadyPurchasedManualRestore" = "We detected an active subscription on this Apple ID. Tap Restore at the bottom to link it to your current account.";
