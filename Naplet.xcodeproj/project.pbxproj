@@ -1868,7 +1868,7 @@
 				CODE_SIGN_ENTITLEMENTS = Naplet/Naplet.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = 9335JM8ZTU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Naplet/Resources/Info.plist;
@@ -1907,7 +1907,7 @@
 				CODE_SIGN_ENTITLEMENTS = Naplet/Naplet.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = 9335JM8ZTU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Naplet/Resources/Info.plist;
