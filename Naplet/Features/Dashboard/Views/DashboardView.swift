@@ -57,6 +57,7 @@ struct DashboardView: View {
                                     ageInMonths: baby.ageInMonths,
                                     wakeWindowProgress: viewModel.wakeWindowProgress
                                 )
+                                .padding(.horizontal, NapletSpacing.lg)
                             }
 
                             // Timeline do dia
